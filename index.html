@@ -789,17 +789,19 @@ const TD={color:'rgba(255,255,255,0.60)',font:{size:12,family:"'League Spartan'"
 const GL={color:'rgba(0,0,0,0.07)'};
 const GD={color:'rgba(255,255,255,0.07)'};
 
-// 1. Perception Gap — radar-style bar
+// 1. Perception Gap
 new Chart(document.getElementById('perceptionGapChart'),{type:'bar',data:{labels:['Travellers "Concerned"','Actively Avoiding ME','Trust in Govt Ads','Saudi Safety Score\n(Numbeo /100)','Indians w/ Positive\nSaudi Perception'],datasets:[{label:'Perception / Fear Score',data:[78,42,30,86,42],backgroundColor:[RED,RED,'rgba(0,0,0,0.25)',GRN,'rgba(30,107,66,0.4)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}%`}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'},max:100}}}});
 
 // 2. Impact chart
 new Chart(document.getElementById('impactChart'),{type:'bar',data:{labels:['Best Case\n(−11%)','Base Case\n(−20%)','Worst Case\n(−27%)'],datasets:[{label:'Revenue Loss ($B)',data:[34,45,56],backgroundColor:['rgba(184,50,50,0.3)','rgba(184,50,50,0.6)',RED],borderWidth:0},{label:'Lost Visitors (M)',data:[23,31,38],backgroundColor:['rgba(201,168,76,0.3)','rgba(201,168,76,0.6)',GLD],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#333',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:TL}}}});
 
-// 3. Perception Shift
-new Chart(document.getElementById('perceptionShiftChart'),{type:'bar',data:{labels:['Positive Perception\nChange','Increased Desire\nto Visit','Influenced\nDestination Choice','Concrete Booking\nIntent'],datasets:[{label:'Influencer Content',data:[76.7,83.3,70,63.3],backgroundColor:BLK,borderWidth:0},{label:'Traditional Advertising',data:[12,18,22,15],backgroundColor:'rgba(255,255,255,0.20)',borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,0.60)',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'%'},max:100}}}});
+// 3. Perception Shift — FIXED: contrast issue on dark bg
+// Original had Influencer=BLK (#080808) and Traditional='rgba(255,255,255,0.20)' — both near-invisible
+// Fix: Influencer = bright white, Traditional = gold, both clearly visible
+new Chart(document.getElementById('perceptionShiftChart'),{type:'bar',data:{labels:['Positive Perception\nChange','Increased Desire\nto Visit','Influenced\nDestination Choice','Concrete Booking\nIntent'],datasets:[{label:'Influencer Content',data:[76.7,83.3,70,63.3],backgroundColor:'rgba(255,255,255,0.92)',borderWidth:0},{label:'Traditional Advertising',data:[12,18,22,15],backgroundColor:'rgba(201,168,76,0.80)',borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,0.85)',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'%'},max:100}}}});
 
 // 4. Funnel
-new Chart(document.getElementById('funnelChart'),{type:'bar',data:{labels:['Prefer Social Media\nfor Travel Planning','Influencer Affected\nDestination Choice','Concrete Booking\nIntent from Influencers'],datasets:[{data:[70,70,63.3],backgroundColor:[BLK,'rgba(255,255,255,0.35)','rgba(255,255,255,0.18)'],borderWidth:0}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x}%`}}},scales:{x:{grid:GD,ticks:{...TD,callback:v=>v+'%'},max:100},y:{grid:{display:false},ticks:{...TD,font:{size:10}}}}}});
+new Chart(document.getElementById('funnelChart'),{type:'bar',data:{labels:['Prefer Social Media\nfor Travel Planning','Influencer Affected\nDestination Choice','Concrete Booking\nIntent from Influencers'],datasets:[{data:[70,70,63.3],backgroundColor:['rgba(255,255,255,0.88)','rgba(255,255,255,0.55)','rgba(255,255,255,0.30)'],borderWidth:0}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x}%`}}},scales:{x:{grid:GD,ticks:{...TD,callback:v=>v+'%'},max:100},y:{grid:{display:false},ticks:{...TD,font:{size:10}}}}}});
 
 // 5. ROI Comparison
 new Chart(document.getElementById('roiCompChart'),{type:'bar',data:{labels:['Traditional\nAdvertising','Earned Media\n(Traditional PR)','Influencer\nMarketing','Top Performing\nInfluencer Campaigns'],datasets:[{label:'Average ROI (%)',data:[350,481,550,1100],backgroundColor:['rgba(0,0,0,0.20)','rgba(0,0,0,0.35)','rgba(0,0,0,0.70)',BLK],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}% ROI`}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'}}}}});
@@ -816,8 +818,71 @@ new Chart(document.getElementById('funnelCompChart'),{type:'bar',data:{labels:['
 // 9. Case Study Recovery Chart
 new Chart(document.getElementById('recoveryCompChart'),{type:'bar',data:{labels:['Egypt\n(2014-2019)','Turkey\n(2016-2018)','Sri Lanka\n(51 Days)','Jordan\n(Ongoing)'],datasets:[{label:'Key Recovery Metric',data:[4,54,270,85],backgroundColor:[BLK,'rgba(0,0,0,0.70)','rgba(0,0,0,0.45)','rgba(0,0,0,0.30)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const labels=['4% tourism economy growth','54% visitor increase (30M→46M)','270% arrival surge in 51 days','All 5 influencer constructs validated'];return labels[c.dataIndex];}}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'}}}}});
 
-// 10. Visit Saudi Chart
-new Chart(document.getElementById('visitSaudiChart'),{type:'bar',data:{labels:['Creators\nMobilised','Trips\nOrganised','Impressions\n(Millions)','Audience\nReached (M)','Would Book\nSaudi (%)'],datasets:[{data:[300,26,350,240,60],backgroundColor:[BLK,BLK,BLK,'rgba(0,0,0,0.60)','rgba(0,0,0,0.40)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:TD}}}});
+// 10. Visit Saudi Chart — FIXED: was mixing raw counts (300 creators, 26 trips, 350M impressions, 240M)
+// with a percentage (60%) on the same linear axis causing 26 and 60 to appear as flat/invisible bars
+// Fix: split into two grouped datasets with separate y-axes (left: large counts, right: %)
+// Left axis: Creators (300), Trips (26), Impressions (350M), Audience (240M)  Right axis: Booking % (60)
+(function(){
+  const ctx = document.getElementById('visitSaudiChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Creators\nMobilised', 'Trips\nOrganised', 'Impressions\n(Millions)', 'Audience\nReached (M)', 'Would Book\nSaudi (%)'],
+      datasets: [
+        {
+          label: 'Volume / Scale',
+          data: [300, 26, 350, 240, null],
+          backgroundColor: ['rgba(255,255,255,0.90)', 'rgba(255,255,255,0.70)', 'rgba(201,168,76,0.90)', 'rgba(201,168,76,0.70)', 'transparent'],
+          borderWidth: 0,
+          yAxisID: 'yLeft',
+          barThickness: 28,
+        },
+        {
+          label: 'Booking Intent (%)',
+          data: [null, null, null, null, 60],
+          backgroundColor: ['transparent','transparent','transparent','transparent','rgba(30,107,66,0.90)'],
+          borderWidth: 0,
+          yAxisID: 'yRight',
+          barThickness: 28,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: 'rgba(255,255,255,0.70)', boxWidth: 10, font: { size: 11 } } },
+        tooltip: {
+          callbacks: {
+            label: function(c) {
+              const realLabels = ['300 creators', '26 trips', '350M impressions', '240M people reached', '60% would book Saudi'];
+              return ' ' + realLabels[c.dataIndex];
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { ...TD, font: { size: 10 } } },
+        yLeft: {
+          type: 'linear',
+          position: 'left',
+          grid: GD,
+          ticks: { ...TD, callback: v => v >= 1000 ? (v/1000)+'K' : v },
+          title: { display: true, text: 'Count / Millions', color: 'rgba(255,255,255,0.40)', font: { size: 10 } }
+        },
+        yRight: {
+          type: 'linear',
+          position: 'right',
+          min: 0,
+          max: 100,
+          grid: { display: false },
+          ticks: { ...TD, callback: v => v + '%' },
+          title: { display: true, text: 'Booking Intent %', color: 'rgba(255,255,255,0.40)', font: { size: 10 } }
+        }
+      }
+    }
+  });
+})();
 
 // 11. Saudi Timeline
 new Chart(document.getElementById('saudiTimelineChart'),{type:'line',data:{labels:['2019\nFirst Creator Trips','2021\n#VisitSaudi Launch','2022\n300+ Creators','2023\n100M Visitors','2024\nIndia MoU','2025\nAlUla Summit'],datasets:[{label:'Tourism Metric Index',data:[20,45,65,100,116,122],borderColor:'#fff',borderWidth:2.5,backgroundColor:'rgba(255,255,255,0.05)',fill:true,tension:0.4,pointBackgroundColor:'#fff',pointRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:GD,ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'M Visitors'}}}}});
@@ -829,10 +894,10 @@ new Chart(document.getElementById('platformChart'),{type:'bar',data:{labels:['Yo
 new Chart(document.getElementById('tierChart'),{type:'bar',data:{labels:['Nano\n(<10K)','Micro\n(10K-100K)','Macro\n(100K-1M)','Mega\n(1M+)'],datasets:[{label:'Engagement Rate (%)',data:[5.5,3.5,1.5,0.8],backgroundColor:['rgba(0,0,0,0.35)',BLK,'rgba(0,0,0,0.50)','rgba(0,0,0,0.25)'],borderWidth:0},{label:'Cost Per Post ($K)',data:[0.2,5,25,150],backgroundColor:[GLD,GLD,GLD,GLD],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#222',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:TL}}}});
 
 // 14. ROI Model
-new Chart(document.getElementById('roiModelChart'),{type:'bar',data:{labels:['Campaign\nInvestment ($M)','Direct Tourism\nRevenue ($M)'],datasets:[{data:[1,75.5],backgroundColor:['rgba(0,0,0,0.30)',BLK],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.y}M`}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:11}}},y:{grid:GD,ticks:{...TD,callback:v=>'$'+v+'M'}}}}});
+new Chart(document.getElementById('roiModelChart'),{type:'bar',data:{labels:['Campaign\nInvestment ($M)','Direct Tourism\nRevenue ($M)'],datasets:[{data:[1,75.5],backgroundColor:['rgba(255,255,255,0.30)','rgba(255,255,255,0.90)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.y}M`}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:11}}},y:{grid:GD,ticks:{...TD,callback:v=>'$'+v+'M'}}}}});
 
 // 15. Budget Comparison
-new Chart(document.getElementById('budgetCompChart'),{type:'bar',data:{labels:['Influencer\nMarketing','Traditional\nTV Spots','Traditional\nPrint','Traditional\nDigital Display'],datasets:[{label:'Impressions for $1M Budget (Millions)',data:[100,12,8,25],backgroundColor:[BLK,'rgba(255,255,255,0.20)','rgba(255,255,255,0.15)','rgba(255,255,255,0.12)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}M impressions for $1M budget`}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'M'}}}}});
+new Chart(document.getElementById('budgetCompChart'),{type:'bar',data:{labels:['Influencer\nMarketing','Traditional\nTV Spots','Traditional\nPrint','Traditional\nDigital Display'],datasets:[{label:'Impressions for $1M Budget (Millions)',data:[100,12,8,25],backgroundColor:['rgba(255,255,255,0.90)','rgba(255,255,255,0.25)','rgba(255,255,255,0.18)','rgba(255,255,255,0.35)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}M impressions for $1M budget`}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'M'}}}}});
 
 // NAV SMOOTH
 document.querySelectorAll('.nav a').forEach(a=>{
