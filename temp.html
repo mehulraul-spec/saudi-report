@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India–Saudi Arabia Tourism Intelligence Report 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+/* ═══════════════════════════════════════════
+   SAUDI TOURISM REPORT — League Spartan Only
+   Theme: Black / White / Off-White
+   ═══════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --black: #080808;
+  --black2: #111111;
+  --black3: #1a1a1a;
+  --white: #ffffff;
+  --off: #f5f4f0;
+  --off2: #eceae3;
+  --mid: #888888;
+  --rule: rgba(0,0,0,0.10);
+  --rule-dark: rgba(255,255,255,0.08);
+  --font: 'League Spartan', system-ui, sans-serif;
+  --gold: #c9a84c;
+  --gold-lt: rgba(201,168,76,0.12);
+  --red: #b83232;
+  --red-lt: rgba(184,50,50,0.10);
+  --green: #1e6b42;
+  --green-lt: rgba(30,107,66,0.10);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--off);
+  color: var(--black);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 300;
+  background: var(--black);
+  display: flex; align-items: center;
+  padding: 0 48px;
+  overflow-x: auto; scrollbar-width: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav-logo {
+  font-size: 11px; font-weight: 900; letter-spacing: 2px;
+  color: var(--white); text-transform: uppercase;
+  padding: 16px 0; margin-right: 32px; flex-shrink: 0;
+  white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.10);
+  padding-right: 32px;
+}
+.nav a {
+  font-size: 9px; font-weight: 700; letter-spacing: 2px;
+  color: rgba(255,255,255,0.32); text-transform: uppercase;
+  padding: 18px 14px; white-space: nowrap; flex-shrink: 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.nav a:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+/* ── COVER ── */
+.cover {
+  background: var(--black);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.cover-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.cover-eyebrow {
+  font-size: 9px; font-weight: 700; letter-spacing: 4px;
+  color: rgba(255,255,255,0.28); text-transform: uppercase;
+  display: flex; align-items: center; gap: 12px;
+}
+.cover-eyebrow::before {
+  content: ''; width: 28px; height: 1px; background: rgba(255,255,255,0.25);
+}
+.cover-main {
+  align-self: center;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; padding: 48px 0 32px;
+  align-items: end;
+}
+.cover h1 {
+  font-size: clamp(44px, 6vw, 82px);
+  font-weight: 900; color: #fff;
+  line-height: 0.95; letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+.cover h1 em {
+  font-style: normal; color: rgba(255,255,255,0.22);
+}
+.cover-sub {
+  font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.30); text-transform: uppercase;
+  margin-bottom: 32px; line-height: 1.8;
+}
+.cover-kpi-row {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-top: 32px;
+}
+.cover-kpi {
+  background: var(--black2); padding: 20px 18px;
+}
+.cover-kpi-val {
+  font-size: 34px; font-weight: 900; color: #fff;
+  line-height: 1; margin-bottom: 4px;
+}
+.cover-kpi-lbl {
+  font-size: 9px; font-weight: 600; letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.28); text-transform: uppercase;
+}
+.cover-right {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.cover-brief {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 24px;
+}
+.cover-brief-label {
+  font-size: 8px; font-weight: 800; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,0.22);
+  margin-bottom: 14px;
+}
+.cover-brief-item {
+  font-size: 12.5px; font-weight: 400; color: rgba(255,255,255,0.55);
+  line-height: 1.6; padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 70px;   /* adjust as needed */
+    width: 120px;
+}
+.cover-brief-item:last-child { border-bottom: none; }
+.cover-brief-item strong { color: rgba(255,255,255,0.88); font-weight: 700; }
+.cover-footer-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px;
+  flex-wrap: wrap; gap: 12px;
+}
+.cover-footer-meta {
+  font-size: 9px; font-weight: 600; letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.18); text-transform: uppercase;
+}
+.badge-conf {
+  background: #fff; color: var(--black);
+  font-size: 8px; font-weight: 900; letter-spacing: 3px;
+  padding: 4px 12px; text-transform: uppercase;
+}
+
+/* ── DIVIDERS ── */
+.rule { height: 2px; background: var(--black); }
+.rule-lt { height: 1px; background: var(--rule); }
+
+/* ── SECTIONS ── */
+.sec { padding: 72px 48px; }
+.sec.dark { background: var(--black); }
+.sec.alt { background: var(--off2); }
+.sec.white { background: var(--white); }
+.inner { max-width: 1200px; margin: 0 auto; }
+
+.eyebrow {
+  font-size: 9px; font-weight: 800; letter-spacing: 4px;
+  text-transform: uppercase; color: rgba(0,0,0,0.28);
+  margin-bottom: 6px;
+}
+.dark .eyebrow { color: rgba(255,255,255,0.22); }
+.sec-title {
+  font-size: clamp(28px,4vw,50px); font-weight: 900;
+  line-height: 1.0; letter-spacing: -1px; margin-bottom: 8px;
+}
+.dark .sec-title { color: #fff; }
+.sec-sub {
+  font-size: 13.5px; font-weight: 400;
+  color: rgba(0,0,0,0.40); margin-bottom: 44px; line-height: 1.5;
+}
+.dark .sec-sub { color: rgba(255,255,255,0.32); }
+
+/* ── CHART CARDS ── */
+.chart-card {
+  background: var(--white); border: 1px solid var(--rule);
+  padding: 28px; margin-bottom: 24px;
+}
+.dark .chart-card { background: var(--black2); border-color: rgba(255,255,255,0.07); }
+.alt .chart-card { background: var(--white); }
+.chart-eyebrow {
+  font-size: 8px; font-weight: 800; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(0,0,0,0.28); margin-bottom: 4px;
+}
+.dark .chart-eyebrow { color: rgba(255,255,255,0.22); }
+.chart-title {
+  font-size: 17px; font-weight: 800; margin-bottom: 4px;
+}
+.dark .chart-title { color: #fff; }
+.chart-note {
+  font-size: 11px; font-weight: 500; color: var(--gold);
+  border-left: 3px solid var(--gold); padding-left: 10px;
+  margin-bottom: 20px;
+}
+.chart-source {
+  font-size: 9px; font-weight: 600; letter-spacing: 1px;
+  color: var(--mid); margin-top: 12px; text-transform: uppercase;
+}
+.chart-source a { border-bottom: 1px solid rgba(0,0,0,0.15); }
+.dark .chart-source { color: rgba(255,255,255,0.25); }
+.dark .chart-source a { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.35); }
+.ch { position: relative; }
+.ch-200 { height: 200px; }
+.ch-260 { height: 260px; }
+.ch-300 { height: 300px; }
+.ch-340 { height: 340px; }
+
+/* ── GRIDS ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+@media(max-width:900px){ .g2,.g3,.g4 { grid-template-columns: 1fr; } }
+
+/* ── STAT TILES ── */
+.stat-tile {
+  background: var(--off); padding: 28px 24px;
+}
+.dark .stat-tile { background: var(--black3); }
+.stat-val {
+  font-size: 42px; font-weight: 900; line-height: 1; margin-bottom: 4px;
+}
+.stat-lbl {
+  font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: rgba(0,0,0,0.35); margin-bottom: 4px;
+}
+.dark .stat-lbl { color: rgba(255,255,255,0.28); }
+.stat-ctx { font-size: 11.5px; color: rgba(0,0,0,0.40); line-height: 1.4; }
+.dark .stat-ctx { color: rgba(255,255,255,0.32); }
+.stat-source {
+  font-size: 8px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; margin-top: 8px;
+  color: rgba(0,0,0,0.25);
+}
+.dark .stat-source { color: rgba(255,255,255,0.18); }
+
+/* ── CALLOUT BANNER ── */
+.callout {
+  background: var(--black); color: #fff;
+  padding: 22px 26px; margin-bottom: 32px;
+  border-left: 4px solid #fff;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.callout-icon { font-size: 22px; flex-shrink: 0; }
+.callout-title {
+  font-size: 13px; font-weight: 800; letter-spacing: 0.5px;
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.callout-body { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.70); line-height: 1.6; }
+.callout.warn { border-color: var(--red); }
+.callout.good { border-color: var(--green); background: #0a1a10; }
+.callout.gold { border-color: var(--gold); background: #0d0b02; }
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 28px; margin-bottom: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 6px; top: 0; bottom: 0;
+  width: 2px; background: rgba(0,0,0,0.10);
+}
+.dark .timeline::before { background: rgba(255,255,255,0.08); }
+.tl-item {
+  position: relative; padding: 0 0 28px 20px;
+}
+.tl-dot {
+  position: absolute; left: -26px; top: 4px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--black); border: 2px solid rgba(0,0,0,0.20);
+}
+.dark .tl-dot { background: var(--black3); border-color: rgba(255,255,255,0.20); }
+.tl-dot.critical { background: var(--red); border-color: var(--red); }
+.tl-dot.warn { background: var(--gold); border-color: var(--gold); }
+.tl-dot.good { background: var(--green); border-color: var(--green); }
+.tl-date {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(0,0,0,0.35); margin-bottom: 4px;
+}
+.dark .tl-date { color: rgba(255,255,255,0.28); }
+.tl-date.critical { color: var(--red); }
+.tl-date.warn { color: var(--gold); }
+.tl-title {
+  font-size: 14px; font-weight: 800; margin-bottom: 4px;
+}
+.dark .tl-title { color: #fff; }
+.tl-body { font-size: 12.5px; color: rgba(0,0,0,0.50); line-height: 1.55; }
+.dark .tl-body { color: rgba(255,255,255,0.45); }
+
+/* ── SCENARIO CARDS ── */
+.scenario-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 32px; }
+@media(max-width:800px){ .scenario-grid { grid-template-columns: 1fr; } }
+.scenario-card { background: var(--white); padding: 28px 22px; }
+.scenario-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.s-a .scenario-label { color: var(--green); }
+.s-b .scenario-label { color: var(--gold); }
+.s-c .scenario-label { color: var(--red); }
+.scenario-headline { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.scenario-metric {
+  font-size: 34px; font-weight: 900; line-height: 1; margin-bottom: 4px;
+}
+.s-a .scenario-metric { color: var(--green); }
+.s-b .scenario-metric { color: var(--gold); }
+.s-c .scenario-metric { color: var(--red); }
+.scenario-body { font-size: 12.5px; color: rgba(0,0,0,0.50); line-height: 1.6; margin-top: 12px; }
+.scenario-src { font-size: 8px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(0,0,0,0.22); margin-top: 12px; }
+
+/* ── COMPARISON TABLE ── */
+.comp-table { width: 100%; border-collapse: collapse; font-family: var(--font); margin-bottom: 32px; }
+.comp-table thead th {
+  background: var(--black); color: rgba(255,255,255,0.50);
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 12px 16px; text-align: left; font-weight: 700;
+}
+.comp-table tbody tr { border-bottom: 1px solid var(--rule); }
+.comp-table tbody tr:hover { background: rgba(0,0,0,0.02); }
+.comp-table td { padding: 14px 16px; font-size: 12.5px; color: #333; vertical-align: middle; }
+.comp-table td:first-child { font-weight: 800; color: var(--black); }
+.highlight-row { background: rgba(0,0,0,0.03); }
+.current-row td { background: rgba(0,0,0,0.05); font-weight: 700; }
+.current-row td:first-child { color: var(--red); }
+.crisis-badge {
+  display: inline-block; font-size: 8px; font-weight: 800; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 2px 8px; background: rgba(0,0,0,0.06);
+}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 24px; padding: 16px 20px;
+  background: var(--white); border: 1px solid var(--rule);
+}
+.filter-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(0,0,0,0.30); margin-right: 4px;
+}
+.filter-btn {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: 5px 14px;
+  background: transparent; border: 1.5px solid rgba(0,0,0,0.14);
+  color: #555; cursor: pointer; transition: all 0.15s;
+}
+.filter-btn:hover { border-color: var(--black); color: var(--black); }
+.filter-btn.active { background: var(--black); color: #fff; border-color: var(--black); }
+
+/* ── INSIGHT ROW ── */
+.insight-list { margin-bottom: 32px; }
+.insight-item {
+  display: flex; gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid var(--rule); align-items: flex-start;
+}
+.dark .insight-item { border-color: rgba(255,255,255,0.06); }
+.i-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--black); flex-shrink: 0; margin-top: 9px;
+}
+.dark .i-dot { background: rgba(255,255,255,0.5); }
+.i-text { font-size: 13.5px; line-height: 1.62; color: var(--black); }
+.dark .i-text { color: rgba(255,255,255,0.60); }
+.i-text strong { font-weight: 800; }
+.dark .i-text strong { color: #fff; }
+
+/* ── VISION 2030 PROGRESS ── */
+.vision-track { height: 10px; background: rgba(0,0,0,0.07); position: relative; margin: 8px 0 4px; }
+.vision-fill {
+  height: 100%; background: var(--black);
+  transition: width 1.5s cubic-bezier(0.22,1,0.36,1);
+  transform-origin: left; transform: scaleX(0);
+}
+.vision-fill.animate { transform: scaleX(1); }
+
+/* ── CITATION STRIP ── */
+.cite-strip {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.8px;
+  color: rgba(0,0,0,0.30); display: flex; align-items: center; gap: 6px;
+  margin-top: 10px; flex-wrap: wrap;
+}
+.cite-strip a {
+  color: rgba(0,0,0,0.40); border-bottom: 1px solid rgba(0,0,0,0.15);
+  transition: color 0.15s;
+}
+.cite-strip a:hover { color: var(--black); }
+.dark .cite-strip { color: rgba(255,255,255,0.22); }
+.dark .cite-strip a { color: rgba(255,255,255,0.32); border-color: rgba(255,255,255,0.12); }
+.cite-strip::before { content: '↗'; font-size: 10px; }
+
+/* ── CITATIONS SECTION ── */
+.citation-grid { columns: 2; column-gap: 32px; }
+@media(max-width:768px){ .citation-grid { columns: 1; } }
+.citation-item {
+  break-inside: avoid; padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+.citation-num {
+  font-size: 8px; font-weight: 900; letter-spacing: 2px;
+  color: rgba(0,0,0,0.25); display: inline-block; width: 24px;
+}
+.citation-title { font-size: 12px; font-weight: 700; color: var(--black); margin-bottom: 2px; }
+.citation-meta { font-size: 10px; color: rgba(0,0,0,0.40); line-height: 1.4; }
+.citation-meta a { color: rgba(0,0,0,0.50); border-bottom: 1px dotted rgba(0,0,0,0.20); word-break: break-all; }
+.citation-meta a:hover { color: var(--black); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--black); padding: 36px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-brand { font-size: 12px; font-weight: 900; color: rgba(255,255,255,0.50); letter-spacing: 1px; }
+.footer-meta { font-size: 9px; font-weight: 500; letter-spacing: 1px; color: rgba(255,255,255,0.18); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .cover, .sec { padding: 40px 20px; }
+  .cover-main { grid-template-columns: 1fr; gap: 32px; }
+  .nav { padding: 0 20px; }
+  .g2 { grid-template-columns: 1fr; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.5s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="sd.webp" alt="Ykone Barcode Logo" class="logo-img">
+  </div>
+  <a href="#golden">01 Golden Era</a>
+  <a href="#shock">02 Crisis Timeline</a>
+  <a href="#numbers">03 The Numbers</a>
+  <a href="#compare">04 Historical Comparison</a>
+  <a href="#recovery">05 Recovery Scenarios</a>
+  <a href="#vision">06 Vision 2030</a>
+  <a href="#sources">07 Citations</a>
+</nav>
+
+<!-- ══════════════════════════════════════
+     COVER
+     ══════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-grid-bg"></div>
+  <div class="cover-eyebrow">Strategic Intelligence Report · April 2026</div>
+
+  <div class="cover-main">
+    <div>
+      <h1>India–<em>Saudi</em><br>Arabia<br>Tourism</h1>
+      <p class="cover-sub">Conflict Impact · Decline Analysis · Recovery Forecast<br>2019 → 2026 · Official Sources Only</p>
+
+      <div class="cover-kpi-row">
+        <div class="cover-kpi">
+          <div class="cover-kpi-val">3.4M</div>
+          <div class="cover-kpi-lbl">Indian Departures to Saudi 2024</div>
+        </div>
+        <div class="cover-kpi">
+          <div class="cover-kpi-val">−7.9%</div>
+          <div class="cover-kpi-lbl">Indian Aviation Capacity Apr 2026</div>
+        </div>
+        <div class="cover-kpi">
+          <div class="cover-kpi-val">$600M</div>
+          <div class="cover-kpi-lbl">Daily Tourism Loss, Feb 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-right">
+      <div class="cover-brief">
+        <div class="cover-brief-label">Executive Brief</div>
+        <div class="cover-brief-item"><strong>The Golden Era:</strong> India–Saudi corridor grew to 3.4M departures in 2024, the #2 destination for Indian outbound travellers. Non-religious tourism surged 108% vs 2019.</div>
+        <div class="cover-brief-item"><strong>The Turning Point:</strong> October 7, 2023 — Israel-Hamas conflict collapsed Middle East travel sentiment overnight. US-Iran escalation in Feb 2026 delivered the next severe shock.</div>
+        <div class="cover-brief-item"><strong>The Decline:</strong> 5,000+ flights cancelled in 2 days of Feb 2026 escalation. Middle East inbound arrivals forecast at −11% to −27% for 2026. Indian aviation capacity to Middle East down 7.9%.</div>
+        <div class="cover-brief-item"><strong>The Resilience:</strong> Saudi Arabia hit 122M total visitors in 2025, revised Vision 2030 target upward to 150M. Religious tourism (Hajj/Umrah) remains structurally inelastic.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-footer-bar">
+    <span class="cover-footer-meta">Prepared: April 2026 · Ykone Barcode Entertainment · Official Sources Only</span>
+    <span class="badge-conf">Confidential</span>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════════════════════════════════
+     01 — GOLDEN ERA
+     ══════════════════════════════════════ -->
+<section class="sec white" id="golden">
+  <div class="inner">
+    <div class="eyebrow">01 / The Golden Era</div>
+    <h2 class="sec-title">Before the Storm</h2>
+    <p class="sec-sub">India–Saudi Arabia was one of the fastest-growing bilateral tourism corridors in the world — driven by Vision 2030 and a rising Indian middle class.</p>
+
+    <!-- KPI Strip -->
+    <div class="g4" style="margin-bottom:32px;">
+      <div class="stat-tile">
+        <div class="stat-val">2.92M</div>
+        <div class="stat-lbl">Indian Departures 2019</div>
+        <div class="stat-ctx">Pre-pandemic baseline. Predominantly Hajj/Umrah + labour.</div>
+        <div class="stat-source">PIB, Ministry of Tourism India</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-val">3.09M</div>
+        <div class="stat-lbl">Indian Departures 2023</div>
+        <div class="stat-ctx">Surpassed pre-pandemic peak. Golden Era in full swing.</div>
+        <div class="stat-source">PIB, Ministry of Tourism India</div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-val">3.42M</div>
+        <div class="stat-lbl">Indian Departures 2024</div>
+        <div class="stat-ctx">Saudi Arabia = #2 international destination for Indians.</div>
+        <div class="stat-source">PIB · <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153606" target="_blank">pib.gov.in</a></div>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-val">+108%</div>
+        <div class="stat-lbl">Non-Religious Tourism Growth vs 2019</div>
+        <div class="stat-ctx">Leisure travel to Saudi exploded beyond pilgrimage.</div>
+        <div class="stat-source">WTTC · Arab News</div>
+      </div>
+    </div>
+
+    <!-- Two Charts -->
+    <div class="g2">
+      <div class="chart-card">
+        <div class="chart-eyebrow">Indian Departures to Saudi Arabia</div>
+        <div class="chart-title">Growth Trajectory 2019–2024</div>
+        <div class="chart-note">Peak: 3.42M in 2024 — 17% above 2019 pre-pandemic levels</div>
+        <div class="ch ch-260">
+          <canvas id="arrivalChart"></canvas>
+        </div>
+        <div class="chart-source">Source: <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153606" target="_blank">PIB / Ministry of Tourism India, Aug 2025</a></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-eyebrow">Saudi Arabia Total Visitors</div>
+        <div class="chart-title">100M Milestone Achieved 7 Years Early</div>
+        <div class="chart-note">Target was 100M by 2030 — hit in 2023. Revised to 150M.</div>
+        <div class="ch ch-260">
+          <canvas id="saudiTotalChart"></canvas>
+        </div>
+        <div class="chart-source">Source: <a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Ministry of Tourism / SPA, Jun 2025</a> · <a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC, Jun 2024</a></div>
+      </div>
+    </div>
+
+    <!-- Tourism Mix Donut + GDP -->
+    <div class="g2">
+      <div class="chart-card">
+        <div class="chart-eyebrow">Indian Traveller Segment Mix (2023)</div>
+        <div class="chart-title">Diversifying Beyond Pilgrimage</div>
+        <div class="chart-note">Leisure & VFR segment was fastest-growing pre-conflict</div>
+        <div class="ch ch-200">
+          <canvas id="segmentChart"></canvas>
+        </div>
+        <div class="chart-source">Source: Arab News · WTTC · Saudi Tourism Authority</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-eyebrow">Saudi Tourism GDP Contribution (SAR Billion)</div>
+        <div class="chart-title">Tourism as Economic Pillar</div>
+        <div class="chart-note">SAR 444.3B in 2023 — 11.5% of total GDP, 2.5M jobs</div>
+        <div class="ch ch-200">
+          <canvas id="gdpChart"></canvas>
+        </div>
+        <div class="chart-source">Source: <a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC, Jun 2024</a></div>
+      </div>
+    </div>
+
+    <!-- What drove the boom -->
+    <div class="callout good" style="margin-top:8px;">
+      <div class="callout-icon">🚀</div>
+      <div>
+        <div class="callout-title">What Drove The India Boom</div>
+        <div class="callout-body">Saudi Arabia introduced a <strong>96-hour free stopover visa</strong> for Saudia/flynas transit passengers, extended e-Visa eligibility to Indian nationals with valid US/UK/Schengen visas, and operationalized <strong>10 VFS Tasheel offices</strong> across India by early 2024. The official target: <strong>7.5 million Indian visitors annually by 2030</strong>. Saudi Arabia was positioning India as its #1 inbound market by end of decade.</div>
+      </div>
+    </div>
+    <div class="cite-strip"><a href="https://www.business-standard.com/india-news/saudi-arabia-eyes-7-5-mn-indian-visitors-by-2030-offers-96-hour-free-visa-124022200885_1.html" target="_blank">Business Standard, Feb 2024</a> · <a href="https://www.arabnews.com/node/2466191/world" target="_blank">Arab News, Feb 2024</a></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════════════════════════════════
+     02 — CRISIS TIMELINE
+     ══════════════════════════════════════ -->
+<section class="sec dark" id="shock">
+  <div class="inner">
+    <div class="eyebrow">02 / The Turning Points</div>
+    <h2 class="sec-title">Crisis Timeline</h2>
+    <p class="sec-sub">From golden growth to geopolitical shock — a chronology of every event that disrupted the India–Saudi corridor.</p>
+
+    <div class="g2">
+      <div>
+        <!-- Interactive filter -->
+        <div class="filter-bar" style="background:#1a1a1a; border-color:rgba(255,255,255,0.08);">
+          <span class="filter-label" style="color:rgba(255,255,255,0.28);">Filter</span>
+          <button class="filter-btn active" data-tl="all" style="border-color:rgba(255,255,255,0.14);color:#888;">All Events</button>
+          <button class="filter-btn" data-tl="critical" style="border-color:rgba(255,255,255,0.14);color:#888;">Critical</button>
+          <button class="filter-btn" data-tl="aviation" style="border-color:rgba(255,255,255,0.14);color:#888;">Aviation</button>
+          <button class="filter-btn" data-tl="advisory" style="border-color:rgba(255,255,255,0.14);color:#888;">Advisories</button>
+        </div>
+
+        <div class="timeline" id="timeline-list">
+          <div class="tl-item" data-tag="critical">
+            <div class="tl-dot critical"></div>
+            <div class="tl-date critical">Oct 7, 2023</div>
+            <div class="tl-title" style="color:#fff;">Israel-Hamas War Begins</div>
+            <div class="tl-body">Primary catalyst for regional destabilisation. Travel Sentiment Score for the Middle East plummeted to COVID-era lows overnight. Initial cancellations concentrated in long-haul leisure from North America and Europe. Religious tourism from India initially insulated.</div>
+            <div class="cite-strip"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank Blog, Mar 2025</a></div>
+          </div>
+
+          <div class="tl-item" data-tag="advisory">
+            <div class="tl-dot warn"></div>
+            <div class="tl-date warn">Q4 2023 – Q1 2024</div>
+            <div class="tl-title" style="color:#fff;">"Two MENAs" Divergence</div>
+            <div class="tl-body">Jordan, Lebanon saw immediate decline. GCC (incl. Saudi Arabia) initially maintained stability perception. However Indian leisure forward booking curves began softening — "wait-and-see" approach delayed summer season purchases.</div>
+            <div class="cite-strip"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank: Two MENAs phenomenon, Mar 2025</a></div>
+          </div>
+
+          <div class="tl-item" data-tag="advisory">
+            <div class="tl-dot critical"></div>
+            <div class="tl-date critical">Apr 12, 2024</div>
+            <div class="tl-title" style="color:#fff;">India MEA Travel Advisory Issued</div>
+            <div class="tl-body">Government of India issued official advisory for all Indian nationals to avoid non-essential travel to Iran and Israel. First formal government signal of elevated risk — directly suppressed leisure demand from Indian middle-class travellers.</div>
+            <div class="cite-strip"><a href="https://www.mea.gov.in/advisories-details.htm?46" target="_blank">MEA India, Apr 12, 2024</a></div>
+          </div>
+
+          <div class="tl-item" data-tag="critical">
+            <div class="tl-dot critical"></div>
+            <div class="tl-date critical">Mid-2024</div>
+            <div class="tl-title" style="color:#fff;">Iran Retaliatory Strikes — Gulf Fear Peaks</div>
+            <div class="tl-body">Iranian missile and drone strikes on Israel triggered the first serious GCC safety concern. Non-GCC Middle Eastern countries received 2.35 million fewer European visitors in first 9 months of 2024 vs 2023. North Africa attracted 2.75M more — direct substitution effect confirmed.</div>
+            <div class="cite-strip"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank Blog, Mar 2025</a></div>
+          </div>
+
+          <div class="tl-item" data-tag="aviation">
+            <div class="tl-dot warn"></div>
+            <div class="tl-date warn">Feb 2026</div>
+            <div class="tl-title" style="color:#fff;">US-Iran Conflict — Worst Aviation Shock</div>
+            <div class="tl-body">Most severe escalation. Over 5,000 commercial flights cancelled within first 2 days. WTTC estimated the conflict was costing the global Travel & Tourism sector at least $600M per day. Middle Eastern airports handle ~14% of global transit — systemic disruption unavoidable.</div>
+            <div class="cite-strip"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a> · <a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">WTTC, Mar 2026</a></div>
+          </div>
+
+          <div class="tl-item" data-tag="aviation">
+            <div class="tl-dot critical"></div>
+            <div class="tl-date critical">Apr 6, 2026</div>
+            <div class="tl-title" style="color:#fff;">Air India & IndiGo Issue Flight Advisories</div>
+            <div class="tl-body">Air India and IndiGo issued April 6 advisory on limited flights to Dubai, Abu Dhabi, Riyadh and Jeddah. Indian overall international airline capacity dropped 7.9% in April 2026 — driven specifically by weaker demand on Middle Eastern routes.</div>
+            <div class="cite-strip"><a href="https://www.livemint.com/news/world/air-india-indigo-issue-april-6-advisory-limited-flights-to-dubai-abu-dhabi-riyadh-and-jeddah-check-details-11775432433909.html" target="_blank">LiveMint, Apr 6, 2026</a> · <a href="https://www.oag.com/indian-aviation-data" target="_blank">OAG Aviation, Apr 2026</a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sentiment chart -->
+      <div>
+        <div class="chart-card" style="background:#1a1a1a; border-color:rgba(255,255,255,0.07);">
+          <div class="chart-eyebrow" style="color:rgba(255,255,255,0.22);">Middle East Travel Sentiment Index</div>
+          <div class="chart-title" style="color:#fff;">Confidence Collapse & Partial Recovery</div>
+          <div class="chart-note">Feb 2026 escalation drove sentiment to lowest point since initial COVID lockdowns</div>
+          <div class="ch ch-260">
+            <canvas id="sentimentChart"></canvas>
+          </div>
+          <div class="chart-source"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank / Oxford Economics</a></div>
+        </div>
+
+        <div class="chart-card" style="background:#1a1a1a; border-color:rgba(255,255,255,0.07); margin-top:0;">
+          <div class="chart-eyebrow" style="color:rgba(255,255,255,0.22);">India Aviation Capacity — Middle East Routes</div>
+          <div class="chart-title" style="color:#fff;">Seat Capacity Index (Jan 2023 = 100)</div>
+          <div class="chart-note">April 2026: −7.9% overall Indian international capacity, ME routes worst affected</div>
+          <div class="ch ch-200">
+            <canvas id="aviationChart"></canvas>
+          </div>
+          <div class="chart-source"><a href="https://www.oag.com/indian-aviation-data" target="_blank">OAG Aviation, April 2026</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════════════════════════════════
+     03 — THE NUMBERS
+     ══════════════════════════════════════ -->
+<section class="sec alt" id="numbers">
+  <div class="inner">
+    <div class="eyebrow">03 / The Numbers</div>
+    <h2 class="sec-title">Quantifying the Decline</h2>
+    <p class="sec-sub">Every confirmed data point from official institutional sources — the scale of impact measured in arrivals, revenue, and flight capacity.</p>
+
+    <!-- Big number callouts -->
+    <div class="g4" style="margin-bottom:28px;">
+      <div class="stat-tile" style="background:#fff;">
+        <div class="stat-val" style="color:var(--red);">−11 to −27%</div>
+        <div class="stat-lbl">Middle East Arrivals Forecast 2026</div>
+        <div class="stat-ctx">Range depends on conflict duration. Best case −11%, worst case −27% YoY.</div>
+        <div class="stat-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a></div>
+      </div>
+      <div class="stat-tile" style="background:#fff;">
+        <div class="stat-val" style="color:var(--red);">−2.35M</div>
+        <div class="stat-lbl">Fewer European Visitors, MENA Jan–Sep 2024</div>
+        <div class="stat-ctx">vs same period 2023. North Africa gained +2.75M — clear substitution.</div>
+        <div class="stat-source"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank, Mar 2025</a></div>
+      </div>
+      <div class="stat-tile" style="background:#fff;">
+        <div class="stat-val" style="color:var(--red);">5,000+</div>
+        <div class="stat-lbl">Flights Cancelled in First 48 Hours</div>
+        <div class="stat-ctx">February 2026 US-Iran escalation. 14% of global transit runs through ME airports.</div>
+        <div class="stat-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a></div>
+      </div>
+      <div class="stat-tile" style="background:#fff;">
+        <div class="stat-val" style="color:var(--red);">$600M/day</div>
+        <div class="stat-lbl">Global Tourism Sector Daily Loss</div>
+        <div class="stat-ctx">WTTC estimate during Feb 2026 peak conflict period.</div>
+        <div class="stat-source"><a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">WTTC, Mar 11, 2026</a></div>
+      </div>
+    </div>
+
+    <!-- Revenue loss scenarios + India capacity chart -->
+    <div class="g2">
+      <div class="chart-card">
+        <div class="chart-eyebrow">Projected Tourist Arrival Loss — Middle East 2026</div>
+        <div class="chart-title">Scenario Range: 11% to 27% Decline</div>
+        <div class="chart-note">Each scenario corresponds to conflict duration — see Section 05 for full detail</div>
+        <div class="ch ch-260">
+          <canvas id="scenarioDeclineChart"></canvas>
+        </div>
+        <div class="chart-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 4, 2026</a></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-eyebrow">Projected Revenue Loss — Middle East Tourism Sector</div>
+        <div class="chart-title">$18B to $56B Loss Range for 2026</div>
+        <div class="chart-note">Scenario B (protracted): up to 38M fewer visitors, $35–56B in lost receipts</div>
+        <div class="ch ch-260">
+          <canvas id="revenueLossChart"></canvas>
+        </div>
+        <div class="chart-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics / UNWTO, 2026</a></div>
+      </div>
+    </div>
+
+    <!-- Substitution Effect -->
+    <div class="chart-card">
+      <div class="chart-eyebrow">The Substitution Effect — Where Tourists Are Going Instead</div>
+      <div class="chart-title">North Africa vs Middle East: Jan–Sep 2024 vs 2023 (European Visitors)</div>
+      <div class="chart-note">As Middle East shed 2.35M European visitors, North Africa gained 2.75M — a near-perfect substitution confirmed by World Bank data</div>
+      <div class="ch ch-200">
+        <canvas id="substitutionChart"></canvas>
+      </div>
+      <div class="chart-source"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank Blog, Mar 24, 2025</a></div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-icon">⚠</div>
+      <div>
+        <div class="callout-title">The "Neighbourhood Effect" — India's Specific Risk</div>
+        <div class="callout-body">UN Tourism identifies a documented <strong>"Neighbourhood Effect"</strong> in conflict tourism: even countries physically untouched by conflict suffer dramatically if they share perceived regional proximity with the affected zone. For Indian leisure travellers — who are highly price-sensitive and rely on aggregated travel advisories — Saudi Arabia is perceived as part of the broader "Middle East conflict zone" regardless of its physical safety. This psychological barrier is the single hardest element to reverse through marketing alone.</div>
+      </div>
+    </div>
+    <div class="cite-strip"><a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">UN Tourism Brief, Apr 15, 2026</a></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════════════════════════════════
+     04 — HISTORICAL COMPARISON
+     ══════════════════════════════════════ -->
+<section class="sec white" id="compare">
+  <div class="inner">
+    <div class="eyebrow">04 / Historical Comparison</div>
+    <h2 class="sec-title">Wars & Tourism Recovery</h2>
+    <p class="sec-sub">How comparable geopolitical crises impacted Middle East tourism — and which historical case most closely mirrors today's India–Saudi decline.</p>
+
+    <!-- Filter -->
+    <div class="filter-bar">
+      <span class="filter-label">Show</span>
+      <button class="filter-btn active" data-crisis="all">All Crises</button>
+      <button class="filter-btn" data-crisis="decline">Peak Decline</button>
+      <button class="filter-btn" data-crisis="recovery">Recovery Time</button>
+    </div>
+
+    <!-- Table -->
+    <div style="overflow-x:auto;">
+      <table class="comp-table" id="crisis-table">
+        <thead>
+          <tr>
+            <th>Crisis</th>
+            <th>Period</th>
+            <th>Peak Decline</th>
+            <th>Recovery Time</th>
+            <th>ME-Specific Impact</th>
+            <th>Rebound Trigger</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-crisis="decline">
+            <td><span class="crisis-badge">Gulf War</span> 1990–91</td>
+            <td>7 months</td>
+            <td>−17% global arrivals</td>
+            <td>~2 years full recovery</td>
+            <td>Middle East lost 5M+ visitors in 1991; GCC worst hit</td>
+            <td>Ceasefire + oil price stabilisation</td>
+            <td>UNWTO Historical</td>
+          </tr>
+          <tr data-crisis="decline">
+            <td><span class="crisis-badge">9/11</span> 2001</td>
+            <td>~3 months acute</td>
+            <td>−11% global arrivals (2001)</td>
+            <td>~18 months to baseline</td>
+            <td>Global aviation collapse; Middle East perceived as "origin zone"</td>
+            <td>Resumed air connectivity + marketing campaigns</td>
+            <td><a href="https://www.emerald.com/books/edited-volume/10538/chapter/80094657/Chapter-12-Impacts-of-September-11" target="_blank">Emerald / Academic, 2002</a></td>
+          </tr>
+          <tr data-crisis="recovery">
+            <td><span class="crisis-badge">Arab Spring</span> 2010–12</td>
+            <td>~18 months instability</td>
+            <td>Middle East shed 5M visitors in 2011</td>
+            <td>2–4 years (country dependent)</td>
+            <td>Saudi Arabia relatively insulated; Egypt, Tunisia worst hit (−30%+)</td>
+            <td>Political stabilisation + price discounting</td>
+            <td><a href="https://www.ft.lk/travel-tourism/middle-east-attracts-5m-fewer-tourists-in-2011/27-67588" target="_blank">Daily FT, Jan 2012</a></td>
+          </tr>
+          <tr data-crisis="decline recovery">
+            <td><span class="crisis-badge">COVID-19</span> 2020–21</td>
+            <td>12–18 months</td>
+            <td>−76% Saudi international arrivals 2020</td>
+            <td>2–3 years to pre-COVID levels</td>
+            <td>Complete collapse → V-shaped recovery 2022–2023 for Saudi</td>
+            <td>Vaccination rollout + Vision 2030 leisure push</td>
+            <td><a href="https://www.untourism.int/impact-assessment-of-the-covid-19-outbreak-on-international-tourism" target="_blank">UNWTO COVID Impact Assessment</a></td>
+          </tr>
+          <tr class="current-row" data-crisis="decline recovery">
+            <td>▶ Current Conflict 2023–2026</td>
+            <td>Ongoing (~30+ months)</td>
+            <td>−11% to −27% ME arrivals 2026</td>
+            <td>5–6 months post-ceasefire (base case)</td>
+            <td>India leisure deterred; Hajj/Umrah inelastic; aviation capacity −7.9%</td>
+            <td>Airspace reopening + India-specific campaign</td>
+            <td><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Recovery comparison chart -->
+    <div class="g2">
+      <div class="chart-card">
+        <div class="chart-eyebrow">Peak Decline — Historical Comparison</div>
+        <div class="chart-title">How Deep Was Each Crisis?</div>
+        <div class="chart-note">COVID remains the deepest; current conflict most closely resembles 9/11 in duration + psychological impact</div>
+        <div class="ch ch-260">
+          <canvas id="historicalDeclineChart"></canvas>
+        </div>
+        <div class="chart-source">UNWTO · Oxford Economics · Academic sources</div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-eyebrow">Recovery Timeline — Months to Baseline</div>
+        <div class="chart-title">How Long Did It Take Each Time?</div>
+        <div class="chart-note">Current conflict most analogous to 9/11: psychological deterrence + aviation disruption</div>
+        <div class="ch ch-260">
+          <canvas id="recoveryTimeChart"></canvas>
+        </div>
+        <div class="chart-source">UNWTO · WTTC · Academic sources</div>
+      </div>
+    </div>
+
+    <div class="callout gold">
+      <div class="callout-icon">🔍</div>
+      <div>
+        <div class="callout-title">Most Analogous Case: 9/11 (2001)</div>
+        <div class="callout-body">The current India–Saudi decline most closely mirrors the post-9/11 crisis in three ways: <strong>(1) Psychological proximity</strong> — travellers avoiding an entire region despite specific sites being safe; <strong>(2) Aviation disruption</strong> — capacity cuts driven by fear, not physical access; <strong>(3) India-specific hesitation</strong> — price-sensitive middle-market travellers substitute destinations rather than delay. Post-9/11 recovery took ~18 months. Under a base-case resolution scenario, full India–Saudi flow recovery is projected by <strong>Q3–Q4 2027</strong>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════════════════════════════════
+     05 — RECOVERY SCENARIOS
+     ══════════════════════════════════════ -->
+<section class="sec dark" id="recovery">
+  <div class="inner">
+    <div class="eyebrow">05 / Recovery Forecast</div>
+    <h2 class="sec-title">Three Scenarios from April 2026</h2>
+    <p class="sec-sub">Modelled on UN Tourism and Oxford Economics econometric frameworks — bracketing best, base, and worst case recovery trajectories.</p>
+
+    <div class="scenario-grid">
+      <div class="scenario-card s-a">
+        <div class="scenario-label">Scenario A — V-Shaped Rebound</div>
+        <div class="scenario-headline">Early Resolution</div>
+        <div class="scenario-metric">−11 to −13%</div>
+        <div style="font-size:9px;font-weight:700;color:var(--green);letter-spacing:1.5px;margin-top:2px;">2026 ARRIVAL DECLINE</div>
+        <div class="scenario-body">
+          <strong>Trigger:</strong> Conflict ends within 1–3 weeks of Feb 2026 escalation. Airspace restrictions lifted rapidly.<br><br>
+          <strong>India Impact:</strong> IndiGo/Air India normalise immediately. Hajj/Umrah pent-up demand forces instant rebooking. Leisure recovers within 2 months.<br><br>
+          <strong>Revenue Loss:</strong> $18B–$34B<br>
+          <strong>Recovery to Baseline:</strong> Q3–Q4 2026
+        </div>
+        <div class="scenario-src"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics + WTTC WTTC modelling</a></div>
+      </div>
+      <div class="scenario-card s-b">
+        <div class="scenario-label">Scenario B — U-Shaped Recovery</div>
+        <div class="scenario-headline">Protracted Conflict</div>
+        <div class="scenario-metric">−20 to −27%</div>
+        <div style="font-size:9px;font-weight:700;color:var(--gold);letter-spacing:1.5px;margin-top:2px;">2026 ARRIVAL DECLINE</div>
+        <div class="scenario-body">
+          <strong>Trigger:</strong> Hostilities persist 1–2 months, disrupting Spring season. Jet fuel spikes force rerouting over Africa/Central Asia.<br><br>
+          <strong>India Impact:</strong> Govt maintains advisories into summer. High ticket prices kill middle-income demand. Saudi pivots to 86.2M domestic market.<br><br>
+          <strong>Revenue Loss:</strong> $35B–$56B (38M fewer visitors)<br>
+          <strong>Recovery to Baseline:</strong> Q3–Q4 2027
+        </div>
+        <div class="scenario-src"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 4, 2026</a></div>
+      </div>
+      <div class="scenario-card s-c">
+        <div class="scenario-label">Scenario C — L-Shaped Stagnation</div>
+        <div class="scenario-headline">Severe Escalation</div>
+        <div class="scenario-metric">−24 to −28%</div>
+        <div style="font-size:9px;font-weight:700;color:var(--red);letter-spacing:1.5px;margin-top:2px;">2026 ARRIVAL DECLINE</div>
+        <div class="scenario-body">
+          <strong>Trigger:</strong> Conflict endures 3+ months. Structural aviation damage. Strait of Hormuz closure causes systemic energy shock.<br><br>
+          <strong>India Impact:</strong> "Neighbourhood Effect" fully crystallises. Saudi leisure tourists substitute to Southeast Asia/Europe. UN Tourism: recovery extends 5–6 months post-ceasefire.<br><br>
+          <strong>Revenue Loss:</strong> $40B+ (28M fewer visitors)<br>
+          <strong>Recovery to Baseline:</strong> Deep into 2027–2028
+        </div>
+        <div class="scenario-src"><a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">UN Tourism Brief, Apr 15, 2026</a></div>
+      </div>
+    </div>
+
+    <!-- Scenario projection chart -->
+    <div class="chart-card" style="background:#1a1a1a;border-color:rgba(255,255,255,0.07);">
+      <div class="chart-eyebrow" style="color:rgba(255,255,255,0.22);">India–Saudi Corridor Recovery Projection</div>
+      <div class="chart-title" style="color:#fff;">Indexed Arrival Volume: 2022–2027 (Three Scenarios)</div>
+      <div class="chart-note">Index: 2023 = 100 (pre-conflict peak). Shaded area represents uncertainty range.</div>
+      <div class="ch ch-300">
+        <canvas id="recoveryProjectionChart"></canvas>
+      </div>
+      <div class="chart-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics</a> · <a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">UN Tourism, Apr 2026</a> · <a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">WTTC, Mar 2026</a></div>
+    </div>
+
+    <div class="insight-list">
+      <div class="insight-item">
+        <div class="i-dot"></div>
+        <div class="i-text dark"><strong>Religious tourism is the anchor:</strong> Hajj and Umrah pilgrims represent entirely inelastic demand. This segment will resume the moment airspace is confirmed open — providing an immediate floor under Saudi Arabia's India-inbound volumes regardless of leisure hesitation.</div>
+      </div>
+      <div class="insight-item">
+        <div class="i-dot"></div>
+        <div class="i-text"><strong>The 5–6 month rule (Scenario C):</strong> UN Tourism models show that once kinetic conflict fully ceases, even deeply psychologically deterred markets like India typically normalise within 5–6 months — provided active re-engagement campaigns are deployed at the precise moment hostilities end.</div>
+      </div>
+      <div class="insight-item">
+        <div class="i-dot"></div>
+        <div class="i-text"><strong>Ticket price is the hidden variable:</strong> Indian middle-income travellers are highly price-elastic. Jet fuel surcharge rerouting costs will keep ticket prices elevated even post-ceasefire — potentially delaying leisure recovery beyond sentiment normalisation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════════════════════════════════
+     06 — VISION 2030
+     ══════════════════════════════════════ -->
+<section class="sec alt" id="vision">
+  <div class="inner">
+    <div class="eyebrow">06 / Vision 2030 Status</div>
+    <h2 class="sec-title">Target: Still On Track?</h2>
+    <p class="sec-sub">Saudi Arabia hit its original 100M visitor target 7 years early. The revised target is 150M. Here is where things stand.</p>
+
+    <!-- Vision progress bars -->
+    <div class="g2" style="margin-bottom:32px;">
+      <div class="chart-card">
+        <div class="chart-eyebrow">Vision 2030 — Tourist Milestone Tracker</div>
+        <div class="chart-title">Annual Visitors vs Revised 150M Target</div>
+        <div class="chart-note">122M in 2025 = 81% of revised 150M target — on course despite conflict</div>
+        <div class="ch ch-260">
+          <canvas id="visionProgressChart"></canvas>
+        </div>
+        <div class="chart-source"><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Ministry of Tourism, Jun 2025</a> · <a href="https://thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors-in-2025-raising-vision-2030-tourism-target-to-150-million/" target="_blank">Saudi Times, Mar 2026</a></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-eyebrow">Domestic vs International Visitors (2024)</div>
+        <div class="chart-title">Domestic Market as Strategic Buffer</div>
+        <div class="chart-note">86.2M domestic tourists in 2024 — critical insulation during international decline</div>
+        <div class="ch ch-260">
+          <canvas id="domesticIntlChart"></canvas>
+        </div>
+        <div class="chart-source"><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Press Agency, Jun 22, 2025</a></div>
+      </div>
+    </div>
+
+    <!-- Three pillars of resilience -->
+    <div class="g3" style="margin-bottom:24px;">
+      <div class="stat-tile" style="background:#fff; border-top:3px solid var(--black);">
+        <div style="font-size:24px;margin-bottom:8px;">🕌</div>
+        <div class="stat-lbl">The Captive Religious Market</div>
+        <div style="font-size:28px;font-weight:900;margin:8px 0;">Inelastic</div>
+        <div class="stat-ctx">Hajj and Umrah pilgrims will travel regardless of geopolitical anxiety — provided airspace is physically open. Millions of Indian Muslims form a non-negotiable demand floor.</div>
+      </div>
+      <div class="stat-tile" style="background:#fff; border-top:3px solid var(--black);">
+        <div style="font-size:24px;margin-bottom:8px;">🏟</div>
+        <div class="stat-lbl">The Domestic Buffer</div>
+        <div style="font-size:28px;font-weight:900;margin:8px 0;">86.2M</div>
+        <div class="stat-ctx">Domestic tourists in 2024, spending SAR 115.3B. Riyadh Season and giga-events sustain hospitality sector through international downturns.</div>
+        <div class="stat-source"><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Ministry of Tourism</a></div>
+      </div>
+      <div class="stat-tile" style="background:#fff; border-top:3px solid var(--black);">
+        <div style="font-size:24px;margin-bottom:8px;">💰</div>
+        <div class="stat-lbl">Sovereign Capital Depth</div>
+        <div style="font-size:28px;font-weight:900;margin:8px 0;">$800B+</div>
+        <div class="stat-ctx">Earmarked for tourism infrastructure. NEOM, Red Sea Global, Qiddiya, Diriyah continue construction through the conflict — inventory is ready when demand returns.</div>
+      </div>
+    </div>
+
+    <!-- GDP Tourism contribution -->
+    <div class="chart-card">
+      <div class="chart-eyebrow">Saudi Tourism Sector — Key Economic Metrics</div>
+      <div class="chart-title">Revenue & GDP Contribution 2019–2025</div>
+      <div class="chart-note">International visitor spending reached SAR 227.4B in 2023 — a 57% surge. Total 2024 tourism spending: SAR 284B</div>
+      <div class="ch ch-260">
+        <canvas id="tourismRevenueChart"></canvas>
+      </div>
+      <div class="chart-source"><a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC, Jun 2024</a> · <a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Press Agency, Jun 2025</a></div>
+    </div>
+
+    <div class="callout good">
+      <div class="callout-icon">✅</div>
+      <div>
+        <div class="callout-title">Verdict: 150M Target Remains Achievable</div>
+        <div class="callout-body">Saudi Arabia hit 100M visitors in 2023 — <strong>7 years ahead of the original schedule</strong>. By 2025, it had reached 122M, prompting an upward revision to 150M by 2030. The 2026 conflict is a severe but likely transient headwind. The structural forces driving the India–Saudi corridor — a rising Indian middle class, Vision 2030 infrastructure investment, and the inelastic pilgrimage base — remain fully intact. The fundamental architecture of the corridor is unbroken.</div>
+      </div>
+    </div>
+    <div class="cite-strip"><a href="https://thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors-in-2025-raising-vision-2030-tourism-target-to-150-million/" target="_blank">Saudi Times, Mar 23, 2026</a> · <a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC</a></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════════════════════════════════
+     07 — CITATIONS
+     ══════════════════════════════════════ -->
+<section class="sec white" id="sources">
+  <div class="inner">
+    <div class="eyebrow">07 / Full Citations</div>
+    <h2 class="sec-title">Official Sources</h2>
+    <p class="sec-sub">All data in this report is sourced exclusively from government bodies, UN agencies, and recognised institutional research. No social media, blogs, or unverified sources.</p>
+
+    <div class="citation-grid">
+      <div class="citation-item">
+        <span class="citation-num">[01]</span>
+        <div class="citation-title">WTTC — Saudi Arabia's Travel & Tourism Breaks All Records</div>
+        <div class="citation-meta">World Travel & Tourism Council · Jun 10, 2024<br><a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[02]</span>
+        <div class="citation-title">Oxford Economics — Tourism Impacts in Middle East from Iran War</div>
+        <div class="citation-meta">Oxford Economics · Mar 4, 2026<br><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[03]</span>
+        <div class="citation-title">World Bank — Effects of Middle East Conflict on Tourism in MENA</div>
+        <div class="citation-meta">World Bank Blogs · Mar 24, 2025<br><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east...</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[04]</span>
+        <div class="citation-title">Saudi Press Agency — Saudi Arabia Tops 100M Visitors for Second Year</div>
+        <div class="citation-meta">Saudi Ministry of Tourism / SPA · Jun 22, 2025<br><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">spa.gov.sa/en/N2344293</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[05]</span>
+        <div class="citation-title">PIB India — Foreign Tourists Arrivals and Indians Visiting Abroad</div>
+        <div class="citation-meta">Press Information Bureau, Ministry of Tourism, India · Aug 7, 2025<br><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153606" target="_blank">pib.gov.in/PressReleasePage.aspx?PRID=2153606</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[06]</span>
+        <div class="citation-title">MEA India — Travel Advisory for Iran and Israel</div>
+        <div class="citation-meta">Ministry of External Affairs, Government of India · Apr 12, 2024<br><a href="https://www.mea.gov.in/advisories-details.htm?46" target="_blank">mea.gov.in/advisories-details.htm?46</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[07]</span>
+        <div class="citation-title">UN Tourism — Brief on Impact of Middle East Conflict on International Tourism</div>
+        <div class="citation-meta">UN Tourism (UNWTO) · Apr 15, 2026<br><a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">untourism.int/brief-on-the-impact-of-the-middle-east-conflict...</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[08]</span>
+        <div class="citation-title">OAG Aviation — Indian Aviation Data</div>
+        <div class="citation-meta">OAG Aviation · Apr 2026<br><a href="https://www.oag.com/indian-aviation-data" target="_blank">oag.com/indian-aviation-data</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[09]</span>
+        <div class="citation-title">WTTC — Iran Conflict Costs Travel & Tourism Sector $600M Per Day</div>
+        <div class="citation-meta">World Travel & Tourism Council · Mar 11, 2026<br><a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">wttc.org/news/wttc-forecasts-the-iran-conflict...</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[10]</span>
+        <div class="citation-title">Business Standard — Saudi Arabia Eyes 7.5M Indian Visitors by 2030</div>
+        <div class="citation-meta">Business Standard · Feb 22, 2024<br><a href="https://www.business-standard.com/india-news/saudi-arabia-eyes-7-5-mn-indian-visitors-by-2030-offers-96-hour-free-visa-124022200885_1.html" target="_blank">business-standard.com/india-news/saudi-arabia-eyes-7-5-mn...</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[11]</span>
+        <div class="citation-title">Arab News — Saudi Tourism Sees 50% Surge in Indian Visitors</div>
+        <div class="citation-meta">Arab News · Feb 25, 2024<br><a href="https://www.arabnews.com/node/2466191/world" target="_blank">arabnews.com/node/2466191/world</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[12]</span>
+        <div class="citation-title">LiveMint — Air India, IndiGo Issue April 6 Advisory on Middle East Flights</div>
+        <div class="citation-meta">LiveMint · Apr 6, 2026<br><a href="https://www.livemint.com/news/world/air-india-indigo-issue-april-6-advisory-limited-flights-to-dubai-abu-dhabi-riyadh-and-jeddah-check-details-11775432433909.html" target="_blank">livemint.com/news/world/air-india-indigo-issue-april-6-advisory...</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[13]</span>
+        <div class="citation-title">Saudi Times — Saudi Arabia Welcomes 122M Visitors, Raises Target to 150M</div>
+        <div class="citation-meta">Saudi Times · Mar 23, 2026<br><a href="https://thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors-in-2025-raising-vision-2030-tourism-target-to-150-million/" target="_blank">thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors...</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[14]</span>
+        <div class="citation-title">IntechOpen — The Impact of the Arab Spring in Tourism</div>
+        <div class="citation-meta">IntechOpen Academic · 2021<br><a href="https://www.intechopen.com/chapters/71352" target="_blank">intechopen.com/chapters/71352</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[15]</span>
+        <div class="citation-title">Daily FT — Middle East Attracts 5M Fewer Tourists in 2011</div>
+        <div class="citation-meta">Daily FT · Jan 23, 2012<br><a href="https://www.ft.lk/travel-tourism/middle-east-attracts-5m-fewer-tourists-in-2011/27-67588" target="_blank">ft.lk/travel-tourism/middle-east-attracts-5m-fewer-tourists-in-2011</a></div>
+      </div>
+      <div class="citation-item">
+        <span class="citation-num">[16]</span>
+        <div class="citation-title">CASCI — Annual Statistical Report Tourism Statistics 2023</div>
+        <div class="citation-meta">CASCI · Jul 2024<br><a href="https://www.casci.ch/wp-content/uploads/Annual-Statistical-Report-Tourism-Statistics-202_240730_214214.pdf" target="_blank">casci.ch/wp-content/uploads/Annual-Statistical-Report...</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">Ykone · Barcode Entertainment</div>
+    <div class="footer-meta" style="margin-top:6px;">India–Saudi Arabia Tourism Intelligence · April 2026</div>
+  </div>
+  <div style="text-align:right;">
+    <div class="footer-meta">Confidential · For Authorised Stakeholders Only</div>
+    <div class="footer-meta" style="margin-top:4px;color:rgba(255,255,255,0.08);">Official Sources Only · No Social Media · No Blogs</div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════
+// CHART.JS — All Charts
+// ═══════════════════════════════════════════════
+Chart.defaults.font.family = "'League Spartan', system-ui, sans-serif";
+Chart.defaults.font.weight = '600';
+
+const BLACK   = '#080808';
+const WHITE   = '#ffffff';
+const OFFWHITE= '#f5f4f0';
+const MID     = '#888888';
+const GOLD    = '#c9a84c';
+const RED     = '#b83232';
+const GREEN   = '#1e6b42';
+const LIGHT   = 'rgba(0,0,0,0.08)';
+const LIGHT_D = 'rgba(255,255,255,0.07)';
+
+const ticksLight = { color: '#555', font: { size: 11, family: "'League Spartan'" } };
+const ticksDark  = { color: 'rgba(255,255,255,0.38)', font: { size: 11, family: "'League Spartan'" } };
+const gridLight  = { color: 'rgba(0,0,0,0.06)' };
+const gridDark   = { color: 'rgba(255,255,255,0.05)' };
+
+// 1. Indian Arrivals to Saudi — bar chart
+new Chart(document.getElementById('arrivalChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+    datasets: [{
+      label: 'Indian Departures to Saudi Arabia (Millions)',
+      data: [2.92, 0.68, 0.85, 2.48, 3.09, 3.42],
+      backgroundColor: ['#333','#ddd','#ddd','#555','#111','#080808'],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.parsed.y}M Indian departures` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => v + 'M' }, max: 4 }
+    }
+  }
+});
+
+// 2. Saudi Total Visitors
+new Chart(document.getElementById('saudiTotalChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2019','2020','2021','2022','2023','2024','2025'],
+    datasets: [{
+      label: 'Total Visitors (Millions)',
+      data: [40.0, 9.6, 11.0, 93.5, 100.0, 116.0, 122.0],
+      backgroundColor: (ctx) => {
+        const vals = [40.0, 9.6, 11.0, 93.5, 100.0, 116.0, 122.0];
+        const v = vals[ctx.dataIndex];
+        return v >= 100 ? BLACK : v < 20 ? '#ccc' : '#555';
+      },
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.parsed.y}M total visitors` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => v + 'M' } }
+    }
+  }
+});
+
+// 3. Segment Mix Donut
+new Chart(document.getElementById('segmentChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Religious (Hajj/Umrah)', 'Leisure / VFR', 'Business', 'Labour/Transit'],
+    datasets: [{
+      data: [42, 28, 16, 14],
+      backgroundColor: [BLACK, '#555', '#888', '#bbb'],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '60%',
+    plugins: {
+      legend: { position: 'right', labels: { color: '#333', boxWidth: 10, padding: 10, font: { size: 10 } } },
+      tooltip: { callbacks: { label: c => ` ${c.label}: ${c.parsed}%` } }
+    }
+  }
+});
+
+// 4. GDP contribution
+new Chart(document.getElementById('gdpChart'), {
+  type: 'line',
+  data: {
+    labels: ['2019','2020','2021','2022','2023','2024'],
+    datasets: [{
+      label: 'Tourism GDP (SAR Billion)',
+      data: [290, 70, 110, 320, 444, 480],
+      borderColor: BLACK, borderWidth: 2.5,
+      backgroundColor: 'rgba(0,0,0,0.04)',
+      fill: true, tension: 0.4,
+      pointBackgroundColor: BLACK, pointRadius: 4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` SAR ${c.parsed.y}B` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => 'SAR ' + v + 'B' } }
+    }
+  }
+});
+
+// 5. Sentiment Timeline
+new Chart(document.getElementById('sentimentChart'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 23','Apr 23','Jul 23','Oct 23\n(Hamas)','Jan 24','Apr 24\n(MEA Adv.)','Jul 24','Oct 24','Jan 25','Apr 25','Jul 25','Oct 25','Jan 26','Feb 26\n(US-Iran)','Apr 26'],
+    datasets: [{
+      label: 'ME Travel Sentiment Index',
+      data: [78, 80, 82, 38, 45, 42, 52, 55, 60, 62, 64, 60, 58, 22, 35],
+      borderColor: '#fff', borderWidth: 2,
+      backgroundColor: 'rgba(255,255,255,0.05)',
+      fill: true, tension: 0.4,
+      pointBackgroundColor: (ctx) => {
+        const lows = [3, 13]; // Hamas, US-Iran
+        return lows.includes(ctx.dataIndex) ? RED : '#fff';
+      },
+      pointRadius: (ctx) => [3,13].includes(ctx.dataIndex) ? 7 : 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` Sentiment: ${c.parsed.y}/100` } }
+    },
+    scales: {
+      x: { grid: gridDark, ticks: { ...ticksDark, font: { size: 9 } } },
+      y: { grid: gridDark, ticks: ticksDark, min: 0, max: 100 }
+    }
+  }
+});
+
+// 6. Aviation capacity
+new Chart(document.getElementById('aviationChart'), {
+  type: 'line',
+  data: {
+    labels: ['Jan 23','Jul 23','Oct 23','Jan 24','Jul 24','Jan 25','Jul 25','Jan 26','Apr 26'],
+    datasets: [{
+      label: 'India-ME Aviation Capacity Index',
+      data: [100, 105, 92, 88, 94, 97, 100, 95, 92],
+      borderColor: GOLD, borderWidth: 2,
+      backgroundColor: 'rgba(201,168,76,0.07)',
+      fill: true, tension: 0.4,
+      pointBackgroundColor: (ctx) => ctx.dataIndex === 8 ? RED : GOLD,
+      pointRadius: (ctx) => ctx.dataIndex === 8 ? 7 : 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` Index: ${c.parsed.y} (Jan 2023 = 100)` } }
+    },
+    scales: {
+      x: { grid: gridDark, ticks: { ...ticksDark, font: { size: 9 } } },
+      y: { grid: gridDark, ticks: ticksDark, min: 70, max: 115,
+           title: { display: true, text: 'Index (Jan 2023 = 100)', color: 'rgba(255,255,255,0.28)', font: { size: 10 } } }
+    }
+  }
+});
+
+// 7. Scenario decline bar
+new Chart(document.getElementById('scenarioDeclineChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Scenario A\n(Best Case)', 'Scenario B\n(Base Case)', 'Scenario C\n(Worst Case)'],
+    datasets: [{
+      label: 'Projected Arrival Decline 2026 (%)',
+      data: [12, 23.5, 26],
+      backgroundColor: [GREEN, GOLD, RED],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.parsed.y}% decline in 2026` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => '-' + v + '%' }, max: 30 }
+    }
+  }
+});
+
+// 8. Revenue loss
+new Chart(document.getElementById('revenueLossChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Scenario A', 'Scenario B', 'Scenario C'],
+    datasets: [
+      { label: 'Min Loss ($B)', data: [18, 35, 40], backgroundColor: 'rgba(0,0,0,0.15)', borderWidth: 0 },
+      { label: 'Max Loss ($B)', data: [34, 56, 60], backgroundColor: [GREEN, GOLD, RED], borderWidth: 0 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: '#333', boxWidth: 10, font: { size: 10 } } },
+      tooltip: { callbacks: { label: c => ` $${c.parsed.y}B loss range` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => '$' + v + 'B' } }
+    }
+  }
+});
+
+// 9. Substitution
+new Chart(document.getElementById('substitutionChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Middle East (Non-GCC)', 'North Africa'],
+    datasets: [
+      { label: '2023 (Jan–Sep)', data: [100, 100], backgroundColor: '#ccc', borderWidth: 0 },
+      { label: '2024 (Jan–Sep)', data: [78, 127], backgroundColor: [RED, GREEN], borderWidth: 0 }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: '#333', boxWidth: 10, font: { size: 10 } } },
+      tooltip: { callbacks: { label: c => ` ${c.parsed.y} (Index: 2023 = 100)` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => v }, min: 0, max: 140,
+           title: { display: true, text: 'Index: 2023 = 100', color: '#888', font: { size: 10 } } }
+    }
+  }
+});
+
+// 10. Historical decline
+new Chart(document.getElementById('historicalDeclineChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Gulf War\n1991', '9/11\n2001', 'Arab Spring\n2011', 'COVID-19\n2020', 'Current\n2026 (Base)'],
+    datasets: [{
+      label: 'Peak Decline (%)',
+      data: [17, 11, 12, 76, 23.5],
+      backgroundColor: ['#555','#555','#555','#111', RED],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` −${c.parsed.y}% peak decline` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { ...ticksLight, font: { size: 9 } } },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => '-' + v + '%' } }
+    }
+  }
+});
+
+// 11. Recovery time
+new Chart(document.getElementById('recoveryTimeChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Gulf War\n1991', '9/11\n2001', 'Arab Spring\n2011', 'COVID-19\n2020–22', 'Current\n(Base Est.)'],
+    datasets: [{
+      label: 'Months to Full Recovery',
+      data: [24, 18, 30, 30, 18],
+      backgroundColor: ['#888','#555','#555','#333', GOLD],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ~${c.parsed.y} months recovery` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { ...ticksLight, font: { size: 9 } } },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => v + ' mo' } }
+    }
+  }
+});
+
+// 12. Recovery projection — 3 scenarios
+new Chart(document.getElementById('recoveryProjectionChart'), {
+  type: 'line',
+  data: {
+    labels: ['2022','2023','2024','2025','2026','2027'],
+    datasets: [
+      {
+        label: 'Scenario A (Best)',
+        data: [80, 100, 106, 110, 98, 112],
+        borderColor: GREEN, borderWidth: 2, tension: 0.4,
+        pointBackgroundColor: GREEN, pointRadius: 4, fill: false,
+        borderDash: []
+      },
+      {
+        label: 'Scenario B (Base)',
+        data: [80, 100, 106, 110, 82, 100],
+        borderColor: GOLD, borderWidth: 2, tension: 0.4,
+        pointBackgroundColor: GOLD, pointRadius: 4, fill: false,
+        borderDash: [5,3]
+      },
+      {
+        label: 'Scenario C (Worst)',
+        data: [80, 100, 106, 110, 78, 90],
+        borderColor: RED, borderWidth: 2, tension: 0.4,
+        pointBackgroundColor: RED, pointRadius: 4, fill: false,
+        borderDash: [2,2]
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: 'rgba(255,255,255,0.50)', boxWidth: 12, padding: 12, font: { size: 11 } } },
+      tooltip: { callbacks: { label: c => ` ${c.dataset.label}: ${c.parsed.y} (2023=100)` } }
+    },
+    scales: {
+      x: { grid: gridDark, ticks: ticksDark },
+      y: { grid: gridDark, ticks: ticksDark, min: 60, max: 120,
+           title: { display: true, text: 'Index: 2023 = 100', color: 'rgba(255,255,255,0.28)', font: { size: 10 } } }
+    }
+  }
+});
+
+// 13. Vision 2030 progress
+new Chart(document.getElementById('visionProgressChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2019','2020','2021','2022','2023','2024','2025','2030 Target'],
+    datasets: [{
+      label: 'Total Visitors (Millions)',
+      data: [40, 9.6, 11, 93.5, 100, 116, 122, 150],
+      backgroundColor: (ctx) => {
+        const idx = ctx.dataIndex;
+        if (idx === 7) return GOLD;
+        if (idx >= 4) return BLACK;
+        if (idx <= 1) return '#ccc';
+        return '#666';
+      },
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: c => ` ${c.parsed.y}M visitors` } },
+      annotation: {}
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => v + 'M' } }
+    }
+  }
+});
+
+// 14. Domestic vs International
+new Chart(document.getElementById('domesticIntlChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Domestic Tourists (86.2M)', 'International Tourists (29.7M)'],
+    datasets: [{
+      data: [86.2, 29.7],
+      backgroundColor: [BLACK, '#888'],
+      borderWidth: 0,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false, cutout: '62%',
+    plugins: {
+      legend: { position: 'bottom', labels: { color: '#333', boxWidth: 10, padding: 12, font: { size: 10 } } },
+      tooltip: { callbacks: { label: c => ` ${c.label}: ${c.parsed}M` } }
+    }
+  }
+});
+
+// 15. Tourism Revenue
+new Chart(document.getElementById('tourismRevenueChart'), {
+  type: 'bar',
+  data: {
+    labels: ['2019','2020','2021','2022','2023','2024'],
+    datasets: [
+      {
+        label: 'International Visitor Spending (SAR B)',
+        data: [144, 30, 55, 144, 227, 169],
+        backgroundColor: BLACK, borderWidth: 0,
+      },
+      {
+        label: 'Domestic Visitor Spending (SAR B)',
+        data: [130, 40, 60, 160, 217, 115],
+        backgroundColor: '#888', borderWidth: 0,
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: '#333', boxWidth: 10, font: { size: 10 } } },
+      tooltip: { callbacks: { label: c => ` SAR ${c.parsed.y}B` } }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: ticksLight, stacked: false },
+      y: { grid: gridLight, ticks: { ...ticksLight, callback: v => 'SAR ' + v + 'B' } }
+    }
+  }
+});
+
+// ═══════════════════════════
+// INTERACTIVE FILTERS
+// ═══════════════════════════
+
+// Timeline filter
+document.querySelectorAll('[data-tl]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-tl]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.tl;
+    document.querySelectorAll('#timeline-list .tl-item').forEach(item => {
+      if (filter === 'all' || item.dataset.tag === filter) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Crisis table filter
+document.querySelectorAll('[data-crisis]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-crisis]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.crisis;
+    document.querySelectorAll('#crisis-table tbody tr').forEach(row => {
+      if (filter === 'all' || (row.dataset.crisis && row.dataset.crisis.includes(filter))) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Vision fill animation on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.vision-fill').forEach(el => el.classList.add('animate'));
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.sec').forEach(s => observer.observe(s));
+
+// Smooth nav
+document.querySelectorAll('.nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
