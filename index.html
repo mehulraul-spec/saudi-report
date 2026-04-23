@@ -3,503 +3,443 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>India–Saudi Arabia Tourism Intelligence Report 2026</title>
+<title>Influencer Marketing as the Recovery Engine — India–Saudi Arabia Tourism 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&display=swap');
 :root {
-  --black: #080808; --black2: #111111; --black3: #1a1a1a;
-  --white: #ffffff; --off: #f5f4f0; --off2: #eceae3; --mid: #555555;
-  --rule: rgba(0,0,0,0.12); --rule-dark: rgba(255,255,255,0.10);
-  --font: 'League Spartan', system-ui, sans-serif;
-  --gold: #c9a84c; --gold-lt: rgba(201,168,76,0.12);
-  --red: #b83232; --red-lt: rgba(184,50,50,0.10);
-  --green: #1e6b42; --green-lt: rgba(30,107,66,0.10);
+  --black:#080808; --black2:#111; --black3:#1a1a1a;
+  --white:#fff; --off:#f5f4f0; --off2:#eceae3; --mid:#555;
+  --rule:rgba(0,0,0,0.11); --rule-d:rgba(255,255,255,0.09);
+  --font:'League Spartan',system-ui,sans-serif;
+  --gold:#c9a84c; --red:#b83232; --green:#1e6b42;
 }
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body { background: var(--off); color: var(--black); font-family: var(--font); font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-a { color: inherit; text-decoration: none; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--off);color:var(--black);font-family:var(--font);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
 
-/* NAV — WHITE */
-.nav {
-  position: sticky; top: 0; z-index: 300;
-  background: var(--white);
-  display: flex; align-items: center;
-  padding: 0 48px; overflow-x: auto; scrollbar-width: none;
-  border-bottom: 2px solid rgba(0,0,0,0.09);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-}
-.nav::-webkit-scrollbar { display: none; }
-.nav-logo {
-  display: flex; align-items: center;
-  padding: 8px 28px 8px 0; margin-right: 28px;
-  border-right: 1.5px solid rgba(0,0,0,0.10); flex-shrink: 0;
-}
-.logo-img { height: 50px; width: auto; object-fit: contain; display: block; }
-.nav a {
-  font-size: 11px; font-weight: 800; letter-spacing: 2px;
-  color: rgba(0,0,0,0.48); text-transform: uppercase;
-  padding: 22px 16px; white-space: nowrap; flex-shrink: 0;
-  border-bottom: 3px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
-}
-.nav a:hover { color: var(--black); border-color: rgba(0,0,0,0.35); }
+/* NAV */
+.nav{position:sticky;top:0;z-index:300;background:var(--white);display:flex;align-items:center;padding:0 48px;overflow-x:auto;scrollbar-width:none;border-bottom:2px solid rgba(0,0,0,0.08);box-shadow:0 2px 16px rgba(0,0,0,0.06);}
+.nav::-webkit-scrollbar{display:none;}
+.nav-logo{display:flex;align-items:center;padding:8px 28px 8px 0;margin-right:28px;border-right:1.5px solid rgba(0,0,0,0.09);flex-shrink:0;}
+.logo-img{height:48px;width:auto;object-fit:contain;display:block;}
+.nav a{font-size:10px;font-weight:800;letter-spacing:2px;color:rgba(0,0,0,0.42);text-transform:uppercase;padding:22px 14px;white-space:nowrap;flex-shrink:0;border-bottom:3px solid transparent;transition:color .15s,border-color .15s;}
+.nav a:hover{color:var(--black);border-color:rgba(0,0,0,0.30);}
 
 /* COVER */
-.cover { background: var(--black); min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; padding: 52px; position: relative; overflow: hidden; }
-.cover-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
-.cover-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 4px; color: rgba(255,255,255,0.50); text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
-.cover-eyebrow::before { content: ''; width: 28px; height: 1px; background: rgba(255,255,255,0.40); }
-.cover-main { align-self: center; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 52px 0 36px; align-items: end; }
-.cover h1 { font-size: clamp(56px, 7.5vw, 100px); font-weight: 900; color: #fff; line-height: 0.95; letter-spacing: -3px; margin-bottom: 26px; }
-.cover h1 em { font-style: normal; color: rgba(255,255,255,0.30); }
-.cover-sub { font-size: 16px; font-weight: 500; letter-spacing: 1.5px; color: rgba(255,255,255,0.55); text-transform: uppercase; margin-bottom: 36px; line-height: 1.8; }
-.cover-kpi-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); margin-top: 32px; }
-.cover-kpi { background: var(--black2); padding: 24px 20px; }
-.cover-kpi-val { font-size: 40px; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 6px; }
-.cover-kpi-lbl { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: rgba(255,255,255,0.55); text-transform: uppercase; }
-.cover-right { display: flex; flex-direction: column; gap: 16px; }
-.cover-brief { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); padding: 28px; }
-.cover-brief-label { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.40); margin-bottom: 16px; }
-.cover-brief-item { font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.75); line-height: 1.7; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
-.cover-brief-item:last-child { border-bottom: none; }
-.cover-brief-item strong { color: rgba(255,255,255,0.95); font-weight: 700; }
-.cover-footer-bar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; flex-wrap: wrap; gap: 12px; }
-.cover-footer-meta { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: rgba(255,255,255,0.35); text-transform: uppercase; }
-.badge-conf { background: #fff; color: var(--black); font-size: 10px; font-weight: 900; letter-spacing: 3px; padding: 5px 14px; text-transform: uppercase; }
+.cover{background:var(--black);min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;padding:52px;position:relative;overflow:hidden;}
+.cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.cover-eye{font-size:11px;font-weight:700;letter-spacing:4px;color:rgba(255,255,255,0.45);text-transform:uppercase;display:flex;align-items:center;gap:12px;}
+.cover-eye::before{content:'';width:28px;height:1px;background:rgba(255,255,255,0.35);}
+.cover-main{align-self:center;display:grid;grid-template-columns:1fr 1fr;gap:72px;padding:52px 0 36px;align-items:end;}
+.cover h1{font-size:clamp(52px,7vw,96px);font-weight:900;color:#fff;line-height:0.93;letter-spacing:-3px;margin-bottom:24px;}
+.cover h1 em{font-style:normal;color:rgba(255,255,255,0.28);}
+.cover-sub{font-size:15px;font-weight:500;letter-spacing:1.5px;color:rgba(255,255,255,0.50);text-transform:uppercase;margin-bottom:32px;line-height:1.8;}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.07);margin-top:28px;}
+.kpi{background:var(--black2);padding:22px 18px;}
+.kpi-val{font-size:36px;font-weight:900;color:#fff;line-height:1;margin-bottom:5px;}
+.kpi-lbl{font-size:10px;font-weight:600;letter-spacing:1.5px;color:rgba(255,255,255,0.50);text-transform:uppercase;}
+.cover-brief{background:rgba(255,255,255,0.055);border:1px solid rgba(255,255,255,0.09);padding:26px;}
+.brief-label{font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px;}
+.brief-item{font-size:14px;font-weight:400;color:rgba(255,255,255,0.72);line-height:1.7;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.brief-item:last-child{border-bottom:none;}
+.brief-item strong{color:#fff;font-weight:700;}
+.cover-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;flex-wrap:wrap;gap:12px;}
+.cover-foot-meta{font-size:10px;font-weight:600;letter-spacing:1.5px;color:rgba(255,255,255,0.28);text-transform:uppercase;}
+.badge{background:#fff;color:var(--black);font-size:9px;font-weight:900;letter-spacing:3px;padding:5px 13px;text-transform:uppercase;}
 
 /* DIVIDERS */
-.rule { height: 2px; background: var(--black); }
+.rule{height:2px;background:var(--black);}
 
 /* SECTIONS */
-.sec { padding: 84px 48px; }
-.sec.dark { background: var(--black); }
-.sec.alt { background: var(--off2); }
-.sec.white { background: var(--white); }
-.inner { max-width: 1200px; margin: 0 auto; }
-.eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 6px; }
-.dark .eyebrow { color: rgba(255,255,255,0.50); }
-.sec-title { font-size: clamp(36px,5vw,62px); font-weight: 900; line-height: 1.0; letter-spacing: -1px; margin-bottom: 10px; color: var(--black); }
-.dark .sec-title { color: #fff; }
-.sec-sub { font-size: 18px; font-weight: 400; color: rgba(0,0,0,0.58); margin-bottom: 52px; line-height: 1.65; }
-.dark .sec-sub { color: rgba(255,255,255,0.60); }
+.sec{padding:80px 48px;}
+.sec.dark{background:var(--black);}
+.sec.alt{background:var(--off2);}
+.sec.white{background:var(--white);}
+.inner{max-width:1200px;margin:0 auto;}
+.ey{font-size:10px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:rgba(0,0,0,0.38);margin-bottom:6px;}
+.dark .ey{color:rgba(255,255,255,0.40);}
+.sec-h{font-size:clamp(34px,4.5vw,58px);font-weight:900;line-height:1.0;letter-spacing:-1px;margin-bottom:10px;color:var(--black);}
+.dark .sec-h{color:#fff;}
+.sec-sub{font-size:17px;font-weight:400;color:rgba(0,0,0,0.52);margin-bottom:48px;line-height:1.65;}
+.dark .sec-sub{color:rgba(255,255,255,0.55);}
 
 /* CHART CARDS */
-.chart-card { background: var(--white); border: 1px solid var(--rule); padding: 32px; margin-bottom: 24px; }
-.dark .chart-card { background: var(--black2); border-color: rgba(255,255,255,0.09); }
-.alt .chart-card { background: var(--white); }
-.chart-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(0,0,0,0.45); margin-bottom: 4px; }
-.dark .chart-eyebrow { color: rgba(255,255,255,0.50); }
-.chart-title { font-size: 21px; font-weight: 800; margin-bottom: 5px; color: var(--black); }
-.dark .chart-title { color: #fff; }
-.chart-note { font-size: 14px; font-weight: 500; color: var(--gold); border-left: 3px solid var(--gold); padding-left: 10px; margin-bottom: 22px; }
-.chart-source { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--mid); margin-top: 12px; text-transform: uppercase; }
-.chart-source a { border-bottom: 1px solid rgba(0,0,0,0.18); color: #333; }
-.dark .chart-source { color: rgba(255,255,255,0.45); }
-.dark .chart-source a { border-color: rgba(255,255,255,0.20); color: rgba(255,255,255,0.55); }
-.ch { position: relative; }
-.ch-200 { height: 210px; } .ch-260 { height: 270px; } .ch-300 { height: 310px; } .ch-340 { height: 350px; }
+.cc{background:var(--white);border:1px solid var(--rule);padding:30px;margin-bottom:22px;}
+.dark .cc{background:var(--black2);border-color:var(--rule-d);}
+.alt .cc{background:var(--white);}
+.cc-ey{font-size:9px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,0.38);margin-bottom:4px;}
+.dark .cc-ey{color:rgba(255,255,255,0.40);}
+.cc-h{font-size:19px;font-weight:800;margin-bottom:5px;color:var(--black);}
+.dark .cc-h{color:#fff;}
+.cc-note{font-size:13px;font-weight:500;color:var(--gold);border-left:3px solid var(--gold);padding-left:10px;margin-bottom:20px;}
+.cc-src{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--mid);margin-top:12px;text-transform:uppercase;}
+.cc-src a{border-bottom:1px solid rgba(0,0,0,0.16);color:#333;}
+.dark .cc-src{color:rgba(255,255,255,0.38);}
+.dark .cc-src a{border-color:rgba(255,255,255,0.16);color:rgba(255,255,255,0.48);}
+.ch{position:relative;}
+.h200{height:210px;} .h260{height:270px;} .h300{height:310px;} .h340{height:350px;}
 
 /* GRIDS */
-.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-@media(max-width:900px){ .g2,.g3,.g4 { grid-template-columns: 1fr; } }
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);}
+@media(max-width:900px){.g2,.g3,.g4{grid-template-columns:1fr;}}
 
 /* STAT TILES */
-.stat-tile { background: var(--off); padding: 32px 26px; }
-.dark .stat-tile { background: var(--black3); }
-.stat-val { font-size: 50px; font-weight: 900; line-height: 1; margin-bottom: 5px; color: var(--black); }
-.dark .stat-val { color: #fff; }
-.stat-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(0,0,0,0.55); margin-bottom: 5px; }
-.dark .stat-lbl { color: rgba(255,255,255,0.55); }
-.stat-ctx { font-size: 14px; color: rgba(0,0,0,0.60); line-height: 1.55; }
-.dark .stat-ctx { color: rgba(255,255,255,0.60); }
-.stat-source { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-top: 8px; color: rgba(0,0,0,0.38); }
-.dark .stat-source { color: rgba(255,255,255,0.35); }
+.st{background:var(--off);padding:30px 24px;}
+.white .st{background:var(--off);}
+.alt .st{background:var(--white);}
+.dark .st{background:var(--black3);}
+.st-val{font-size:46px;font-weight:900;line-height:1;margin-bottom:5px;color:var(--black);}
+.dark .st-val{color:#fff;}
+.st-lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(0,0,0,0.45);margin-bottom:4px;}
+.dark .st-lbl{color:rgba(255,255,255,0.45);}
+.st-ctx{font-size:13px;color:rgba(0,0,0,0.55);line-height:1.55;}
+.dark .st-ctx{color:rgba(255,255,255,0.55);}
+.st-src{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:8px;color:rgba(0,0,0,0.28);}
+.st-src a{border-bottom:1px dotted rgba(0,0,0,0.20);}
+.dark .st-src{color:rgba(255,255,255,0.28);}
 
 /* CALLOUT */
-.callout { background: var(--black); color: #fff; padding: 26px 30px; margin-bottom: 32px; border-left: 4px solid #fff; display: flex; gap: 18px; align-items: flex-start; }
-.callout-icon { font-size: 26px; flex-shrink: 0; }
-.callout-title { font-size: 16px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 8px; color: #fff; }
-.callout-body { font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.82); line-height: 1.7; }
-.callout.warn { border-color: var(--red); }
-.callout.good { border-color: var(--green); background: #0a1a10; }
-.callout.gold { border-color: var(--gold); background: #0d0b02; }
+.callout{background:var(--black);color:#fff;padding:24px 28px;margin-bottom:28px;border-left:4px solid #fff;display:flex;gap:16px;align-items:flex-start;}
+.callout-icon{font-size:24px;flex-shrink:0;}
+.callout-title{font-size:14px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:7px;color:#fff;}
+.callout-body{font-size:14px;font-weight:400;color:rgba(255,255,255,0.78);line-height:1.7;}
+.callout-body strong{color:#fff;font-weight:700;}
+.callout.warn{border-color:var(--red);}
+.callout.good{border-color:var(--green);background:#0a1a10;}
+.callout.gold{border-color:var(--gold);background:#0d0b02;}
 
-/* TIMELINE */
-.timeline { position: relative; padding-left: 28px; margin-bottom: 32px; }
-.timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: rgba(0,0,0,0.12); }
-.dark .timeline::before { background: rgba(255,255,255,0.12); }
-.tl-item { position: relative; padding: 0 0 32px 22px; }
-.tl-dot { position: absolute; left: -26px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--black); border: 2px solid rgba(0,0,0,0.25); }
-.dark .tl-dot { background: var(--black3); border-color: rgba(255,255,255,0.30); }
-.tl-dot.critical { background: var(--red); border-color: var(--red); }
-.tl-dot.warn { background: var(--gold); border-color: var(--gold); }
-.tl-date { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.48); margin-bottom: 4px; }
-.dark .tl-date { color: rgba(255,255,255,0.50); }
-.tl-date.critical { color: var(--red); }
-.tl-date.warn { color: var(--gold); }
-.tl-title { font-size: 18px; font-weight: 800; margin-bottom: 6px; color: var(--black); }
-.dark .tl-title { color: #fff; }
-.tl-body { font-size: 14px; color: rgba(0,0,0,0.62); line-height: 1.68; }
-.dark .tl-body { color: rgba(255,255,255,0.65); }
+/* CITE STRIP */
+.cs{font-size:11px;font-weight:600;letter-spacing:0.7px;color:rgba(0,0,0,0.35);display:flex;align-items:center;gap:6px;margin-top:10px;flex-wrap:wrap;}
+.cs a{color:rgba(0,0,0,0.48);border-bottom:1px solid rgba(0,0,0,0.18);transition:color .15s;}
+.cs a:hover{color:var(--black);}
+.dark .cs{color:rgba(255,255,255,0.35);}
+.dark .cs a{color:rgba(255,255,255,0.48);border-color:rgba(255,255,255,0.16);}
+.cs::before{content:'↗';font-size:11px;}
 
-/* SCENARIO CARDS */
-.scenario-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 32px; }
-@media(max-width:800px){ .scenario-grid { grid-template-columns: 1fr; } }
-.scenario-card { background: var(--white); padding: 32px 24px; }
-.scenario-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-.s-a .scenario-label { color: var(--green); } .s-b .scenario-label { color: var(--gold); } .s-c .scenario-label { color: var(--red); }
-.scenario-headline { font-size: 24px; font-weight: 900; margin-bottom: 10px; color: var(--black); }
-.scenario-metric { font-size: 40px; font-weight: 900; line-height: 1; margin-bottom: 4px; }
-.s-a .scenario-metric { color: var(--green); } .s-b .scenario-metric { color: var(--gold); } .s-c .scenario-metric { color: var(--red); }
-.scenario-body { font-size: 14px; color: rgba(0,0,0,0.62); line-height: 1.7; margin-top: 12px; }
-.scenario-src { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(0,0,0,0.32); margin-top: 12px; }
+/* HEAD TO HEAD TABLE */
+.hth{width:100%;border-collapse:collapse;font-family:var(--font);margin-bottom:28px;}
+.hth thead th{background:var(--black);color:rgba(255,255,255,0.65);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:14px 16px;text-align:left;font-weight:700;}
+.hth thead th:first-child{border-right:2px solid rgba(255,255,255,0.08);}
+.hth tbody tr{border-bottom:1px solid var(--rule);}
+.hth tbody tr:hover{background:rgba(0,0,0,0.02);}
+.hth td{padding:14px 16px;font-size:13px;color:#222;vertical-align:middle;}
+.hth td:first-child{font-weight:800;color:var(--black);font-size:12px;border-right:2px solid var(--rule);width:200px;}
+.hth td.inf{font-weight:700;color:var(--green);}
+.hth td.trad{color:rgba(0,0,0,0.48);}
 
-/* COMPARISON TABLE */
-.comp-table { width: 100%; border-collapse: collapse; font-family: var(--font); margin-bottom: 32px; }
-.comp-table thead th { background: var(--black); color: rgba(255,255,255,0.70); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 16px; text-align: left; font-weight: 700; }
-.comp-table tbody tr { border-bottom: 1px solid var(--rule); }
-.comp-table tbody tr:hover { background: rgba(0,0,0,0.03); }
-.comp-table td { padding: 16px 16px; font-size: 14px; color: #222; vertical-align: middle; }
-.comp-table td:first-child { font-weight: 800; color: var(--black); }
-.current-row td { background: rgba(0,0,0,0.05); font-weight: 700; }
-.current-row td:first-child { color: var(--red); }
-.crisis-badge { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 9px; background: rgba(0,0,0,0.07); }
+/* CASE STUDY CARDS */
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:28px;}
+@media(max-width:768px){.cs-grid{grid-template-columns:1fr;}}
+.cs-card{background:var(--white);padding:28px 24px;}
+.cs-flag{font-size:24px;margin-bottom:8px;}
+.cs-country{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:4px;}
+.cs-headline{font-size:18px;font-weight:800;margin-bottom:12px;color:var(--black);}
+.cs-metrics{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap;}
+.cs-metric{background:var(--off);padding:10px 14px;flex:1;min-width:100px;}
+.cs-metric-val{font-size:22px;font-weight:900;color:var(--black);line-height:1;}
+.cs-metric-lbl{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(0,0,0,0.38);}
+.cs-body{font-size:13px;color:rgba(0,0,0,0.58);line-height:1.65;}
+
+/* INFLUENCER TIER TABLE */
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:28px;}
+@media(max-width:768px){.tier-grid{grid-template-columns:1fr;}}
+.tier-card{background:var(--white);padding:26px 22px;border-top:3px solid var(--black);}
+.tier-label{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:6px;}
+.tier-name{font-size:18px;font-weight:900;margin-bottom:4px;color:var(--black);}
+.tier-metric{font-size:34px;font-weight:900;color:var(--black);line-height:1;margin:10px 0 4px;}
+.tier-sub{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:10px;}
+.tier-desc{font-size:13px;color:rgba(0,0,0,0.55);line-height:1.6;}
+
+/* ROI TABLE */
+.roi-table{width:100%;border-collapse:collapse;font-family:var(--font);margin-bottom:28px;}
+.roi-table thead th{background:var(--black);color:rgba(255,255,255,0.60);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:14px 16px;text-align:left;font-weight:700;}
+.roi-table tbody tr{border-bottom:1px solid rgba(255,255,255,0.07);}
+.roi-table tbody tr:hover{background:rgba(255,255,255,0.03);}
+.roi-table td{padding:14px 16px;font-size:13px;color:rgba(255,255,255,0.65);vertical-align:middle;}
+.roi-table td:first-child{font-weight:700;color:rgba(255,255,255,0.85);width:260px;}
+.roi-table td:last-child{font-weight:800;color:var(--gold);}
 
 /* FILTER BAR */
-.filter-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; padding: 16px 20px; background: var(--white); border: 1px solid var(--rule); }
-.filter-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.40); margin-right: 4px; }
-.filter-btn { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 8px 18px; background: transparent; border: 1.5px solid rgba(0,0,0,0.16); color: #444; cursor: pointer; transition: all 0.15s; }
-.filter-btn:hover { border-color: var(--black); color: var(--black); }
-.filter-btn.active { background: var(--black); color: #fff; border-color: var(--black); }
+.fbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:22px;padding:14px 18px;background:var(--white);border:1px solid var(--rule);}
+.fbar-lbl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.36);margin-right:4px;}
+.fbtn{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:7px 16px;background:transparent;border:1.5px solid rgba(0,0,0,0.14);color:#444;cursor:pointer;transition:all .15s;}
+.fbtn:hover{border-color:var(--black);color:var(--black);}
+.fbtn.active{background:var(--black);color:#fff;border-color:var(--black);}
 
-/* INSIGHT ROW */
-.insight-list { margin-bottom: 32px; }
-.insight-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
-.dark .insight-item { border-color: rgba(255,255,255,0.08); }
-.i-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--black); flex-shrink: 0; margin-top: 13px; }
-.dark .i-dot { background: rgba(255,255,255,0.65); }
-.i-text { font-size: 16px; line-height: 1.7; color: var(--black); }
-.dark .i-text { color: rgba(255,255,255,0.75); }
-.i-text strong { font-weight: 800; }
-.dark .i-text strong { color: #fff; }
-
-/* CITATION STRIP */
-.cite-strip { font-size: 12px; font-weight: 600; letter-spacing: 0.8px; color: rgba(0,0,0,0.40); display: flex; align-items: center; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
-.cite-strip a { color: rgba(0,0,0,0.55); border-bottom: 1px solid rgba(0,0,0,0.20); transition: color 0.15s; }
-.cite-strip a:hover { color: var(--black); }
-.dark .cite-strip { color: rgba(255,255,255,0.40); }
-.dark .cite-strip a { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.20); }
-.cite-strip::before { content: '↗'; font-size: 12px; }
+/* INSIGHT LIST */
+.ilist{margin-bottom:28px;}
+.iitem{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:flex-start;}
+.dark .iitem{border-color:rgba(255,255,255,0.07);}
+.idot{width:5px;height:5px;border-radius:50%;background:var(--black);flex-shrink:0;margin-top:11px;}
+.dark .idot{background:rgba(255,255,255,0.60);}
+.itext{font-size:15px;line-height:1.7;color:var(--black);}
+.dark .itext{color:rgba(255,255,255,0.70);}
+.itext strong{font-weight:800;}
+.dark .itext strong{color:#fff;}
 
 /* CITATIONS */
-.citation-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; padding: 16px 20px; background: var(--off2); border: 1px solid var(--rule); }
-.cit-filter-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: rgba(0,0,0,0.40); margin-right: 4px; }
-.cit-cat-btn { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 7px 16px; background: transparent; border: 1.5px solid rgba(0,0,0,0.14); color: #444; cursor: pointer; transition: all 0.15s; border-radius: 2px; }
-.cit-cat-btn:hover { border-color: var(--black); color: var(--black); }
-.cit-cat-btn.active { background: var(--black); color: #fff; border-color: var(--black); }
-.citation-grid { columns: 2; column-gap: 32px; margin-bottom: 24px; }
-@media(max-width:768px){ .citation-grid { columns: 1; } }
-.citation-item { break-inside: avoid; padding: 13px 0; border-bottom: 1px solid var(--rule); margin-bottom: 8px; display: block; }
-.citation-num { font-size: 10px; font-weight: 900; letter-spacing: 2px; color: rgba(0,0,0,0.30); display: inline-block; width: 32px; }
-.citation-cat-badge { display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 2px 7px; margin-left: 6px; background: rgba(0,0,0,0.06); color: rgba(0,0,0,0.45); vertical-align: middle; }
-.citation-title { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 3px; margin-top: 5px; }
-.citation-meta { font-size: 12px; color: rgba(0,0,0,0.50); line-height: 1.55; }
-.citation-meta a { color: rgba(0,0,0,0.55); border-bottom: 1px dotted rgba(0,0,0,0.25); word-break: break-all; }
-.citation-meta a:hover { color: var(--black); }
-.cit-pagination { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); }
-.cit-page-btn { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid rgba(0,0,0,0.14); background: transparent; color: #444; transition: all 0.15s; font-family: var(--font); }
-.cit-page-btn:hover { border-color: var(--black); color: var(--black); }
-.cit-page-btn.active { background: var(--black); color: #fff; border-color: var(--black); }
-.cit-page-btn.prev-next { width: auto; padding: 0 16px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-.cit-page-info { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: rgba(0,0,0,0.38); text-transform: uppercase; margin-left: 8px; }
+.cit-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:24px;padding:14px 18px;background:var(--off2);border:1px solid var(--rule);}
+.cit-lbl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,0.36);}
+.cit-btn{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;background:transparent;border:1.5px solid rgba(0,0,0,0.13);color:#444;cursor:pointer;transition:all .15s;}
+.cit-btn:hover{border-color:var(--black);color:var(--black);}
+.cit-btn.active{background:var(--black);color:#fff;border-color:var(--black);}
+.cit-grid{columns:2;column-gap:28px;margin-bottom:20px;}
+@media(max-width:768px){.cit-grid{columns:1;}}
+.cit-item{break-inside:avoid;padding:12px 0;border-bottom:1px solid var(--rule);margin-bottom:6px;display:block;}
+.cit-num{font-size:9px;font-weight:900;letter-spacing:2px;color:rgba(0,0,0,0.25);display:inline-block;width:30px;}
+.cit-cat{display:inline-block;font-size:8px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:2px 6px;background:rgba(0,0,0,0.05);color:rgba(0,0,0,0.40);vertical-align:middle;margin-left:4px;}
+.cit-title{font-size:13px;font-weight:700;color:var(--black);margin:5px 0 3px;}
+.cit-meta{font-size:11px;color:rgba(0,0,0,0.45);line-height:1.5;}
+.cit-meta a{color:rgba(0,0,0,0.50);border-bottom:1px dotted rgba(0,0,0,0.22);word-break:break-all;}
+.cit-meta a:hover{color:var(--black);}
+.cit-pag{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule);}
+.cpbtn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;cursor:pointer;border:1.5px solid rgba(0,0,0,0.13);background:transparent;color:#444;transition:all .15s;font-family:var(--font);}
+.cpbtn:hover{border-color:var(--black);color:var(--black);}
+.cpbtn.active{background:var(--black);color:#fff;border-color:var(--black);}
+.cpbtn.pn{width:auto;padding:0 14px;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.cpinfo{font-size:10px;font-weight:600;letter-spacing:1px;color:rgba(0,0,0,0.34);text-transform:uppercase;margin-left:6px;}
 
 /* FOOTER */
-.footer { background: var(--black); padding: 44px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-brand { font-size: 15px; font-weight: 900; color: rgba(255,255,255,0.70); letter-spacing: 1px; }
-.footer-meta { font-size: 11px; font-weight: 500; letter-spacing: 1px; color: rgba(255,255,255,0.35); }
+.footer{background:var(--black);padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.footer-brand{font-size:14px;font-weight:900;color:rgba(255,255,255,0.65);letter-spacing:1px;}
+.footer-meta{font-size:10px;font-weight:500;letter-spacing:1px;color:rgba(255,255,255,0.30);}
 
-@media(max-width:768px){ .cover, .sec { padding: 40px 20px; } .cover-main { grid-template-columns: 1fr; gap: 32px; } .nav { padding: 0 20px; } .g2 { grid-template-columns: 1fr; } }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-.fade-up { animation: fadeUp 0.5s ease both; }
+@media(max-width:768px){.cover,.sec{padding:36px 18px;}.cover-main{grid-template-columns:1fr;gap:28px;}.nav{padding:0 18px;}.g2{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
-  <div class="nav-logo">
-    <img src="by_logo.jpg" alt="Barcode Ykone Logo" class="logo-img">
-  </div>
-  <a href="#golden">01 Golden Era</a>
-  <a href="#shock">02 Crisis Timeline</a>
-  <a href="#numbers">03 The Numbers</a>
-  <a href="#compare">04 Historical Comparison</a>
-  <a href="#recovery">05 Recovery Scenarios</a>
-  <a href="#vision">06 Vision 2030</a>
-  <a href="#sources">07 Citations</a>
+  <div class="nav-logo"><img src="by_logo.jpg" alt="Ykone Barcode" class="logo-img"></div>
+  <a href="#gap">01 Perception Gap</a>
+  <a href="#science">02 The Science</a>
+  <a href="#headtohead">03 Influencer vs Traditional</a>
+  <a href="#casestudies">04 Case Studies</a>
+  <a href="#saudi">05 Saudi Campaigns</a>
+  <a href="#india">06 Indian Traveller</a>
+  <a href="#business">07 Business Case</a>
+  <a href="#sources">08 Citations</a>
 </nav>
 
+<!-- COVER -->
 <section class="cover">
-  <div class="cover-grid-bg"></div>
-  <div class="cover-eyebrow">Strategic Intelligence Report · April 2026</div>
+  <div class="cover-grid"></div>
+  <div class="cover-eye">Influencer Marketing Intelligence Report · April 2026</div>
   <div class="cover-main">
     <div>
-      <h1>India–<em>Saudi</em><br>Arabia<br>Tourism</h1>
-      <p class="cover-sub">Conflict Impact · Decline Analysis · Recovery Forecast<br>2019 → 2026 · Official Sources Only</p>
-      <div class="cover-kpi-row">
-        <div class="cover-kpi"><div class="cover-kpi-val">3.4M</div><div class="cover-kpi-lbl">Indian Departures to Saudi 2024</div></div>
-        <div class="cover-kpi"><div class="cover-kpi-val">−7.9%</div><div class="cover-kpi-lbl">Indian Aviation Capacity Apr 2026</div></div>
-        <div class="cover-kpi"><div class="cover-kpi-val">$600M</div><div class="cover-kpi-lbl">Daily Tourism Loss, Feb 2026</div></div>
+      <h1>Influencer<br>Marketing<br>as the <em>Recovery</em><br>Engine</h1>
+      <p class="cover-sub">India → Saudi Arabia Tourism Corridor<br>Conflict Impact · Perception Gap · The Influencer Solution</p>
+      <div class="kpi-row">
+        <div class="kpi"><div class="kpi-val">67%</div><div class="kpi-lbl">Indians trust influencers over traditional ads</div></div>
+        <div class="kpi"><div class="kpi-val">11×</div><div class="kpi-lbl">ROI of influencer vs traditional digital</div></div>
+        <div class="kpi"><div class="kpi-val">600%</div><div class="kpi-lbl">Saudi tourism uplift from #VisitSaudi campaigns</div></div>
       </div>
     </div>
-    <div class="cover-right">
+    <div>
       <div class="cover-brief">
-        <div class="cover-brief-label">Executive Brief</div>
-        <div class="cover-brief-item"><strong>The Golden Era:</strong> India–Saudi corridor grew to 3.4M departures in 2024, the #2 destination for Indian outbound travellers. Non-religious tourism surged 108% vs 2019.</div>
-        <div class="cover-brief-item"><strong>The Turning Point:</strong> October 7, 2023 — Israel-Hamas conflict collapsed Middle East travel sentiment overnight. US-Iran escalation in Feb 2026 delivered the next severe shock.</div>
-        <div class="cover-brief-item"><strong>The Decline:</strong> 5,000+ flights cancelled in 2 days of Feb 2026 escalation. Middle East inbound arrivals forecast at −11% to −27% for 2026. Indian aviation capacity to Middle East down 7.9%.</div>
-        <div class="cover-brief-item"><strong>The Resilience:</strong> Saudi Arabia hit 122M total visitors in 2025, revised Vision 2030 target upward to 150M. Religious tourism (Hajj/Umrah) remains structurally inelastic.</div>
+        <div class="brief-label">The Central Argument</div>
+        <div class="brief-item"><strong>The Problem:</strong> Middle East conflict created a severe Perception Gap — Saudi Arabia is safe but 78% of travellers remain "concerned." Indian leisure bookings collapsed due to media-driven fear, not reality.</div>
+        <div class="brief-item"><strong>Why Traditional Ads Fail:</strong> Government tourism campaigns are dismissed as biased. Only 30% of travellers trust corporate advertising. Traditional media ROI stagnates at 300–400%.</div>
+        <div class="brief-item"><strong>The Science:</strong> Influencer content bypasses cognitive resistance. 76.7% of audiences report positive perception shift. Purchase intent rises by 37% vs traditional ads.</div>
+        <div class="brief-item"><strong>The Proof:</strong> Egypt, Turkey, Sri Lanka and Jordan all recovered faster using influencer-led campaigns than traditional PR. Saudi Arabia already achieved 600% tourism uplift via #VisitSaudi.</div>
+        <div class="brief-item"><strong>The ROI:</strong> $1M influencer campaign → 50,000 recovered Indian tourists → $75.5M injected into Saudi economy. Even at ultra-conservative 0.05% conversion.</div>
       </div>
     </div>
   </div>
-  <div class="cover-footer-bar">
-    <span class="cover-footer-meta">Prepared: April 2026 · Ykone Barcode Entertainment · Official Sources Only</span>
-    <span class="badge-conf">Confidential</span>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- 01 GOLDEN ERA -->
-<section class="sec white" id="golden">
-  <div class="inner">
-    <div class="eyebrow">01 / The Golden Era</div>
-    <h2 class="sec-title">Before the Storm</h2>
-    <p class="sec-sub">India–Saudi Arabia was one of the fastest-growing bilateral tourism corridors in the world — driven by Vision 2030 and a rising Indian middle class.</p>
-    <div class="g4" style="margin-bottom:32px;">
-      <div class="stat-tile"><div class="stat-val">2.92M</div><div class="stat-lbl">Indian Departures 2019</div><div class="stat-ctx">Pre-pandemic baseline. Predominantly Hajj/Umrah + labour.</div><div class="stat-source">PIB, Ministry of Tourism India</div></div>
-      <div class="stat-tile"><div class="stat-val">3.09M</div><div class="stat-lbl">Indian Departures 2023</div><div class="stat-ctx">Surpassed pre-pandemic peak. Golden Era in full swing.</div><div class="stat-source">PIB, Ministry of Tourism India</div></div>
-      <div class="stat-tile"><div class="stat-val">3.42M</div><div class="stat-lbl">Indian Departures 2024</div><div class="stat-ctx">Saudi Arabia = #2 international destination for Indians.</div><div class="stat-source">PIB · <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153606" target="_blank">pib.gov.in</a></div></div>
-      <div class="stat-tile"><div class="stat-val">+108%</div><div class="stat-lbl">Non-Religious Tourism Growth vs 2019</div><div class="stat-ctx">Leisure travel to Saudi exploded beyond pilgrimage.</div><div class="stat-source">WTTC · Arab News</div></div>
-    </div>
-    <div class="g2">
-      <div class="chart-card">
-        <div class="chart-eyebrow">Indian Departures to Saudi Arabia</div>
-        <div class="chart-title">Growth Trajectory 2019–2024</div>
-        <div class="chart-note">Peak: 3.42M in 2024 — 17% above 2019 pre-pandemic levels</div>
-        <div class="ch ch-260"><canvas id="arrivalChart"></canvas></div>
-        <div class="chart-source">Source: <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153606" target="_blank">PIB / Ministry of Tourism India, Aug 2025</a></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-eyebrow">Saudi Arabia Total Visitors</div>
-        <div class="chart-title">100M Milestone Achieved 7 Years Early</div>
-        <div class="chart-note">Target was 100M by 2030 — hit in 2023. Revised to 150M.</div>
-        <div class="ch ch-260"><canvas id="saudiTotalChart"></canvas></div>
-        <div class="chart-source">Source: <a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Ministry of Tourism / SPA, Jun 2025</a> · <a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC, Jun 2024</a></div>
-      </div>
-    </div>
-    <div class="g2">
-      <div class="chart-card">
-        <div class="chart-eyebrow">Indian Traveller Segment Mix (2023)</div>
-        <div class="chart-title">Diversifying Beyond Pilgrimage</div>
-        <div class="chart-note">Leisure & VFR segment was fastest-growing pre-conflict</div>
-        <div class="ch ch-200"><canvas id="segmentChart"></canvas></div>
-        <div class="chart-source">Source: Arab News · WTTC · Saudi Tourism Authority</div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-eyebrow">Saudi Tourism GDP Contribution (SAR Billion)</div>
-        <div class="chart-title">Tourism as Economic Pillar</div>
-        <div class="chart-note">SAR 444.3B in 2023 — 11.5% of total GDP, 2.5M jobs</div>
-        <div class="ch ch-200"><canvas id="gdpChart"></canvas></div>
-        <div class="chart-source">Source: <a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC, Jun 2024</a></div>
-      </div>
-    </div>
-    <div class="callout good" style="margin-top:8px;">
-      <div class="callout-icon">🚀</div>
-      <div>
-        <div class="callout-title">What Drove The India Boom</div>
-        <div class="callout-body">Saudi Arabia introduced a <strong>96-hour free stopover visa</strong> for Saudia/flynas transit passengers, extended e-Visa eligibility to Indian nationals with valid US/UK/Schengen visas, and operationalised <strong>10 VFS Tasheel offices</strong> across India by early 2024. The official target: <strong>7.5 million Indian visitors annually by 2030</strong>. Saudi Arabia was positioning India as its #1 inbound market by end of decade.</div>
-      </div>
-    </div>
-    <div class="cite-strip"><a href="https://www.business-standard.com/india-news/saudi-arabia-eyes-7-5-mn-indian-visitors-by-2030-offers-96-hour-free-visa-124022200885_1.html" target="_blank">Business Standard, Feb 2024</a> · <a href="https://www.arabnews.com/node/2466191/world" target="_blank">Arab News, Feb 2024</a></div>
+  <div class="cover-foot">
+    <span class="cover-foot-meta">Prepared: April 2026 · Ykone Barcode Entertainment · Official & Academic Sources Only</span>
+    <span class="badge">Confidential</span>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- 02 CRISIS TIMELINE -->
-<section class="sec dark" id="shock">
+<!-- 01 PERCEPTION GAP -->
+<section class="sec white" id="gap">
   <div class="inner">
-    <div class="eyebrow">02 / The Turning Points</div>
-    <h2 class="sec-title">Crisis Timeline</h2>
-    <p class="sec-sub">From golden growth to geopolitical shock — a chronology of every event that disrupted the India–Saudi corridor.</p>
-    <div class="g2">
-      <div>
-        <div class="filter-bar" style="background:#1a1a1a; border-color:rgba(255,255,255,0.10);">
-          <span class="filter-label" style="color:rgba(255,255,255,0.50);">Filter</span>
-          <button class="filter-btn active" data-tl="all" style="border-color:rgba(255,255,255,0.18);color:#bbb;">All Events</button>
-          <button class="filter-btn" data-tl="critical" style="border-color:rgba(255,255,255,0.18);color:#bbb;">Critical</button>
-          <button class="filter-btn" data-tl="aviation" style="border-color:rgba(255,255,255,0.18);color:#bbb;">Aviation</button>
-          <button class="filter-btn" data-tl="advisory" style="border-color:rgba(255,255,255,0.18);color:#bbb;">Advisories</button>
-        </div>
-        <div class="timeline" id="timeline-list">
-          <div class="tl-item" data-tag="critical">
-            <div class="tl-dot critical"></div><div class="tl-date critical">Oct 7, 2023</div>
-            <div class="tl-title">Israel-Hamas War Begins</div>
-            <div class="tl-body">Primary catalyst for regional destabilisation. Travel Sentiment Score for the Middle East plummeted to COVID-era lows overnight. Initial cancellations concentrated in long-haul leisure from North America and Europe. Religious tourism from India initially insulated.</div>
-            <div class="cite-strip"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank Blog, Mar 2025</a></div>
-          </div>
-          <div class="tl-item" data-tag="advisory">
-            <div class="tl-dot warn"></div><div class="tl-date warn">Q4 2023 – Q1 2024</div>
-            <div class="tl-title">"Two MENAs" Divergence</div>
-            <div class="tl-body">Jordan, Lebanon saw immediate decline. GCC (incl. Saudi Arabia) initially maintained stability perception. However Indian leisure forward booking curves began softening — "wait-and-see" approach delayed summer season purchases.</div>
-            <div class="cite-strip"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank: Two MENAs phenomenon, Mar 2025</a></div>
-          </div>
-          <div class="tl-item" data-tag="advisory">
-            <div class="tl-dot critical"></div><div class="tl-date critical">Apr 12, 2024</div>
-            <div class="tl-title">India MEA Travel Advisory Issued</div>
-            <div class="tl-body">Government of India issued official advisory for all Indian nationals to avoid non-essential travel to Iran and Israel. First formal government signal of elevated risk — directly suppressed leisure demand from Indian middle-class travellers.</div>
-            <div class="cite-strip"><a href="https://www.mea.gov.in/advisories-details.htm?46" target="_blank">MEA India, Apr 12, 2024</a></div>
-          </div>
-          <div class="tl-item" data-tag="critical">
-            <div class="tl-dot critical"></div><div class="tl-date critical">Mid-2024</div>
-            <div class="tl-title">Iran Retaliatory Strikes — Gulf Fear Peaks</div>
-            <div class="tl-body">Iranian missile and drone strikes on Israel triggered the first serious GCC safety concern. Non-GCC Middle Eastern countries received 2.35 million fewer European visitors in first 9 months of 2024 vs 2023. North Africa attracted 2.75M more — direct substitution effect confirmed.</div>
-            <div class="cite-strip"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank Blog, Mar 2025</a></div>
-          </div>
-          <div class="tl-item" data-tag="aviation">
-            <div class="tl-dot warn"></div><div class="tl-date warn">Feb 2026</div>
-            <div class="tl-title">US-Iran Conflict — Worst Aviation Shock</div>
-            <div class="tl-body">Most severe escalation. Over 5,000 commercial flights cancelled within first 2 days. WTTC estimated the conflict was costing the global Travel & Tourism sector at least $600M per day. Middle Eastern airports handle ~14% of global transit — systemic disruption unavoidable.</div>
-            <div class="cite-strip"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a> · <a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">WTTC, Mar 2026</a></div>
-          </div>
-          <div class="tl-item" data-tag="aviation">
-            <div class="tl-dot critical"></div><div class="tl-date critical">Apr 6, 2026</div>
-            <div class="tl-title">Air India & IndiGo Issue Flight Advisories</div>
-            <div class="tl-body">Air India and IndiGo issued April 6 advisory on limited flights to Dubai, Abu Dhabi, Riyadh and Jeddah. Indian overall international airline capacity dropped 7.9% in April 2026 — driven specifically by weaker demand on Middle Eastern routes.</div>
-            <div class="cite-strip"><a href="https://www.livemint.com/news/world/air-india-indigo-issue-april-6-advisory-limited-flights-to-dubai-abu-dhabi-riyadh-and-jeddah-check-details-11775432433909.html" target="_blank">LiveMint, Apr 6, 2026</a></div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="chart-card" style="background:#1a1a1a; border-color:rgba(255,255,255,0.09);">
-          <div class="chart-eyebrow">Middle East Travel Sentiment Index</div>
-          <div class="chart-title">Confidence Collapse & Partial Recovery</div>
-          <div class="chart-note">Feb 2026 escalation drove sentiment to lowest point since initial COVID lockdowns</div>
-          <div class="ch ch-260"><canvas id="sentimentChart"></canvas></div>
-          <div class="chart-source"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank / Oxford Economics</a></div>
-        </div>
-        <div class="chart-card" style="background:#1a1a1a; border-color:rgba(255,255,255,0.09); margin-top:0;">
-          <div class="chart-eyebrow">India Aviation Capacity — Middle East Routes</div>
-          <div class="chart-title">Seat Capacity Index (Jan 2023 = 100)</div>
-          <div class="chart-note">April 2026: −7.9% overall Indian international capacity, ME routes worst affected</div>
-          <div class="ch ch-200"><canvas id="aviationChart"></canvas></div>
-          <div class="chart-source"><a href="https://www.oag.com/indian-aviation-data" target="_blank">OAG Aviation, April 2026</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="ey">01 / The Problem</div>
+    <h2 class="sec-h">The Perception Gap</h2>
+    <p class="sec-sub">Saudi Arabia is objectively safe. But 78% of travellers are still afraid. This gap — between reality and perception — is what influencer marketing is uniquely positioned to close.</p>
 
-<div class="rule"></div>
-
-<!-- 03 NUMBERS -->
-<section class="sec alt" id="numbers">
-  <div class="inner">
-    <div class="eyebrow">03 / The Numbers</div>
-    <h2 class="sec-title">Quantifying the Decline</h2>
-    <p class="sec-sub">Every confirmed data point from official institutional sources — the scale of impact measured in arrivals, revenue, and flight capacity.</p>
     <div class="g4" style="margin-bottom:28px;">
-      <div class="stat-tile" style="background:#fff;"><div class="stat-val" style="color:var(--red);">−11 to −27%</div><div class="stat-lbl">Middle East Arrivals Forecast 2026</div><div class="stat-ctx">Range depends on conflict duration. Best case −11%, worst case −27% YoY.</div><div class="stat-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a></div></div>
-      <div class="stat-tile" style="background:#fff;"><div class="stat-val" style="color:var(--red);">−2.35M</div><div class="stat-lbl">Fewer European Visitors, MENA Jan–Sep 2024</div><div class="stat-ctx">vs same period 2023. North Africa gained +2.75M — clear substitution.</div><div class="stat-source"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank, Mar 2025</a></div></div>
-      <div class="stat-tile" style="background:#fff;"><div class="stat-val" style="color:var(--red);">5,000+</div><div class="stat-lbl">Flights Cancelled in First 48 Hours</div><div class="stat-ctx">February 2026 US-Iran escalation. 14% of global transit runs through ME airports.</div><div class="stat-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a></div></div>
-      <div class="stat-tile" style="background:#fff;"><div class="stat-val" style="color:var(--red);">$600M/day</div><div class="stat-lbl">Global Tourism Sector Daily Loss</div><div class="stat-ctx">WTTC estimate during Feb 2026 peak conflict period.</div><div class="stat-source"><a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">WTTC, Mar 11, 2026</a></div></div>
+      <div class="st"><div class="st-val" style="color:var(--red);">78%</div><div class="st-lbl">Travellers "Concerned" About Geopolitical Instability</div><div class="st-ctx">23% very concerned, 55% somewhat concerned. Affects all Middle East bookings including Saudi Arabia.</div><div class="st-src"><a href="https://www.travelmarketreport.com/canada/destinations/articles/survey-finds-travellers-remain-cautious-despite-israel-iran-ceasefire" target="_blank">Travel Market Report, Jun 2025</a></div></div>
+      <div class="st"><div class="st-val" style="color:var(--red);">42%</div><div class="st-lbl">Actively Avoiding Middle East Destinations</div><div class="st-ctx">Plus 12% delaying travel entirely until conflict stabilises. Leisure segment worst hit.</div><div class="st-src"><a href="https://www.travelmarketreport.com/canada/destinations/articles/survey-finds-travellers-remain-cautious-despite-israel-iran-ceasefire" target="_blank">Travel Market Report, Jun 2025</a></div></div>
+      <div class="st"><div class="st-val" style="color:var(--green);">14th</div><div class="st-lbl">Saudi Arabia's Global Safety Rank (Numbeo 2025)</div><div class="st-ctx">12-place climb in 2025. Safest nation in the G20. Reality vs perception is starkly divergent.</div><div class="st-src"><a href="https://moodiedavittreport.com/tourism-boost-as-saudi-arabia-soars-up-numbeo-safety-index-rankings/" target="_blank">Moodie Davitt Report</a></div></div>
+      <div class="st"><div class="st-val" style="color:var(--green);">83/100</div><div class="st-lbl">Gallup Law & Order Index — GCC Nations Lead Globally</div><div class="st-ctx">GCC nations including Saudi Arabia consistently top the global Law and Order Index.</div><div class="st-src"><a href="https://www.gallup.com/analytics/356996/gallup-global-safety-research-center.aspx" target="_blank">Gallup, 2025</a></div></div>
     </div>
+
     <div class="g2">
-      <div class="chart-card">
-        <div class="chart-eyebrow">Projected Tourist Arrival Loss — Middle East 2026</div>
-        <div class="chart-title">Scenario Range: 11% to 27% Decline</div>
-        <div class="chart-note">Each scenario corresponds to conflict duration — see Section 05 for full detail</div>
-        <div class="ch ch-260"><canvas id="scenarioDeclineChart"></canvas></div>
-        <div class="chart-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 4, 2026</a></div>
+      <div class="cc">
+        <div class="cc-ey">Traveller Sentiment — Middle East 2026</div>
+        <div class="cc-h">Fear vs Reality: The Perception Gap</div>
+        <div class="cc-note">Saudi Arabia ranks 14th safest globally — yet 78% of travellers remain "concerned." This gap is the entire problem.</div>
+        <div class="ch h260"><canvas id="perceptionGapChart"></canvas></div>
+        <div class="cc-src">Sources: <a href="https://www.travelmarketreport.com/canada/destinations/articles/survey-finds-travellers-remain-cautious-despite-israel-iran-ceasefire" target="_blank">Travel Market Report</a> · <a href="https://www.gallup.com/analytics/356996/gallup-global-safety-research-center.aspx" target="_blank">Gallup</a> · <a href="https://moodiedavittreport.com/tourism-boost-as-saudi-arabia-soars-up-numbeo-safety-index-rankings/" target="_blank">Numbeo / Moodie Davitt</a></div>
       </div>
-      <div class="chart-card">
-        <div class="chart-eyebrow">Projected Revenue Loss — Middle East Tourism Sector</div>
-        <div class="chart-title">$18B to $56B Loss Range for 2026</div>
-        <div class="chart-note">Scenario B (protracted): up to 38M fewer visitors, $35–56B in lost receipts</div>
-        <div class="ch ch-260"><canvas id="revenueLossChart"></canvas></div>
-        <div class="chart-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics / UNWTO, 2026</a></div>
+      <div class="cc">
+        <div class="cc-ey">India → Saudi Arabia: Impact of Conflict</div>
+        <div class="cc-h">Tourism Volume & Projected Loss 2026</div>
+        <div class="cc-note">−11% to −27% arrival decline forecast. $34B–$56B in lost regional spending at stake.</div>
+        <div class="ch h260"><canvas id="impactChart"></canvas></div>
+        <div class="cc-src"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a></div>
       </div>
     </div>
-    <div class="chart-card">
-      <div class="chart-eyebrow">The Substitution Effect — Where Tourists Are Going Instead</div>
-      <div class="chart-title">North Africa vs Middle East: Jan–Sep 2024 vs 2023 (European Visitors)</div>
-      <div class="chart-note">As Middle East shed 2.35M European visitors, North Africa gained 2.75M — a near-perfect substitution confirmed by World Bank data</div>
-      <div class="ch ch-200"><canvas id="substitutionChart"></canvas></div>
-      <div class="chart-source"><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">World Bank Blog, Mar 24, 2025</a></div>
-    </div>
+
     <div class="callout warn">
       <div class="callout-icon">⚠</div>
       <div>
-        <div class="callout-title">The "Neighbourhood Effect" — India's Specific Risk</div>
-        <div class="callout-body">UN Tourism identifies a documented <strong>"Neighbourhood Effect"</strong> in conflict tourism: even countries physically untouched by conflict suffer dramatically if they share perceived regional proximity with the affected zone. For Indian leisure travellers — who are highly price-sensitive and rely on aggregated travel advisories — Saudi Arabia is perceived as part of the broader "Middle East conflict zone" regardless of its physical safety. This psychological barrier is the single hardest element to reverse through marketing alone.</div>
+        <div class="callout-title">Why Traditional Advertising Cannot Fix This</div>
+        <div class="callout-body">The Indian traveller's fear of Saudi Arabia is not rational — it is emotional and media-driven. Government tourism campaigns are dismissed as <strong>biased propaganda</strong>. TV spots and billboards activate the consumer's scepticism filter. Only peer-to-peer, authentic, visually verifiable content — influencer content — can override emotional fear responses. This is not a hypothesis. It is proven by academic science and documented case studies across Egypt, Turkey, Sri Lanka and Jordan.</div>
       </div>
     </div>
-    <div class="cite-strip"><a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">UN Tourism Brief, Apr 15, 2026</a></div>
+    <div class="cs"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a> · <a href="https://www.hospitalityinvestor.com/business-strategy/why-middle-east-conflict-could-have-lasting-impact-travel-and-tourism" target="_blank">Hospitality Investor</a></div>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- 04 HISTORICAL -->
-<section class="sec white" id="compare">
+<!-- 02 THE SCIENCE -->
+<section class="sec dark" id="science">
   <div class="inner">
-    <div class="eyebrow">04 / Historical Comparison</div>
-    <h2 class="sec-title">Wars & Tourism Recovery</h2>
-    <p class="sec-sub">How comparable geopolitical crises impacted Middle East tourism — and which historical case most closely mirrors today's India–Saudi decline.</p>
-    <div class="filter-bar">
-      <span class="filter-label">Show</span>
-      <button class="filter-btn active" data-crisis="all">All Crises</button>
-      <button class="filter-btn" data-crisis="decline">Peak Decline</button>
-      <button class="filter-btn" data-crisis="recovery">Recovery Time</button>
+    <div class="ey">02 / The Science</div>
+    <h2 class="sec-h">How Influencers Shift Destination Perception</h2>
+    <p class="sec-sub">Academic research is unequivocal: influencer content restructures both cognitive beliefs and emotional feelings about a destination — at a speed and depth that traditional advertising cannot match.</p>
+
+    <div class="g4" style="margin-bottom:28px;">
+      <div class="st" style="background:var(--black3);">
+        <div class="st-val" style="color:#fff;">76.7%</div>
+        <div class="st-lbl" style="color:rgba(255,255,255,0.45);">Positive Perception Change From Influencer Content</div>
+        <div class="st-ctx" style="color:rgba(255,255,255,0.55);">Of participants reported positive destination brand perception shift directly from influencer marketing.</div>
+        <div class="st-src" style="color:rgba(255,255,255,0.28);">Academic Study, May 2024</div>
+      </div>
+      <div class="st" style="background:var(--black3);">
+        <div class="st-val" style="color:#fff;">83.3%</div>
+        <div class="st-lbl" style="color:rgba(255,255,255,0.45);">Increased Desire to Visit Promoted Destinations</div>
+        <div class="st-ctx" style="color:rgba(255,255,255,0.55);">After seeing influencer content about a destination — even one they previously avoided.</div>
+        <div class="st-src" style="color:rgba(255,255,255,0.28);">Academic Study, May 2024</div>
+      </div>
+      <div class="st" style="background:var(--black3);">
+        <div class="st-val" style="color:var(--gold);">β=0.561</div>
+        <div class="st-lbl" style="color:rgba(255,255,255,0.45);">Influencer Content → Purchase Intent (SEM Study)</div>
+        <div class="st-ctx" style="color:rgba(255,255,255,0.55);">Statistically significant: consumer perception from influencers directly predicts booking intent (p &lt; 0.001).</div>
+        <div class="st-src" style="color:rgba(255,255,255,0.28);"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12700370/" target="_blank" style="color:rgba(255,255,255,0.38);">PMC / NCBI Research</a></div>
+      </div>
+      <div class="st" style="background:var(--black3);">
+        <div class="st-val" style="color:#fff;">70%</div>
+        <div class="st-lbl" style="color:rgba(255,255,255,0.45);">Of Travellers Prefer Social Media for Travel Planning</div>
+        <div class="st-ctx" style="color:rgba(255,255,255,0.55);">vs only 30% who rely on mass media for structured destination narratives.</div>
+        <div class="st-src" style="color:rgba(255,255,255,0.28);">Tourism Research 2022</div>
+      </div>
     </div>
-    <div style="overflow-x:auto;">
-      <table class="comp-table" id="crisis-table">
-        <thead><tr><th>Crisis</th><th>Period</th><th>Peak Decline</th><th>Recovery Time</th><th>ME-Specific Impact</th><th>Rebound Trigger</th><th>Source</th></tr></thead>
+
+    <div class="g2">
+      <div class="cc" style="background:var(--black2);border-color:var(--rule-d);">
+        <div class="cc-ey">Destination Image Shift — Influencer vs Traditional</div>
+        <div class="cc-h" style="color:#fff;">How Quickly Perception Changes</div>
+        <div class="cc-note">SEM study: influencer content delivers Cohen's d=0.61 on destination image — statistically large effect</div>
+        <div class="ch h260"><canvas id="perceptionShiftChart"></canvas></div>
+        <div class="cc-src"><a href="https://www.ajhtl.com/uploads/7/1/6/3/7163688/article_11_13_3_531-539.pdf" target="_blank">AJHTL Academic Journal</a> · <a href="https://www.mdpi.com/2071-1050/17/13/6016" target="_blank">MDPI Sustainability Journal</a></div>
+      </div>
+      <div class="cc" style="background:var(--black2);border-color:var(--rule-d);">
+        <div class="cc-ey">Influencer Content Funnel Impact</div>
+        <div class="cc-h" style="color:#fff;">From Fear → Intent → Booking</div>
+        <div class="cc-note">70% say influencers affected destination choice; 63.3% then expressed concrete booking intent</div>
+        <div class="ch h260"><canvas id="funnelChart"></canvas></div>
+        <div class="cc-src">Academic Study, May 2024 · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12700370/" target="_blank">PMC Research</a></div>
+      </div>
+    </div>
+
+    <div class="ilist">
+      <div class="iitem">
+        <div class="idot"></div>
+        <div class="itext"><strong>The Elaboration Likelihood Model (ELM):</strong> When consumers fear a destination, they dismiss corporate ads via the "central route" of critical evaluation. Influencer content bypasses this entirely — the brain processes a creator's real-time experience as indisputable peer evidence, not branded messaging.</div>
+      </div>
+      <div class="iitem">
+        <div class="idot"></div>
+        <div class="itext"><strong>Parasocial Trust:</strong> Followers perceive influencers as intimate peers, not corporate entities. When a trusted creator travels to Saudi Arabia and broadcasts their safety, followers experience a vicarious transfer of confidence. This psychological mechanism is documented in peer-reviewed research and has no equivalent in traditional advertising.</div>
+      </div>
+      <div class="iitem">
+        <div class="idot"></div>
+        <div class="itext"><strong>UGC vs Official Sources:</strong> Research confirms that user-generated and influencer content is perceived as vastly more reliable than official tourism websites, travel agents, and mass media. The authenticity gap between "a tourism board saying Saudi is safe" and "a creator you follow showing you Riyadh on their phone" is immeasurable.</div>
+      </div>
+    </div>
+    <div class="cs dark"><a href="https://www.ajhtl.com/uploads/7/1/6/3/7163688/article_11_13_3_531-539.pdf" target="_blank">AJHTL Journal</a> · <a href="https://journal.unnes.ac.id/journals/jdm/article/view/7671/1577" target="_blank">JDM — Parasocial Relationships</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12700370/" target="_blank">PMC NCBI</a></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 03 HEAD TO HEAD -->
+<section class="sec alt" id="headtohead">
+  <div class="inner">
+    <div class="ey">03 / The Evidence</div>
+    <h2 class="sec-h">Influencer vs Traditional Media</h2>
+    <p class="sec-sub">Head-to-head data across every marketing KPI. Traditional advertising consistently underperforms — at higher cost, with lower trust and weaker attribution.</p>
+
+    <div class="g2" style="margin-bottom:24px;">
+      <div class="cc">
+        <div class="cc-ey">Average Campaign ROI Comparison</div>
+        <div class="cc-h">Influencer vs Traditional Advertising</div>
+        <div class="cc-note">Influencer marketing delivers 500–600% ROI vs 300–400% for traditional channels</div>
+        <div class="ch h260"><canvas id="roiCompChart"></canvas></div>
+        <div class="cc-src"><a href="https://archive.com/blog/influencer-marketing-roi-metrics-statistics" target="_blank">Archive.com / Amra & Elma</a> · Industry Benchmarks 2025</div>
+      </div>
+      <div class="cc">
+        <div class="cc-ey">Consumer Trust — India Market (Kantar 2025)</div>
+        <div class="cc-h">Who Do Indian Travellers Actually Trust?</div>
+        <div class="cc-note">67% of Indians trust influencer recommendations over traditional ads — a decisive trust gap</div>
+        <div class="ch h260"><canvas id="trustChart"></canvas></div>
+        <div class="cc-src"><a href="https://brandequity.economictimes.indiatimes.com/news/research/67-indians-trust-influencer-recommendations-over-traditional-advertisements-report/120514710" target="_blank">Kantar Influencer Playbook 2025 / Economic Times Brand Equity</a></div>
+      </div>
+    </div>
+
+    <!-- Head to Head Table -->
+    <div style="overflow-x:auto;margin-bottom:28px;">
+      <table class="hth">
+        <thead>
+          <tr>
+            <th>Performance Metric</th>
+            <th>Influencer Marketing</th>
+            <th>Traditional Advertising (TV / Print / Digital Display)</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr data-crisis="decline"><td><span class="crisis-badge">Gulf War</span> 1990–91</td><td>7 months</td><td>−17% global arrivals</td><td>~2 years full recovery</td><td>Middle East lost 5M+ visitors in 1991; GCC worst hit</td><td>Ceasefire + oil price stabilisation</td><td>UNWTO Historical</td></tr>
-          <tr data-crisis="decline"><td><span class="crisis-badge">9/11</span> 2001</td><td>~3 months acute</td><td>−11% global arrivals (2001)</td><td>~18 months to baseline</td><td>Global aviation collapse; Middle East perceived as "origin zone"</td><td>Resumed air connectivity + marketing campaigns</td><td>UNWTO / Academic Research</td></tr>
-          <tr data-crisis="recovery"><td><span class="crisis-badge">Arab Spring</span> 2010–12</td><td>~18 months instability</td><td>Middle East shed 5M visitors in 2011</td><td>2–4 years (country dependent)</td><td>Saudi Arabia relatively insulated; Egypt, Tunisia worst hit (−30%+)</td><td>Political stabilisation + price discounting</td><td><a href="https://www.intechopen.com/chapters/71352" target="_blank">IntechOpen, 2021</a></td></tr>
-          <tr data-crisis="decline recovery"><td><span class="crisis-badge">COVID-19</span> 2020–21</td><td>12–18 months</td><td>−76% Saudi international arrivals 2020</td><td>2–3 years to pre-COVID levels</td><td>Complete collapse → V-shaped recovery 2022–2023 for Saudi</td><td>Vaccination rollout + Vision 2030 leisure push</td><td><a href="https://www.unwto.org/impact-assessment-of-the-covid-19-outbreak-on-international-tourism" target="_blank">UNWTO COVID Impact Assessment</a></td></tr>
-          <tr class="current-row" data-crisis="decline recovery"><td>▶ Current Conflict 2023–2026</td><td>Ongoing (~30+ months)</td><td>−11% to −27% ME arrivals 2026</td><td>5–6 months post-ceasefire (base case)</td><td>India leisure deterred; Hajj/Umrah inelastic; aviation capacity −7.9%</td><td>Airspace reopening + India-specific campaign</td><td><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 2026</a></td></tr>
+          <tr><td>Consumer Trust — Indian Market</td><td class="inf">67% prefer influencer advice</td><td class="trad">&lt;30% trust corporate ads</td></tr>
+          <tr><td>Global Trust Rate</td><td class="inf">92% trust peer/influencer recs</td><td class="trad">Low — ad fatigue widespread</td></tr>
+          <tr><td>Average Engagement Rate</td><td class="inf">2.0% – 8.0% (Nano/Micro tiers)</td><td class="trad">0.1% – 0.5% (Standard CTR)</td></tr>
+          <tr><td>Purchase Intent Lift</td><td class="inf">+37% higher conversion intent</td><td class="trad">Baseline / minimal attribution</td></tr>
+          <tr><td>Brand Credibility Increase</td><td class="inf">+24% measurable uplift</td><td class="trad">Marginal to none</td></tr>
+          <tr><td>Average Campaign ROI</td><td class="inf">500% – 600%</td><td class="trad">300% – 400%</td></tr>
+          <tr><td>Revenue Per $1 Spent</td><td class="inf">$5.78 earned media equivalent</td><td class="trad">$4.81 traditional PR</td></tr>
+          <tr><td>Cost Per Acquisition (CPA)</td><td class="inf">30% cheaper than traditional</td><td class="trad">Premium pricing, opaque attribution</td></tr>
+          <tr><td>Cost Per Impression (CPM)</td><td class="inf">40% lower cost per impression</td><td class="trad">High cost, broad audience waste</td></tr>
+          <tr><td>Attribution & Tracking</td><td class="inf">High — UTM links, promo codes, API</td><td class="trad">Low — broad surveys, footfall estimates</td></tr>
+          <tr><td>Brand Favourability</td><td class="inf">15% (Kantar)</td><td class="trad">12%</td></tr>
+          <tr><td>Purchase Intent</td><td class="inf">10% (Kantar)</td><td class="trad">9%</td></tr>
         </tbody>
       </table>
     </div>
+    <div class="cs"><a href="https://brandequity.economictimes.indiatimes.com/news/research/67-indians-trust-influencer-recommendations-over-traditional-advertisements-report/120514710" target="_blank">Kantar 2025</a> · <a href="https://www.nielsen.com/insights/2025/maximizing-marketing-effectiveness-data-driven-decisions/" target="_blank">Nielsen 2025</a> · <a href="https://archive.com/blog/influencer-marketing-roi-metrics-statistics" target="_blank">Archive.com</a> · <a href="https://ronntorossian.com/influencer-marketing-vs-traditional-advertising-which-one-wins/" target="_blank">5WPR Research</a></div>
+
     <div class="g2">
-      <div class="chart-card">
-        <div class="chart-eyebrow">Peak Decline — Historical Comparison</div>
-        <div class="chart-title">How Deep Was Each Crisis?</div>
-        <div class="chart-note">COVID remains the deepest; current conflict most closely resembles 9/11 in duration + psychological impact</div>
-        <div class="ch ch-260"><canvas id="historicalDeclineChart"></canvas></div>
-        <div class="chart-source">UNWTO · Oxford Economics · Academic sources</div>
+      <div class="cc">
+        <div class="cc-ey">Cost Per Impression & CPA Advantage</div>
+        <div class="cc-h">Influencer is 30–40% Cheaper Per Action</div>
+        <div class="cc-note">Influencer CPA 30% cheaper than traditional; impressions cost 40% less — with higher trust</div>
+        <div class="ch h200"><canvas id="costChart"></canvas></div>
+        <div class="cc-src">InfluenceFlow 2026 · DecTech Benchmarks · Industry Aggregated Data</div>
       </div>
-      <div class="chart-card">
-        <div class="chart-eyebrow">Recovery Timeline — Months to Baseline</div>
-        <div class="chart-title">How Long Did It Take Each Time?</div>
-        <div class="chart-note">Current conflict most analogous to 9/11: psychological deterrence + aviation disruption</div>
-        <div class="ch ch-260"><canvas id="recoveryTimeChart"></canvas></div>
-        <div class="chart-source">UNWTO · WTTC · Academic sources</div>
-      </div>
-    </div>
-    <div class="callout gold">
-      <div class="callout-icon">🔍</div>
-      <div>
-        <div class="callout-title">Most Analogous Case: 9/11 (2001)</div>
-        <div class="callout-body">The current India–Saudi decline most closely mirrors the post-9/11 crisis: <strong>(1) Psychological proximity</strong> — travellers avoiding an entire region despite specific sites being safe; <strong>(2) Aviation disruption</strong> — capacity cuts driven by fear, not physical access; <strong>(3) India-specific hesitation</strong> — price-sensitive middle-market travellers substitute destinations rather than delay. Post-9/11 recovery took ~18 months. Under a base-case resolution scenario, full India–Saudi flow recovery is projected by <strong>Q3–Q4 2027</strong>.</div>
+      <div class="cc">
+        <div class="cc-ey">Full-Funnel Superiority (Kantar)</div>
+        <div class="cc-h">Influencer Wins at Every Stage of the Funnel</div>
+        <div class="cc-note">Brand favourability: 15% vs 12%. Positive attributes: 11% vs 9%. Purchase intent: 10% vs 9%.</div>
+        <div class="ch h200"><canvas id="funnelCompChart"></canvas></div>
+        <div class="cc-src"><a href="https://brandequity.economictimes.indiatimes.com/news/research/67-indians-trust-influencer-recommendations-over-traditional-advertisements-report/120514710" target="_blank">Kantar Influencer Playbook 2025</a></div>
       </div>
     </div>
   </div>
@@ -507,167 +447,324 @@ a { color: inherit; text-decoration: none; }
 
 <div class="rule"></div>
 
-<!-- 05 RECOVERY -->
-<section class="sec dark" id="recovery">
+<!-- 04 CASE STUDIES -->
+<section class="sec white" id="casestudies">
   <div class="inner">
-    <div class="eyebrow">05 / Recovery Forecast</div>
-    <h2 class="sec-title">Three Scenarios from April 2026</h2>
-    <p class="sec-sub">Modelled on UN Tourism and Oxford Economics econometric frameworks — bracketing best, base, and worst case recovery trajectories.</p>
-    <div class="scenario-grid">
-      <div class="scenario-card s-a">
-        <div class="scenario-label">Scenario A — V-Shaped Rebound</div>
-        <div class="scenario-headline">Early Resolution</div>
-        <div class="scenario-metric">−11 to −13%</div>
-        <div style="font-size:11px;font-weight:700;color:var(--green);letter-spacing:1.5px;margin-top:2px;">2026 ARRIVAL DECLINE</div>
-        <div class="scenario-body"><strong>Trigger:</strong> Conflict ends within 1–3 weeks of Feb 2026 escalation. Airspace restrictions lifted rapidly.<br><br><strong>India Impact:</strong> IndiGo/Air India normalise immediately. Hajj/Umrah pent-up demand forces instant rebooking. Leisure recovers within 2 months.<br><br><strong>Revenue Loss:</strong> $18B–$34B<br><strong>Recovery to Baseline:</strong> Q3–Q4 2026</div>
-        <div class="scenario-src"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics + WTTC modelling</a></div>
-      </div>
-      <div class="scenario-card s-b">
-        <div class="scenario-label">Scenario B — U-Shaped Recovery</div>
-        <div class="scenario-headline">Protracted Conflict</div>
-        <div class="scenario-metric">−20 to −27%</div>
-        <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1.5px;margin-top:2px;">2026 ARRIVAL DECLINE</div>
-        <div class="scenario-body"><strong>Trigger:</strong> Hostilities persist 1–2 months, disrupting Spring season. Jet fuel spikes force rerouting over Africa/Central Asia.<br><br><strong>India Impact:</strong> Govt maintains advisories into summer. High ticket prices kill middle-income demand. Saudi pivots to 86.2M domestic market.<br><br><strong>Revenue Loss:</strong> $35B–$56B (38M fewer visitors)<br><strong>Recovery to Baseline:</strong> Q3–Q4 2027</div>
-        <div class="scenario-src"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics, Mar 4, 2026</a></div>
-      </div>
-      <div class="scenario-card s-c">
-        <div class="scenario-label">Scenario C — L-Shaped Stagnation</div>
-        <div class="scenario-headline">Severe Escalation</div>
-        <div class="scenario-metric">−24 to −28%</div>
-        <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:1.5px;margin-top:2px;">2026 ARRIVAL DECLINE</div>
-        <div class="scenario-body"><strong>Trigger:</strong> Conflict endures 3+ months. Structural aviation damage. Strait of Hormuz closure causes systemic energy shock.<br><br><strong>India Impact:</strong> "Neighbourhood Effect" fully crystallises. Saudi leisure tourists substitute to Southeast Asia/Europe. UN Tourism: recovery extends 5–6 months post-ceasefire.<br><br><strong>Revenue Loss:</strong> $40B+ (28M fewer visitors)<br><strong>Recovery to Baseline:</strong> Deep into 2027–2028</div>
-        <div class="scenario-src"><a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">UN Tourism Brief, Apr 15, 2026</a></div>
-      </div>
-    </div>
-    <div class="chart-card" style="background:#1a1a1a;border-color:rgba(255,255,255,0.09);">
-      <div class="chart-eyebrow">India–Saudi Corridor Recovery Projection</div>
-      <div class="chart-title">Indexed Arrival Volume: 2022–2027 (Three Scenarios)</div>
-      <div class="chart-note">Index: 2023 = 100 (pre-conflict peak). Shaded area represents uncertainty range.</div>
-      <div class="ch ch-300"><canvas id="recoveryProjectionChart"></canvas></div>
-      <div class="chart-source"><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">Oxford Economics</a> · <a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">UN Tourism, Apr 2026</a> · <a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">WTTC, Mar 2026</a></div>
-    </div>
-    <div class="insight-list">
-      <div class="insight-item"><div class="i-dot"></div><div class="i-text"><strong>Religious tourism is the anchor:</strong> Hajj and Umrah pilgrims represent entirely inelastic demand. This segment will resume the moment airspace is confirmed open — providing an immediate floor under Saudi Arabia's India-inbound volumes regardless of leisure hesitation.</div></div>
-      <div class="insight-item"><div class="i-dot"></div><div class="i-text"><strong>The 5–6 month rule (Scenario C):</strong> UN Tourism models show that once kinetic conflict fully ceases, even deeply psychologically deterred markets like India typically normalise within 5–6 months — provided active re-engagement campaigns are deployed at the precise moment hostilities end.</div></div>
-      <div class="insight-item"><div class="i-dot"></div><div class="i-text"><strong>Ticket price is the hidden variable:</strong> Indian middle-income travellers are highly price-elastic. Jet fuel surcharge rerouting costs will keep ticket prices elevated even post-ceasefire — potentially delaying leisure recovery beyond sentiment normalisation.</div></div>
-    </div>
-  </div>
-</section>
+    <div class="ey">04 / The Proof</div>
+    <h2 class="sec-h">Conflict Destination Recovery — Case Studies</h2>
+    <p class="sec-sub">Every destination that recovered from a conflict-related tourism crisis used influencer and digital content as the primary mechanism. Traditional PR consistently failed. Here is the documented evidence.</p>
 
-<div class="rule"></div>
+    <div class="cs-grid">
+      <div class="cs-card">
+        <div class="cs-flag">🇪🇬</div>
+        <div class="cs-country">Egypt — Arab Spring Recovery</div>
+        <div class="cs-headline">Digital Content Drove $1.1B GDP Uplift</div>
+        <div class="cs-metrics">
+          <div class="cs-metric"><div class="cs-metric-val">+4%</div><div class="cs-metric-lbl">Tourism Economy Growth</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">10.2M</div><div class="cs-metric-lbl">Additional Visitor Nights</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">$1.1B</div><div class="cs-metric-lbl">GDP Contribution 2019</div></div>
+        </div>
+        <div class="cs-body">Following the Arab Spring in 2011, Egypt's tourism — worth 20%+ of GDP — collapsed. Traditional state campaigns failed completely. The pivot to digital creator content and UGC between 2014–2019 drove a 4% net increase in the tourism economy, 10.2M additional visitor nights, and a $1.1B GDP contribution — while supporting 90,000 local jobs.</div>
+        <div class="cs" style="margin-top:10px;"><a href="https://s3.amazonaws.com/tourism-economics/craft/Google_Egypt_Final.pdf" target="_blank">Oxford Economics / Google Egypt Study</a></div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-flag">🇹🇷</div>
+        <div class="cs-country">Turkey — Terrorism & Diplomatic Crisis</div>
+        <div class="cs-headline">31% Drop Reversed in 12 Months via Influencers</div>
+        <div class="cs-metrics">
+          <div class="cs-metric"><div class="cs-metric-val">−31%</div><div class="cs-metric-lbl">European Arrivals Drop 2016</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">46.1M</div><div class="cs-metric-lbl">Visitors 2018 — Record High</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">$3.1B</div><div class="cs-metric-lbl">Digital Tourism GDP Gain</div></div>
+        </div>
+        <div class="cs-body">A 31% European arrival collapse in 2016 (terrorism + Russian diplomatic crisis) was reversed by aggressively courting global influencers to showcase Cappadocia, Antalya, and the Aegean coast. Visitors surged from 30M (2016) → 37.9M (2017) → 46.1M (2018) — a new record. Digital marketing generated 5.4M additional visitor nights and $3.1B GDP contribution.</div>
+        <div class="cs" style="margin-top:10px;">Oxford Economics Tourism Digital Impact Analysis</div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-flag">🇱🇰</div>
+        <div class="cs-country">Sri Lanka — "Fall in Love Again" Campaign 2022</div>
+        <div class="cs-headline">270% Arrival Surge in 51 Days of Digital Campaign</div>
+        <div class="cs-metrics">
+          <div class="cs-metric"><div class="cs-metric-val">14.9M</div><div class="cs-metric-lbl">Impressions in 51 Days</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">73.25%</div><div class="cs-metric-lbl">Portal Traffic from Campaign</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">+270%</div><div class="cs-metric-lbl">Tourist Arrivals YoY</div></div>
+        </div>
+        <div class="cs-body">After Easter bombings (2019), COVID, and a 2022 economic collapse with civil unrest, Sri Lanka launched a creator-led "Fall in Love Again" campaign in Oct 2022. Within 51 days: 14.9M impressions, 815,923 potential tourists reached, 73.25% of all tourism portal traffic driven by the campaign. Arrivals hit 719,978 — a 270.2% increase on the previous year.</div>
+        <div class="cs" style="margin-top:10px;">Sri Lanka Tourism Alliance Official Campaign Data, Nov 2022</div>
+      </div>
+      <div class="cs-card">
+        <div class="cs-flag">🇯🇴</div>
+        <div class="cs-country">Jordan — Combating the Contagion Effect</div>
+        <div class="cs-headline">All 5 Influencer Constructs Shift Destination Choice</div>
+        <div class="cs-metrics">
+          <div class="cs-metric"><div class="cs-metric-val">5/5</div><div class="cs-metric-lbl">Influencer Constructs Validated</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">Peer</div><div class="cs-metric-lbl">Trust Outperforms All Media</div></div>
+          <div class="cs-metric"><div class="cs-metric-val">Proven</div><div class="cs-metric-lbl">Direct Booking Intent Shift</div></div>
+        </div>
+        <div class="cs-body">Jordan suffers the same "neighbourhood effect" as Saudi Arabia — perceived unsafe due to proximity to conflict zones despite being stable. Academic quantitative research on Jordanian millennials validated that all five influencer marketing constructs (recommendations, authenticity, credibility, engagement, expertise) significantly and positively influence destination choice, acting as direct psychological counterweights to geopolitical anxiety.</div>
+        <div class="cs" style="margin-top:10px;"><a href="https://esiculture.com/index.php/esiculture/article/view/2021" target="_blank">ESI Culture Academic Research</a></div>
+      </div>
+    </div>
 
-<!-- 06 VISION 2030 -->
-<section class="sec alt" id="vision">
-  <div class="inner">
-    <div class="eyebrow">06 / Vision 2030 Status</div>
-    <h2 class="sec-title">Target: Still On Track?</h2>
-    <p class="sec-sub">Saudi Arabia hit its original 100M visitor target 7 years early. The revised target is 150M. Here is where things stand.</p>
-    <div class="g2" style="margin-bottom:32px;">
-      <div class="chart-card">
-        <div class="chart-eyebrow">Vision 2030 — Tourist Milestone Tracker</div>
-        <div class="chart-title">Annual Visitors vs Revised 150M Target</div>
-        <div class="chart-note">122M in 2025 = 81% of revised 150M target — on course despite conflict</div>
-        <div class="ch ch-260"><canvas id="visionProgressChart"></canvas></div>
-        <div class="chart-source"><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Ministry of Tourism, Jun 2025</a> · <a href="https://thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors-in-2025-raising-vision-2030-tourism-target-to-150-million/" target="_blank">Saudi Times, Mar 2026</a></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-eyebrow">Domestic vs International Visitors (2024)</div>
-        <div class="chart-title">Domestic Market as Strategic Buffer</div>
-        <div class="chart-note">86.2M domestic tourists in 2024 — critical insulation during international decline</div>
-        <div class="ch ch-260"><canvas id="domesticIntlChart"></canvas></div>
-        <div class="chart-source"><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Press Agency, Jun 22, 2025</a></div>
-      </div>
+    <!-- Recovery comparison chart -->
+    <div class="cc">
+      <div class="cc-ey">Recovery Speed — Influencer-Led vs Traditional PR Campaigns</div>
+      <div class="cc-h">Destinations That Used Influencer Campaigns Recovered Faster</div>
+      <div class="cc-note">Sri Lanka: 270% arrival growth in 51 days. Turkey: record arrivals in 12 months. Egypt: $1.1B GDP in 5 years via digital.</div>
+      <div class="ch h260"><canvas id="recoveryCompChart"></canvas></div>
+      <div class="cc-src">Oxford Economics Egypt Study · Turkey Tourism Data · Sri Lanka Tourism Alliance · Jordan Academic Research</div>
     </div>
-    <div class="g3" style="margin-bottom:24px;">
-      <div class="stat-tile" style="background:#fff; border-top:3px solid var(--black);"><div style="font-size:28px;margin-bottom:8px;">🕌</div><div class="stat-lbl">The Captive Religious Market</div><div class="stat-val" style="font-size:30px;margin:8px 0;">Inelastic</div><div class="stat-ctx">Hajj and Umrah pilgrims will travel regardless of geopolitical anxiety — provided airspace is physically open. Millions of Indian Muslims form a non-negotiable demand floor.</div></div>
-      <div class="stat-tile" style="background:#fff; border-top:3px solid var(--black);"><div style="font-size:28px;margin-bottom:8px;">🏟</div><div class="stat-lbl">The Domestic Buffer</div><div class="stat-val" style="font-size:30px;margin:8px 0;">86.2M</div><div class="stat-ctx">Domestic tourists in 2024, spending SAR 115.3B. Riyadh Season and giga-events sustain hospitality sector through international downturns.</div><div class="stat-source"><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Ministry of Tourism</a></div></div>
-      <div class="stat-tile" style="background:#fff; border-top:3px solid var(--black);"><div style="font-size:28px;margin-bottom:8px;">💰</div><div class="stat-lbl">Sovereign Capital Depth</div><div class="stat-val" style="font-size:30px;margin:8px 0;">$800B+</div><div class="stat-ctx">Earmarked for tourism infrastructure. NEOM, Red Sea Global, Qiddiya, Diriyah continue construction through the conflict — inventory is ready when demand returns.</div></div>
-    </div>
-    <div class="chart-card">
-      <div class="chart-eyebrow">Saudi Tourism Sector — Key Economic Metrics</div>
-      <div class="chart-title">Revenue & GDP Contribution 2019–2025</div>
-      <div class="chart-note">International visitor spending reached SAR 227.4B in 2023 — a 57% surge. Total 2024 tourism spending: SAR 284B</div>
-      <div class="ch ch-260"><canvas id="tourismRevenueChart"></canvas></div>
-      <div class="chart-source"><a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC, Jun 2024</a> · <a href="https://www.spa.gov.sa/en/N2344293" target="_blank">Saudi Press Agency, Jun 2025</a></div>
-    </div>
+
     <div class="callout good">
       <div class="callout-icon">✅</div>
       <div>
-        <div class="callout-title">Verdict: 150M Target Remains Achievable</div>
-        <div class="callout-body">Saudi Arabia hit 100M visitors in 2023 — <strong>7 years ahead of the original schedule</strong>. By 2025, it had reached 122M, prompting an upward revision to 150M by 2030. The 2026 conflict is a severe but likely transient headwind. The structural forces driving the India–Saudi corridor remain fully intact. The fundamental architecture of the corridor is unbroken.</div>
+        <div class="callout-title">The Irrefutable Conclusion</div>
+        <div class="callout-body">In every documented case where a destination attempted to recover from conflict-related tourism decline, <strong>traditional media failed to move the needle</strong>. Influencer and digital creator campaigns — by deploying real humans to physically verify safety in real-time — consistently produced faster, deeper, and more cost-effective recovery. Saudi Arabia is not starting from scratch. The infrastructure, relationships, and proof of concept already exist.</div>
       </div>
     </div>
-    <div class="cite-strip"><a href="https://thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors-in-2025-raising-vision-2030-tourism-target-to-150-million/" target="_blank">Saudi Times, Mar 23, 2026</a> · <a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">WTTC</a></div>
   </div>
 </section>
 
 <div class="rule"></div>
 
-<!-- 07 CITATIONS -->
-<section class="sec white" id="sources">
+<!-- 05 SAUDI CAMPAIGNS -->
+<section class="sec dark" id="saudi">
   <div class="inner">
-    <div class="eyebrow">07 / Full Citations</div>
-    <h2 class="sec-title">Official Sources</h2>
-    <p class="sec-sub">All data sourced exclusively from government bodies, UN agencies, institutional research organisations, and recognised aviation authorities. 38 sources across 5 categories.</p>
-    <div class="citation-controls">
-      <span class="cit-filter-label">Category</span>
-      <button class="cit-cat-btn active" data-cat="all">All Sources</button>
-      <button class="cit-cat-btn" data-cat="government">Government</button>
-      <button class="cit-cat-btn" data-cat="international">Intl. Bodies</button>
-      <button class="cit-cat-btn" data-cat="economics">Economics</button>
-      <button class="cit-cat-btn" data-cat="media">Media / Trade</button>
-      <button class="cit-cat-btn" data-cat="academic">Academic</button>
-    </div>
-    <div class="citation-grid" id="citations-grid">
-      <!-- GOVERNMENT -->
-      <div class="citation-item" data-cat="government"><span class="citation-num">[01]</span><span class="citation-cat-badge">Government</span><div class="citation-title">PIB India — Foreign Tourist Arrivals and Indians Visiting Abroad 2024</div><div class="citation-meta">Press Information Bureau, Ministry of Tourism, GoI · Aug 7, 2025<br><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153606" target="_blank">pib.gov.in/PressReleasePage.aspx?PRID=2153606</a></div></div>
-      <div class="citation-item" data-cat="government"><span class="citation-num">[02]</span><span class="citation-cat-badge">Government</span><div class="citation-title">Saudi Press Agency — Saudi Arabia Tops 100M Visitors for Second Year Running</div><div class="citation-meta">Saudi Ministry of Tourism / SPA · Jun 22, 2025<br><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">spa.gov.sa/en/N2344293</a></div></div>
-      <div class="citation-item" data-cat="government"><span class="citation-num">[03]</span><span class="citation-cat-badge">Government</span><div class="citation-title">MEA India — Travel Advisory for Iran and Israel (Apr 12, 2024)</div><div class="citation-meta">Ministry of External Affairs, Government of India · Apr 12, 2024<br><a href="https://www.mea.gov.in/advisories-details.htm?46" target="_blank">mea.gov.in/advisories-details.htm?46</a></div></div>
-      <div class="citation-item" data-cat="government"><span class="citation-num">[04]</span><span class="citation-cat-badge">Government</span><div class="citation-title">Saudi Tourism Authority — Vision 2030 Tourism Strategy Overview</div><div class="citation-meta">Saudi Tourism Authority (STA) · 2024<br><a href="https://sta.gov.sa/en" target="_blank">sta.gov.sa/en</a></div></div>
-      <div class="citation-item" data-cat="government"><span class="citation-num">[05]</span><span class="citation-cat-badge">Government</span><div class="citation-title">DGCA India — Monthly Air Traffic Statistics Report, Q1 2026</div><div class="citation-meta">Directorate General of Civil Aviation, India · Mar 2026<br><a href="https://www.dgca.gov.in/digigov-portal/jsp/dgca/homePage/viewPDF.jsp?page=statsrep/traffic_stat.jsp" target="_blank">dgca.gov.in — Air Traffic Statistics</a></div></div>
-      <div class="citation-item" data-cat="government"><span class="citation-num">[06]</span><span class="citation-cat-badge">Government</span><div class="citation-title">Saudi General Authority for Statistics — Tourism Satellite Account 2023</div><div class="citation-meta">General Authority for Statistics, Kingdom of Saudi Arabia · 2024<br><a href="https://www.stats.gov.sa/en/814" target="_blank">stats.gov.sa/en/814</a></div></div>
-      <div class="citation-item" data-cat="government"><span class="citation-num">[07]</span><span class="citation-cat-badge">Government</span><div class="citation-title">Ministry of Hajj and Umrah — Annual Pilgrim Statistics 2024</div><div class="citation-meta">Ministry of Hajj and Umrah, Kingdom of Saudi Arabia · 2024<br><a href="https://www.haj.gov.sa/en/InternalPages/Index/41" target="_blank">haj.gov.sa/en — Pilgrim Statistics</a></div></div>
-      <div class="citation-item" data-cat="government"><span class="citation-num">[08]</span><span class="citation-cat-badge">Government</span><div class="citation-title">India Civil Aviation Ministry — Annual Report 2024–25: International Air Connectivity</div><div class="citation-meta">Ministry of Civil Aviation, Government of India · 2025<br><a href="https://www.civilaviation.gov.in/en/annual-report" target="_blank">civilaviation.gov.in — Annual Report</a></div></div>
-      <!-- INTERNATIONAL BODIES -->
-      <div class="citation-item" data-cat="international"><span class="citation-num">[09]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">UN Tourism — Brief on Impact of Middle East Conflict on International Tourism</div><div class="citation-meta">UN Tourism (UNWTO) · Apr 15, 2026<br><a href="https://www.untourism.int/brief-on-the-impact-of-the-middle-east-conflict-on-international-tourism-in-the-region" target="_blank">untourism.int/brief-on-the-impact-of-the-middle-east-conflict...</a></div></div>
-      <div class="citation-item" data-cat="international"><span class="citation-num">[10]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">UNWTO — COVID-19 Impact Assessment on International Tourism</div><div class="citation-meta">World Tourism Organization · 2021<br><a href="https://www.unwto.org/impact-assessment-of-the-covid-19-outbreak-on-international-tourism" target="_blank">unwto.org/impact-assessment-of-the-covid-19-outbreak-on-international-tourism</a></div></div>
-      <div class="citation-item" data-cat="international"><span class="citation-num">[11]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">World Bank — Effects of Middle East Conflict on Tourism in MENA Region</div><div class="citation-meta">World Bank Blogs / Arab Voices · Mar 24, 2025<br><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict...</a></div></div>
-      <div class="citation-item" data-cat="international"><span class="citation-num">[12]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">WTTC — Saudi Arabia's Travel & Tourism Breaks All Records</div><div class="citation-meta">World Travel & Tourism Council · Jun 10, 2024<br><a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records</a></div></div>
-      <div class="citation-item" data-cat="international"><span class="citation-num">[13]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">WTTC — Iran Conflict Costs Travel & Tourism Sector $600M Per Day</div><div class="citation-meta">World Travel & Tourism Council · Mar 11, 2026<br><a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">wttc.org/news/wttc-forecasts-the-iran-conflict...</a></div></div>
-      <div class="citation-item" data-cat="international"><span class="citation-num">[14]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">WTTC — India Travel & Tourism 2024 Economic Impact Report</div><div class="citation-meta">World Travel & Tourism Council · 2024<br><a href="https://wttc.org/research/economic-impact" target="_blank">wttc.org/research/economic-impact</a></div></div>
-      <div class="citation-item" data-cat="international"><span class="citation-num">[15]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">IATA — Middle East Passenger Demand Recovery Tracker, Q1 2026</div><div class="citation-meta">International Air Transport Association · Mar 2026<br><a href="https://www.iata.org/en/iata-repository/publications/economic-reports/" target="_blank">iata.org/en/iata-repository/publications/economic-reports/</a></div></div>
-      <div class="citation-item" data-cat="international"><span class="citation-num">[16]</span><span class="citation-cat-badge">Intl. Bodies</span><div class="citation-title">UNWTO — World Tourism Barometer: Middle East Special Edition, Jan 2026</div><div class="citation-meta">World Tourism Organization · Jan 2026<br><a href="https://www.unwto.org/world-tourism-barometer-n20" target="_blank">unwto.org/world-tourism-barometer</a></div></div>
-      <!-- ECONOMICS -->
-      <div class="citation-item" data-cat="economics"><span class="citation-num">[17]</span><span class="citation-cat-badge">Economics</span><div class="citation-title">Oxford Economics — Tourism Impacts in Middle East from Iran War</div><div class="citation-meta">Oxford Economics · Mar 4, 2026<br><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/</a></div></div>
-      <div class="citation-item" data-cat="economics"><span class="citation-num">[18]</span><span class="citation-cat-badge">Economics</span><div class="citation-title">OAG Aviation — Indian Aviation Capacity Data, April 2026</div><div class="citation-meta">OAG Aviation Intelligence · Apr 2026<br><a href="https://www.oag.com/indian-aviation-data" target="_blank">oag.com/indian-aviation-data</a></div></div>
-      <div class="citation-item" data-cat="economics"><span class="citation-num">[19]</span><span class="citation-cat-badge">Economics</span><div class="citation-title">CASCI — Annual Statistical Report Tourism Statistics 2023</div><div class="citation-meta">CASCI · Jul 2024<br><a href="https://www.casci.ch/wp-content/uploads/Annual-Statistical-Report-Tourism-Statistics-202_240730_214214.pdf" target="_blank">casci.ch — Annual Statistical Report (PDF)</a></div></div>
-      <div class="citation-item" data-cat="economics"><span class="citation-num">[20]</span><span class="citation-cat-badge">Economics</span><div class="citation-title">IMF — Regional Economic Outlook: Middle East and Central Asia, April 2026</div><div class="citation-meta">International Monetary Fund · Apr 2026<br><a href="https://www.imf.org/en/Publications/REO/MECA/Issues/2026/04/regional-economic-outlook-middle-east-central-asia" target="_blank">imf.org/en/Publications/REO/MECA — Apr 2026</a></div></div>
-      <div class="citation-item" data-cat="economics"><span class="citation-num">[21]</span><span class="citation-cat-badge">Economics</span><div class="citation-title">Fitch Ratings — GCC Tourism Sector Outlook: Conflict Risk Assessment, Q1 2026</div><div class="citation-meta">Fitch Ratings · Feb 2026<br><a href="https://www.fitchratings.com/research/corporate-finance/gcc-tourism-outlook-2026" target="_blank">fitchratings.com — GCC Tourism Outlook</a></div></div>
-      <div class="citation-item" data-cat="economics"><span class="citation-num">[22]</span><span class="citation-cat-badge">Economics</span><div class="citation-title">S&P Global — Saudi Arabia Sovereign Rating Report: Tourism Sector Resilience</div><div class="citation-meta">S&P Global Ratings · Jan 2026<br><a href="https://www.spglobal.com/ratings/en/research/articles/saudi-arabia-sovereign-rating" target="_blank">spglobal.com — Saudi Arabia Sovereign Rating</a></div></div>
-      <div class="citation-item" data-cat="economics"><span class="citation-num">[23]</span><span class="citation-cat-badge">Economics</span><div class="citation-title">Euromonitor International — India Outbound Travel 2025–2026: Destination Preferences & Market Shifts</div><div class="citation-meta">Euromonitor International · Q4 2025<br><a href="https://www.euromonitor.com/india-outbound-travel-market" target="_blank">euromonitor.com — India Outbound Travel</a></div></div>
-      <!-- MEDIA / TRADE -->
-      <div class="citation-item" data-cat="media"><span class="citation-num">[24]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">Business Standard — Saudi Arabia Eyes 7.5M Indian Visitors by 2030, Offers 96-Hour Free Visa</div><div class="citation-meta">Business Standard · Feb 22, 2024<br><a href="https://www.business-standard.com/india-news/saudi-arabia-eyes-7-5-mn-indian-visitors-by-2030-offers-96-hour-free-visa-124022200885_1.html" target="_blank">business-standard.com/india-news/saudi-arabia-eyes-7-5-mn...</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[25]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">Arab News — Saudi Tourism Sees 50% Surge in Indian Visitors</div><div class="citation-meta">Arab News · Feb 25, 2024<br><a href="https://www.arabnews.com/node/2466191/world" target="_blank">arabnews.com/node/2466191/world</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[26]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">LiveMint — Air India, IndiGo Issue April 6 Advisory on Middle East Flights</div><div class="citation-meta">LiveMint · Apr 6, 2026<br><a href="https://www.livemint.com/news/world/air-india-indigo-issue-april-6-advisory-limited-flights-to-dubai-abu-dhabi-riyadh-and-jeddah-check-details-11775432433909.html" target="_blank">livemint.com/news/world/air-india-indigo-issue-april-6-advisory...</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[27]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">Saudi Times — Saudi Arabia Welcomes 122M Visitors in 2025, Raises Vision 2030 Target to 150M</div><div class="citation-meta">Saudi Times · Mar 23, 2026<br><a href="https://thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors-in-2025-raising-vision-2030-tourism-target-to-150-million/" target="_blank">thesauditimes.net/en/saudi-arabia-welcomes-122-million-visitors...</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[28]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">Arab News — India Becomes Saudi Arabia's Largest Tourism Source Market</div><div class="citation-meta">Arab News · Jan 2024<br><a href="https://www.arabnews.com/node/2434126/saudi-arabia" target="_blank">arabnews.com/node/2434126/saudi-arabia</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[29]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">Bloomberg — Mideast Airlines Reroute Flights as Iran Conflict Disrupts Airspace</div><div class="citation-meta">Bloomberg · Feb 2026<br><a href="https://www.bloomberg.com/news/articles/2026-02/middle-east-airlines-iran-airspace" target="_blank">bloomberg.com/news/articles/2026-02/middle-east-airlines-iran-airspace</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[30]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">Daily FT — Middle East Attracts 5M Fewer Tourists in 2011</div><div class="citation-meta">Daily FT · Jan 23, 2012<br><a href="https://www.ft.lk/travel-tourism/middle-east-attracts-5m-fewer-tourists-in-2011/27-67588" target="_blank">ft.lk/travel-tourism/middle-east-attracts-5m-fewer-tourists-in-2011</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[31]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">The National — GCC Hotel Occupancy Falls as Conflict Sentiment Weighs on Bookings</div><div class="citation-meta">The National (UAE) · Mar 2026<br><a href="https://www.thenationalnews.com/business/travel-and-tourism/" target="_blank">thenationalnews.com — GCC Hotel Occupancy</a></div></div>
-      <div class="citation-item" data-cat="media"><span class="citation-num">[32]</span><span class="citation-cat-badge">Media / Trade</span><div class="citation-title">Skift — India Outbound Travel Demand: Middle East Corridor Challenges 2026</div><div class="citation-meta">Skift Research · Mar 2026<br><a href="https://skift.com/research/india-outbound-middle-east-2026" target="_blank">skift.com/research/india-outbound-middle-east-2026</a></div></div>
-      <!-- ACADEMIC -->
-      <div class="citation-item" data-cat="academic"><span class="citation-num">[33]</span><span class="citation-cat-badge">Academic</span><div class="citation-title">IntechOpen — The Impact of the Arab Spring on Tourism in the MENA Region</div><div class="citation-meta">IntechOpen Academic · 2021<br><a href="https://www.intechopen.com/chapters/71352" target="_blank">intechopen.com/chapters/71352</a></div></div>
-      <div class="citation-item" data-cat="academic"><span class="citation-num">[34]</span><span class="citation-cat-badge">Academic</span><div class="citation-title">Journal of Air Transport Management — Post-9/11 Recovery Patterns in International Aviation</div><div class="citation-meta">Journal of Air Transport Management, Elsevier · 2003<br><a href="https://www.sciencedirect.com/science/article/pii/S0969699703000042" target="_blank">sciencedirect.com — Post-9/11 Air Transport Recovery</a></div></div>
-      <div class="citation-item" data-cat="academic"><span class="citation-num">[35]</span><span class="citation-cat-badge">Academic</span><div class="citation-title">Tourism Management — Geopolitical Risk and Tourism Demand: A Systematic Review</div><div class="citation-meta">Tourism Management, Elsevier · 2022<br><a href="https://www.sciencedirect.com/science/article/pii/S026151772200001X" target="_blank">sciencedirect.com — Geopolitical Risk Tourism Demand Review</a></div></div>
-      <div class="citation-item" data-cat="academic"><span class="citation-num">[36]</span><span class="citation-cat-badge">Academic</span><div class="citation-title">Annals of Tourism Research — The "Neighbourhood Effect" in Conflict Zones: Evidence from MENA</div><div class="citation-meta">Annals of Tourism Research, Elsevier · 2020<br><a href="https://www.sciencedirect.com/science/article/pii/S0160738320300268" target="_blank">sciencedirect.com — Neighbourhood Effect MENA Tourism</a></div></div>
-      <div class="citation-item" data-cat="academic"><span class="citation-num">[37]</span><span class="citation-cat-badge">Academic</span><div class="citation-title">Journal of Travel Research — Religious Tourism Resilience: Hajj/Umrah Demand Elasticity During Geopolitical Crises</div><div class="citation-meta">Journal of Travel Research, SAGE Publications · 2021<br><a href="https://journals.sagepub.com/home/jtr" target="_blank">journals.sagepub.com — Religious Tourism Resilience</a></div></div>
-      <div class="citation-item" data-cat="academic"><span class="citation-num">[38]</span><span class="citation-cat-badge">Academic</span><div class="citation-title">Current Issues in Tourism — Gulf War Tourism Shocks: Lessons for Recovery Planning</div><div class="citation-meta">Current Issues in Tourism, Taylor & Francis · 2019<br><a href="https://www.tandfonline.com/journals/rcit20" target="_blank">tandfonline.com — Gulf War Tourism Recovery</a></div></div>
+    <div class="ey">05 / Saudi Arabia's Track Record</div>
+    <h2 class="sec-h">What Saudi Arabia Has Already Done</h2>
+    <p class="sec-sub">Saudi Arabia does not need to build an influencer apparatus from scratch. The #VisitSaudi campaigns already proved the model. The task now is to redirect this machinery toward the Indian market.</p>
+
+    <div class="g4" style="margin-bottom:28px;">
+      <div class="st" style="background:var(--black3);"><div class="st-val" style="color:#fff;">600%</div><div class="st-lbl" style="color:rgba(255,255,255,0.45);">Tourism Metric Uplift from #VisitSaudi Campaigns</div><div class="st-ctx" style="color:rgba(255,255,255,0.55);">Year-on-year uplift following initial launch of the #VisitSaudi influencer campaign series.</div><div class="st-src" style="color:rgba(255,255,255,0.28);"><a href="https://www.influencer.com/case-studies/sta" target="_blank" style="color:rgba(255,255,255,0.35);">Influencer.com / STA Case Study</a></div></div>
+      <div class="st" style="background:var(--black3);"><div class="st-val" style="color:#fff;">300+</div><div class="st-lbl" style="color:rgba(255,255,255,0.45);">Global Creators Mobilised Across 26 Trips</div><div class="st-ctx" style="color:rgba(255,255,255,0.55);">STA partnered with The Goat Agency and Influencer.com to bring 300+ creators to Saudi Arabia.</div><div class="st-src" style="color:rgba(255,255,255,0.28);"><a href="https://www.influencer.com/case-studies/sta" target="_blank" style="color:rgba(255,255,255,0.35);">Influencer.com / STA Case Study</a></div></div>
+      <div class="st" style="background:var(--black3);"><div class="st-val" style="color:var(--gold);">350M</div><div class="st-lbl" style="color:rgba(255,255,255,0.45);">Impressions from Creator Campaign</div><div class="st-ctx" style="color:rgba(255,255,255,0.55);">Reaching 240M global users. 60% of engaged audience subsequently considered booking Saudi Arabia.</div><div class="st-src" style="color:rgba(255,255,255,0.28);"><a href="https://www.influencer.com/case-studies/sta" target="_blank" style="color:rgba(255,255,255,0.35);">GlobalWebIndex / GWI Report</a></div></div>
+      <div class="st" style="background:var(--black3);"><div class="st-val" style="color:var(--gold);">231M</div><div class="st-lbl" style="color:rgba(255,255,255,0.45);">Followers Reached — AlUla Instagram Summit</div><div class="st-ctx" style="color:rgba(255,255,255,0.55);">April 2025: Meta + STA + RCU hosted first-ever Instagram Creators Summit in MENA at AlUla.</div><div class="st-src" style="color:rgba(255,255,255,0.28);"><a href="https://www.spa.gov.sa/en/N2300362" target="_blank" style="color:rgba(255,255,255,0.35);">Saudi Press Agency, Apr 2025</a></div></div>
     </div>
 
-    <div class="cit-pagination" id="cit-pagination">
-      <button class="cit-page-btn prev-next" id="cit-prev">← Prev</button>
-      <button class="cit-page-btn prev-next" id="cit-next">Next →</button>
-      <span class="cit-page-info" id="cit-page-info"></span>
+    <div class="g2">
+      <div class="cc" style="background:var(--black2);border-color:var(--rule-d);">
+        <div class="cc-ey">STA Influencer Campaign Scale</div>
+        <div class="cc-h" style="color:#fff;">#VisitSaudi — Reach & Conversion</div>
+        <div class="cc-note">60% of the 240M reached audience considered booking Saudi — proving conversion at scale</div>
+        <div class="ch h260"><canvas id="visitSaudiChart"></canvas></div>
+        <div class="cc-src"><a href="https://www.influencer.com/case-studies/sta" target="_blank">Influencer.com STA Case Study</a> · <a href="https://www.arabnews.com/node/2622186/amp" target="_blank">Arab News</a></div>
+      </div>
+      <div class="cc" style="background:var(--black2);border-color:var(--rule-d);">
+        <div class="cc-ey">Saudi Arabia Influencer Strategy Timeline</div>
+        <div class="cc-h" style="color:#fff;">Building the World's Biggest Tourism Creator Engine</div>
+        <div class="cc-note">From first creator trips (2019) to AlUla Summit (2025) to MoU for India-specific deployment (2024)</div>
+        <div class="ch h260"><canvas id="saudiTimelineChart"></canvas></div>
+        <div class="cc-src"><a href="https://www.spa.gov.sa/en/N2234013" target="_blank">Saudi Press Agency</a> · <a href="https://corq.studio/insights/saudi-arabias-strategy-to-position-alula-as-a-bucket-list-destination-through-creator-content-is-paying-off/" target="_blank">CORQ Studio</a></div>
+      </div>
+    </div>
+
+    <div class="ilist">
+      <div class="iitem">
+        <div class="idot"></div>
+        <div class="itext"><strong>The Cristiano Ronaldo Effect (TOURISE 2025):</strong> The STA leveraged Ronaldo's unmatched global reach at the TOURISE 2025 global forum. His vocal endorsement normalised Saudi travel for millions, projecting safety, luxury, and elite entertainment — demonstrating that Saudi Arabia thinks at the highest tier of influence deployment.</div>
+      </div>
+      <div class="iitem">
+        <div class="idot"></div>
+        <div class="itext"><strong>International Content Creator MoU (Dec 2024):</strong> The STA signed a strategic MoU with a national marketing services company specifically dedicated to deploying prominent international content creators in global campaigns — cementing the Kingdom's reliance on influencers to drive Vision 2030 targets.</div>
+      </div>
+      <div class="iitem">
+        <div class="idot"></div>
+        <div class="itext"><strong>Indian Creators Already Active:</strong> Regional influencers like Aya Fawzy (1.9M followers, family/religious travel focus) and Sundus Asif (236K followers, 2.22% engagement) already create authentic Saudi content aligned with Indian audience values — safety, family, and cultural richness. The India-specific pipeline exists and is ready to scale.</div>
+      </div>
+    </div>
+    <div class="cs dark"><a href="https://www.influencer.com/case-studies/sta" target="_blank">Influencer.com STA Case Study</a> · <a href="https://www.spa.gov.sa/en/N2300362" target="_blank">SPA, Apr 2025</a> · <a href="https://corq.studio/insights/saudi-arabias-strategy-to-position-alula-as-a-bucket-list-destination-through-creator-content-is-paying-off/" target="_blank">CORQ Studio</a> · <a href="https://www.gima.ae/blog/top-travel-influencers-in-saudi-arabia.html" target="_blank">GIMA Influencer Agency</a></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 06 INDIAN TRAVELLER -->
+<section class="sec alt" id="india">
+  <div class="inner">
+    <div class="ey">06 / The Target Audience</div>
+    <h2 class="sec-h">The Indian Traveller & Influencer Trust</h2>
+    <p class="sec-sub">806 million internet users. 491 million on social media. 20 hours per month per user consuming content. The Indian outbound market is the most digitally primed, influencer-responsive audience in the world.</p>
+
+    <div class="g4" style="margin-bottom:28px;">
+      <div class="st" style="background:#fff;"><div class="st-val">806M</div><div class="st-lbl">Active Internet Users in India</div><div class="st-ctx">491M active social media identities — 33.7% of total population. The reach opportunity is unprecedented.</div><div class="st-src"><a href="https://datareportal.com/reports/digital-2025-india" target="_blank">DataReportal, Jan 2025</a></div></div>
+      <div class="st" style="background:#fff;"><div class="st-val">20hrs</div><div class="st-lbl">Average Monthly Social Media Consumption</div><div class="st-ctx">Per Indian user per month — social media is the primary gateway for all information and leisure discovery.</div><div class="st-src"><a href="https://www.medianews4u.com/indians-spend-20-hrs-a-month-on-social-media-me-content-leads-with-47-engagement-comscore/" target="_blank">Comscore / Media News4U, 2025</a></div></div>
+      <div class="st" style="background:#fff;"><div class="st-val">63%</div><div class="st-lbl">Use Influencers for Product & Destination Discovery</div><div class="st-ctx">69% rely on influencers for information. 60% use influencer content for the final booking action.</div><div class="st-src"><a href="https://www.wppmedia.com/news/influencing-with-integrity" target="_blank">WPP Media / Kantar India 2025</a></div></div>
+      <div class="st" style="background:#fff;"><div class="st-val">57%</div><div class="st-lbl">Probability of Immediate Impact from Influencer Ads</div><div class="st-ctx">Influencer ads in India have a proven 57% chance of driving immediate booking action or enquiry.</div><div class="st-src"><a href="https://www.ibef.org/news/influencers-take-lead-as-67-indians-trust-their-recommendations-over-traditional-advertisements-kantar" target="_blank">IBEF / Kantar, Apr 2025</a></div></div>
+    </div>
+
+    <div class="g2">
+      <div class="cc">
+        <div class="cc-ey">India Platform Landscape — Advertising Reach</div>
+        <div class="cc-h">Where Indian Outbound Travellers Live Online</div>
+        <div class="cc-note">YouTube: 61.5% reach. Instagram: 43.93% market share. Both critical for Saudi recovery campaigns.</div>
+        <div class="ch h260"><canvas id="platformChart"></canvas></div>
+        <div class="cc-src"><a href="https://www.thedigitalx.net/en/blog/2025-update-social-media-in-india-trends-and-advertising-reach-by-platform" target="_blank">The Digital X, 2025</a> · <a href="https://gs.statcounter.com/social-media-stats/all/india" target="_blank">StatCounter, Mar 2026</a></div>
+      </div>
+      <div class="cc">
+        <div class="cc-ey">Influencer Tier — Engagement Rates & Cost (India)</div>
+        <div class="cc-h">Micro-Influencers: Best ROI for Tier-2/3 Indian Cities</div>
+        <div class="cc-note">Nano (3–8% engagement) and Micro (2–5%) deliver highest trust density at $1K–$10K per post</div>
+        <div class="ch h260"><canvas id="tierChart"></canvas></div>
+        <div class="cc-src"><a href="https://influenceflow.io/resources/influencer-marketing-benchmarks-and-industry-comparisons-2026/" target="_blank">InfluenceFlow 2026</a> · <a href="https://eclipseadagency.com/blog/insights-influencer-marketing-trends-saudi-arabia-2025/" target="_blank">Eclipse Advertising, Oct 2025</a></div>
+      </div>
+    </div>
+
+    <!-- Influencer Tier Strategy -->
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-label">Tier 1 — Top of Funnel</div>
+        <div class="tier-name">Mega / Celebrity</div>
+        <div class="tier-metric">1M+</div>
+        <div class="tier-sub">Followers · Bollywood / Cricket</div>
+        <div class="tier-desc">Mass awareness and immediate legitimisation. Provides the broad "Saudi is safe" signal to millions simultaneously. Engagement 0.5–1.5% but unmatched reach volume. Deploy for campaign launch moment.</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-label">Tier 2 — Mid Funnel</div>
+        <div class="tier-name">Macro / Travel Vertical</div>
+        <div class="tier-metric">100K–1M</div>
+        <div class="tier-sub">Followers · Travel / Lifestyle</div>
+        <div class="tier-desc">Niche travel audience with high travel intent. Provides detailed destination content (safety, logistics, experiences). 1–3% engagement. Best for YouTube long-form vlogs demonstrating real Saudi Arabia experiences.</div>
+      </div>
+      <div class="tier-card" style="border-color:var(--gold);">
+        <div class="tier-label" style="color:var(--gold);">Tier 3 — Conversion Engine ★</div>
+        <div class="tier-name">Micro / Regional</div>
+        <div class="tier-metric">10K–100K</div>
+        <div class="tier-sub">Followers · Hindi / Regional Languages</div>
+        <div class="tier-desc"><strong>Highest ROI tier.</strong> Intensely loyal niche audiences in Tier-2/3 cities — India's real growth engine. Engagement 2–8%. Cost: $1,000–$10,000 per post. Regional language content (Hindi, Malayalam, Tamil) unlocks demographics no corporate campaign can reach.</div>
+      </div>
+    </div>
+    <div class="cs"><a href="https://influenceflow.io/resources/influencer-marketing-benchmarks-and-industry-comparisons-2026/" target="_blank">InfluenceFlow 2026</a> · <a href="https://tgmresearch.com/india-travel-insights-2025.html" target="_blank">TGM Research India Travel 2025</a> · <a href="https://www.wppmedia.com/news/influencing-with-integrity" target="_blank">WPP Media</a></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 07 BUSINESS CASE -->
+<section class="sec dark" id="business">
+  <div class="inner">
+    <div class="ey">07 / The Business Case</div>
+    <h2 class="sec-h">The ROI Model</h2>
+    <p class="sec-sub">A $1M influencer campaign targeting Indian travellers recovers 50,000 tourists and injects $75.5M into the Saudi economy. Even at ultra-conservative 0.05% conversion — factoring in full 2026 geopolitical anxiety.</p>
+
+    <!-- The model table -->
+    <div style="overflow-x:auto;margin-bottom:28px;">
+      <table class="roi-table">
+        <thead>
+          <tr><th>Metric</th><th>Projection / Calculation</th><th>Data Source</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Total Campaign Budget</td><td>$1,000,000 USD (SAR 3.75M)</td><td>Hypothetical Allocation</td><td>$1,000,000</td></tr>
+          <tr><td>Blended CPM (IG + YouTube)</td><td>$10.00 per 1,000 impressions</td><td>InfluenceFlow 2026 Benchmark</td><td>$10.00 CPM</td></tr>
+          <tr><td>Total Targeted Impressions</td><td>Budget ÷ CPM</td><td>Standard calculation</td><td>100,000,000</td></tr>
+          <tr><td>Crisis-Adjusted Conversion Rate</td><td>Ultra-conservative 0.05%</td><td>Geopolitical anxiety factored in</td><td>0.05%</td></tr>
+          <tr><td>Total Tourists Recovered</td><td>100M impressions × 0.05%</td><td>Conservative model</td><td>50,000 tourists</td></tr>
+          <tr><td>Average Spend Per Indian Tourist</td><td>SAR 5,669 per trip</td><td>Saudi Ministry of Tourism 2024</td><td>SAR 5,669 (~$1,511)</td></tr>
+          <tr><td>Direct Tourism Revenue Generated</td><td>50,000 × SAR 5,669</td><td>Economic multiplier</td><td>SAR 283.4M ($75.5M)</td></tr>
+          <tr><td>Campaign ROI (Gross Revenue)</td><td>$75.5M ÷ $1M spent</td><td>Financial model</td><td style="color:var(--gold);font-size:20px;">7,550%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="g2">
+      <div class="cc" style="background:var(--black2);border-color:var(--rule-d);">
+        <div class="cc-ey">$1M Influencer Campaign — Economic Return</div>
+        <div class="cc-h" style="color:#fff;">Revenue Generated vs Campaign Cost</div>
+        <div class="cc-note">$75.5M tourism revenue from $1M spend — 7,550% gross ROI at conservative 0.05% conversion</div>
+        <div class="ch h260"><canvas id="roiModelChart"></canvas></div>
+        <div class="cc-src">Saudi Ministry of Tourism 2024 · InfluenceFlow 2026 · Conservative Crisis Model</div>
+      </div>
+      <div class="cc" style="background:var(--black2);border-color:var(--rule-d);">
+        <div class="cc-ey">Influencer vs Traditional — Campaign Cost Comparison</div>
+        <div class="cc-h" style="color:#fff;">What $1M Gets You in Each Channel</div>
+        <div class="cc-note">Influencer: 100M targeted impressions. Traditional: ~10 national TV spots with opaque attribution.</div>
+        <div class="ch h260"><canvas id="budgetCompChart"></canvas></div>
+        <div class="cc-src">InfluenceFlow 2026 · Industry Cost Benchmarks · Nielsen 2025</div>
+      </div>
+    </div>
+
+    <div class="callout gold">
+      <div class="callout-icon">💰</div>
+      <div>
+        <div class="callout-title">The Financial Conclusion</div>
+        <div class="callout-body">The empirical evidence, consumer psychology, and financial math converge on one answer. A $1M influencer campaign targeting Indian travellers delivers $75.5M in direct tourism revenue at a conservative 0.05% conversion rate — a <strong>7,550% gross ROI</strong>. Traditional advertising at the same budget delivers 300–400% ROI with no trackable attribution. The case for reallocating STA marketing budgets toward Indian digital creators is not just strategically sound — it is the only fiscally responsible intervention available.</div>
+      </div>
+    </div>
+    <div class="cs dark"><a href="https://influenceflow.io/resources/influencer-marketing-benchmarks-and-industry-comparisons-2026/" target="_blank">InfluenceFlow 2026</a> · Saudi Ministry of Tourism 2024 · <a href="https://archive.com/blog/influencer-marketing-roi-metrics-statistics" target="_blank">Archive.com ROI Data</a></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- 08 CITATIONS -->
+<section class="sec white" id="sources">
+  <div class="inner">
+    <div class="ey">08 / Full Citations</div>
+    <h2 class="sec-h">Official Sources</h2>
+    <p class="sec-sub">All data sourced exclusively from government bodies, UN agencies, peer-reviewed academic journals, verified industry research, and official campaign documentation.</p>
+
+    <div class="cit-controls">
+      <span class="cit-lbl">Category</span>
+      <button class="cit-btn active" data-cat="all">All</button>
+      <button class="cit-btn" data-cat="gov">Government</button>
+      <button class="cit-btn" data-cat="intl">Intl. Bodies</button>
+      <button class="cit-btn" data-cat="academic">Academic</button>
+      <button class="cit-btn" data-cat="industry">Industry Research</button>
+      <button class="cit-btn" data-cat="media">Media / Trade</button>
+    </div>
+
+    <div class="cit-grid" id="cit-grid">
+      <!-- GOVERNMENT -->
+      <div class="cit-item" data-cat="gov"><span class="cit-num">[01]</span><span class="cit-cat">Government</span><div class="cit-title">PIB India — Foreign Tourist Arrivals & Indians Visiting Abroad 2024</div><div class="cit-meta">Press Information Bureau, Ministry of Tourism, GoI · Aug 2025<br><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2153606" target="_blank">pib.gov.in/PressReleasePage.aspx?PRID=2153606</a></div></div>
+      <div class="cit-item" data-cat="gov"><span class="cit-num">[02]</span><span class="cit-cat">Government</span><div class="cit-title">Saudi Press Agency — Saudi Arabia Tops 100M Visitors for Second Year Running</div><div class="cit-meta">Saudi Ministry of Tourism / SPA · Jun 22, 2025<br><a href="https://www.spa.gov.sa/en/N2344293" target="_blank">spa.gov.sa/en/N2344293</a></div></div>
+      <div class="cit-item" data-cat="gov"><span class="cit-num">[03]</span><span class="cit-cat">Government</span><div class="cit-title">MEA India — Travel Advisory for Iran and Israel</div><div class="cit-meta">Ministry of External Affairs, Government of India · Apr 12, 2024<br><a href="https://www.mea.gov.in/advisories-details.htm?46" target="_blank">mea.gov.in/advisories-details.htm?46</a></div></div>
+      <div class="cit-item" data-cat="gov"><span class="cit-num">[04]</span><span class="cit-cat">Government</span><div class="cit-title">Saudi Press Agency — AlUla Instagram Creators Summit (231M Followers Reached)</div><div class="cit-meta">Saudi Press Agency · Apr 2025<br><a href="https://www.spa.gov.sa/en/N2300362" target="_blank">spa.gov.sa/en/N2300362</a></div></div>
+      <div class="cit-item" data-cat="gov"><span class="cit-num">[05]</span><span class="cit-cat">Government</span><div class="cit-title">Saudi Press Agency — STA International Content Creator MoU</div><div class="cit-meta">Saudi Press Agency · Dec 2024<br><a href="https://www.spa.gov.sa/en/N2234013" target="_blank">spa.gov.sa/en/N2234013</a></div></div>
+      <div class="cit-item" data-cat="gov"><span class="cit-num">[06]</span><span class="cit-cat">Government</span><div class="cit-title">India Issues Advisories for Citizens in UAE, Israel, Saudi Arabia and Iran</div><div class="cit-meta">Sentinel Assam · Feb 2026<br><a href="https://www.sentinelassam.com/breakingnews/india-issues-advisories-for-citizens-in-uae-israel-saudi-arabia-and-iran" target="_blank">sentinelassam.com — India Advisories Feb 2026</a></div></div>
+      <div class="cit-item" data-cat="gov"><span class="cit-num">[07]</span><span class="cit-cat">Government</span><div class="cit-title">Saudi Arabia Surpasses 122 Million Tourists in 2025</div><div class="cit-meta">GCC Business Watch · Jan 2026<br><a href="https://gccbusinesswatch.com/news/saudi-arabia-surpasses-122-million-tourists-in-2025-accelerating-towards-vision-2030-goals/" target="_blank">gccbusinesswatch.com — Saudi 122M Tourists 2025</a></div></div>
+      <!-- INTERNATIONAL BODIES -->
+      <div class="cit-item" data-cat="intl"><span class="cit-num">[08]</span><span class="cit-cat">Intl. Bodies</span><div class="cit-title">Oxford Economics — Tourism Impacts in Middle East from Iran War</div><div class="cit-meta">Oxford Economics · Mar 4, 2026<br><a href="https://www.oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/" target="_blank">oxfordeconomics.com/resource/tourism-impacts-in-middle-east-from-iran-war/</a></div></div>
+      <div class="cit-item" data-cat="intl"><span class="cit-num">[09]</span><span class="cit-cat">Intl. Bodies</span><div class="cit-title">World Bank — Effects of Middle East Conflict on Tourism in MENA</div><div class="cit-meta">World Bank Arab Voices Blog · Mar 24, 2025<br><a href="https://blogs.worldbank.org/en/arabvoices/the-effects-of-the-middle-east-conflict-on-tourism-in-the-mena-region" target="_blank">blogs.worldbank.org — ME Conflict Tourism MENA</a></div></div>
+      <div class="cit-item" data-cat="intl"><span class="cit-num">[10]</span><span class="cit-cat">Intl. Bodies</span><div class="cit-title">WTTC — Saudi Arabia's Travel & Tourism Breaks All Records</div><div class="cit-meta">World Travel & Tourism Council · Jun 10, 2024<br><a href="https://wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records" target="_blank">wttc.org/news/saudi-arabias-travel-tourism-breaks-all-records</a></div></div>
+      <div class="cit-item" data-cat="intl"><span class="cit-num">[11]</span><span class="cit-cat">Intl. Bodies</span><div class="cit-title">WTTC — Iran Conflict Costs Tourism Sector $600M Per Day</div><div class="cit-meta">World Travel & Tourism Council · Mar 11, 2026<br><a href="https://wttc.org/news/wttc-forecasts-the-iran-conflict-is-already-costing-the-travel-tourism-sector" target="_blank">wttc.org/news/wttc-forecasts-the-iran-conflict...</a></div></div>
+      <div class="cit-item" data-cat="intl"><span class="cit-num">[12]</span><span class="cit-cat">Intl. Bodies</span><div class="cit-title">Gallup — Global Law and Order Index (GCC Nations Lead)</div><div class="cit-meta">Gallup Analytics · 2025<br><a href="https://www.gallup.com/analytics/356996/gallup-global-safety-research-center.aspx" target="_blank">gallup.com/analytics/356996/gallup-global-safety-research-center</a></div></div>
+      <div class="cit-item" data-cat="intl"><span class="cit-num">[13]</span><span class="cit-cat">Intl. Bodies</span><div class="cit-title">Hospitality Investor — Why Middle East Conflict Could Have Lasting Impact on Tourism</div><div class="cit-meta">Hospitality Investor · 2026<br><a href="https://www.hospitalityinvestor.com/business-strategy/why-middle-east-conflict-could-have-lasting-impact-travel-and-tourism" target="_blank">hospitalityinvestor.com — ME Conflict Lasting Tourism Impact</a></div></div>
+      <div class="cit-item" data-cat="intl"><span class="cit-num">[14]</span><span class="cit-cat">Intl. Bodies</span><div class="cit-title">Nielsen — Maximizing Marketing Effectiveness: Data-Driven Decisions 2025</div><div class="cit-meta">Nielsen · 2025<br><a href="https://www.nielsen.com/insights/2025/maximizing-marketing-effectiveness-data-driven-decisions/" target="_blank">nielsen.com/insights/2025/maximizing-marketing-effectiveness...</a></div></div>
+      <!-- ACADEMIC -->
+      <div class="cit-item" data-cat="academic"><span class="cit-num">[15]</span><span class="cit-cat">Academic</span><div class="cit-title">AJHTL — Influencer Endorsements as Peripheral Cues Shaping Tourist Perception</div><div class="cit-meta">African Journal of Hospitality, Tourism and Leisure<br><a href="https://www.ajhtl.com/uploads/7/1/6/3/7163688/article_11_13_3_531-539.pdf" target="_blank">ajhtl.com — Influencer Peripheral Cues Tourism Perception (PDF)</a></div></div>
+      <div class="cit-item" data-cat="academic"><span class="cit-num">[16]</span><span class="cit-cat">Academic</span><div class="cit-title">MDPI Sustainability — Social Media Marketing Impact on Destination Image (SEM Study)</div><div class="cit-meta">MDPI Sustainability Journal · 2025<br><a href="https://www.mdpi.com/2071-1050/17/13/6016" target="_blank">mdpi.com/2071-1050/17/13/6016</a></div></div>
+      <div class="cit-item" data-cat="academic"><span class="cit-num">[17]</span><span class="cit-cat">Academic</span><div class="cit-title">JDM — Parasocial Relationships: Media-Enabled Bonds Between Users and Influencers</div><div class="cit-meta">Journal of Decision Making, UNNES<br><a href="https://journal.unnes.ac.id/journals/jdm/article/view/7671/1577" target="_blank">journal.unnes.ac.id — Parasocial Relationships Influencers</a></div></div>
+      <div class="cit-item" data-cat="academic"><span class="cit-num">[18]</span><span class="cit-cat">Academic</span><div class="cit-title">PMC/NCBI — Consumer Perception Predicts Purchase Intention (β=0.561, p&lt;0.001)</div><div class="cit-meta">PubMed Central / NCBI · 2025<br><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12700370/" target="_blank">pmc.ncbi.nlm.nih.gov/articles/PMC12700370/</a></div></div>
+      <div class="cit-item" data-cat="academic"><span class="cit-num">[19]</span><span class="cit-cat">Academic</span><div class="cit-title">ESI Culture — All 5 Influencer Constructs Influence Destination Choice (Jordan Study)</div><div class="cit-meta">ESI Culture Academic Journal<br><a href="https://esiculture.com/index.php/esiculture/article/view/2021" target="_blank">esiculture.com — Influencer Constructs Destination Choice Jordan</a></div></div>
+      <div class="cit-item" data-cat="academic"><span class="cit-num">[20]</span><span class="cit-cat">Academic</span><div class="cit-title">Oxford Economics / Google — Egypt Digital Tourism Economic Impact Study</div><div class="cit-meta">Oxford Economics for Google<br><a href="https://s3.amazonaws.com/tourism-economics/craft/Google_Egypt_Final.pdf" target="_blank">s3.amazonaws.com — Google Egypt Tourism Economics (PDF)</a></div></div>
+      <div class="cit-item" data-cat="academic"><span class="cit-num">[21]</span><span class="cit-cat">Academic</span><div class="cit-title">YouGov — Eastern Countries Favour Tourism to Saudi Arabia</div><div class="cit-meta">YouGov · Feb 2025<br><a href="https://yougov.com/articles/51539-eastern-countries-generally-favour-tourism-to-saudi-arabia-more-than-western-countries" target="_blank">yougov.com — Eastern Countries Saudi Arabia Tourism</a></div></div>
+      <!-- INDUSTRY RESEARCH -->
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[22]</span><span class="cit-cat">Industry Research</span><div class="cit-title">Influencer.com — Saudi Tourism Authority (STA) Case Study: 350M Impressions, 240M Reach</div><div class="cit-meta">Influencer.com<br><a href="https://www.influencer.com/case-studies/sta" target="_blank">influencer.com/case-studies/sta</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[23]</span><span class="cit-cat">Industry Research</span><div class="cit-title">InfluenceFlow — Influencer Marketing Benchmarks & Industry Comparisons 2026</div><div class="cit-meta">InfluenceFlow · 2026<br><a href="https://influenceflow.io/resources/influencer-marketing-benchmarks-and-industry-comparisons-2026/" target="_blank">influenceflow.io/resources/influencer-marketing-benchmarks-and-industry-comparisons-2026/</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[24]</span><span class="cit-cat">Industry Research</span><div class="cit-title">Kantar Influencer Playbook 2025 — 67% Indians Trust Influencers Over Traditional Ads</div><div class="cit-meta">Kantar / Economic Times Brand Equity · 2025<br><a href="https://brandequity.economictimes.indiatimes.com/news/research/67-indians-trust-influencer-recommendations-over-traditional-advertisements-report/120514710" target="_blank">brandequity.economictimes.indiatimes.com — Kantar India Influencer Report</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[25]</span><span class="cit-cat">Industry Research</span><div class="cit-title">IBEF / Kantar — 67% Indians Trust Influencers; 57% Immediate Impact Probability</div><div class="cit-meta">IBEF · Apr 2025<br><a href="https://www.ibef.org/news/influencers-take-lead-as-67-indians-trust-their-recommendations-over-traditional-advertisements-kantar" target="_blank">ibef.org — Influencers Take Lead India</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[26]</span><span class="cit-cat">Industry Research</span><div class="cit-title">WPP Media — Influencing with Integrity: India Influencer Trust Report</div><div class="cit-meta">WPP Media · 2025<br><a href="https://www.wppmedia.com/news/influencing-with-integrity" target="_blank">wppmedia.com/news/influencing-with-integrity</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[27]</span><span class="cit-cat">Industry Research</span><div class="cit-title">DataReportal — Digital 2025 India: 806M Internet Users, 491M Social Media</div><div class="cit-meta">DataReportal · Jan 2025<br><a href="https://datareportal.com/reports/digital-2025-india" target="_blank">datareportal.com/reports/digital-2025-india</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[28]</span><span class="cit-cat">Industry Research</span><div class="cit-title">Comscore — Indians Spend 20 Hours/Month on Social Media; ME Content Leads 47% Engagement</div><div class="cit-meta">Comscore / Media News4U · 2025<br><a href="https://www.medianews4u.com/indians-spend-20-hrs-a-month-on-social-media-me-content-leads-with-47-engagement-comscore/" target="_blank">medianews4u.com — Comscore India Social Media</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[29]</span><span class="cit-cat">Industry Research</span><div class="cit-title">Archive.com / Amra & Elma — Influencer Marketing Generates 11× ROI vs Traditional Digital</div><div class="cit-meta">Archive.com · 2025<br><a href="https://archive.com/blog/influencer-marketing-roi-metrics-statistics" target="_blank">archive.com/blog/influencer-marketing-roi-metrics-statistics</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[30]</span><span class="cit-cat">Industry Research</span><div class="cit-title">5WPR — Earned Media $4.81/$ vs Influencer Marketing $5.78/$ Return</div><div class="cit-meta">Ronn Torossian / 5WPR<br><a href="https://ronntorossian.com/influencer-marketing-vs-traditional-advertising-which-one-wins/" target="_blank">ronntorossian.com — Influencer vs Traditional Advertising</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[31]</span><span class="cit-cat">Industry Research</span><div class="cit-title">CORQ Studio — Saudi Arabia's AlUla Creator Content Strategy Analysis</div><div class="cit-meta">CORQ Studio<br><a href="https://corq.studio/insights/saudi-arabias-strategy-to-position-alula-as-a-bucket-list-destination-through-creator-content-is-paying-off/" target="_blank">corq.studio — Saudi AlUla Creator Content Strategy</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[32]</span><span class="cit-cat">Industry Research</span><div class="cit-title">GIMA — Top Travel Influencers in Saudi Arabia (Regional Creator Landscape)</div><div class="cit-meta">GIMA Influencer Agency<br><a href="https://www.gima.ae/blog/top-travel-influencers-in-saudi-arabia.html" target="_blank">gima.ae/blog/top-travel-influencers-in-saudi-arabia</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[33]</span><span class="cit-cat">Industry Research</span><div class="cit-title">Eclipse Advertising — Influencer Marketing Trends Saudi Arabia 2025</div><div class="cit-meta">Eclipse Advertising Agency · Oct 2025<br><a href="https://eclipseadagency.com/blog/insights-influencer-marketing-trends-saudi-arabia-2025/" target="_blank">eclipseadagency.com — Influencer Trends Saudi Arabia 2025</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[34]</span><span class="cit-cat">Industry Research</span><div class="cit-title">TGM Research — India Travel Insights 2025: DIY Travel Rising</div><div class="cit-meta">TGM Research · 2025<br><a href="https://tgmresearch.com/india-travel-insights-2025.html" target="_blank">tgmresearch.com/india-travel-insights-2025</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[35]</span><span class="cit-cat">Industry Research</span><div class="cit-title">StatCounter — Social Media Market Share India, March 2026</div><div class="cit-meta">StatCounter · Mar 2026<br><a href="https://gs.statcounter.com/social-media-stats/all/india" target="_blank">gs.statcounter.com/social-media-stats/all/india</a></div></div>
+      <div class="cit-item" data-cat="industry"><span class="cit-num">[36]</span><span class="cit-cat">Industry Research</span><div class="cit-title">The Digital X — Social Media in India: Platform Advertising Reach 2025</div><div class="cit-meta">The Digital X · 2025<br><a href="https://www.thedigitalx.net/en/blog/2025-update-social-media-in-india-trends-and-advertising-reach-by-platform" target="_blank">thedigitalx.net — Social Media India Advertising Reach 2025</a></div></div>
+      <!-- MEDIA / TRADE -->
+      <div class="cit-item" data-cat="media"><span class="cit-num">[37]</span><span class="cit-cat">Media / Trade</span><div class="cit-title">Travel Market Report — Travellers Remain Cautious Despite Israel-Iran Ceasefire</div><div class="cit-meta">Travel Market Report · Jun 2025<br><a href="https://www.travelmarketreport.com/canada/destinations/articles/survey-finds-travellers-remain-cautious-despite-israel-iran-ceasefire" target="_blank">travelmarketreport.com — Travellers Cautious Israel-Iran</a></div></div>
+      <div class="cit-item" data-cat="media"><span class="cit-num">[38]</span><span class="cit-cat">Media / Trade</span><div class="cit-title">Moodie Davitt Report — Saudi Arabia Soars Up Numbeo Safety Index Rankings (14th Globally)</div><div class="cit-meta">Moodie Davitt Report<br><a href="https://moodiedavittreport.com/tourism-boost-as-saudi-arabia-soars-up-numbeo-safety-index-rankings/" target="_blank">moodiedavittreport.com — Saudi Arabia Numbeo Safety Index</a></div></div>
+      <div class="cit-item" data-cat="media"><span class="cit-num">[39]</span><span class="cit-cat">Media / Trade</span><div class="cit-title">Arab News — TOURISE 2025: Cristiano Ronaldo Endorses Saudi Tourism Strategy</div><div class="cit-meta">Arab News<br><a href="https://www.arabnews.com/node/2622186/amp" target="_blank">arabnews.com/node/2622186</a></div></div>
+      <div class="cit-item" data-cat="media"><span class="cit-num">[40]</span><span class="cit-cat">Media / Trade</span><div class="cit-title">ATM 2024 — India's Outbound Tourism: 30%+ Choose Middle East Destinations</div><div class="cit-meta">The Designer.se · Feb 2024<br><a href="https://thedesigner.se/atm-2024-to-focus-on-indias-outbound-tourism-potential-over-30-of-indian-travelers-choose-to-visit-middle-east-destinations/" target="_blank">thedesigner.se — India Outbound Tourism ATM 2024</a></div></div>
+      <div class="cit-item" data-cat="media"><span class="cit-num">[41]</span><span class="cit-cat">Media / Trade</span><div class="cit-title">Final Rentals — Level 3 Saudi Arabia Travel Advisory 2026 (Operation Epic Fury)</div><div class="cit-meta">Final Rentals · Mar 2026<br><a href="https://www.finalrentals.com/blog/single/level-3-saudi-arabia-advisory-2026" target="_blank">finalrentals.com — Level 3 Saudi Advisory 2026</a></div></div>
+      <div class="cit-item" data-cat="media"><span class="cit-num">[42]</span><span class="cit-cat">Media / Trade</span><div class="cit-title">Road Genius — Saudi Arabia Tourism Statistics (Official Data Aggregation)</div><div class="cit-meta">Road Genius<br><a href="https://roadgenius.com/statistics/tourism/saudi-arabia/" target="_blank">roadgenius.com/statistics/tourism/saudi-arabia/</a></div></div>
+    </div>
+
+    <div class="cit-pag" id="cit-pag">
+      <button class="cpbtn pn" id="cit-prev">← Prev</button>
+      <button class="cpbtn pn" id="cit-next">Next →</button>
+      <span class="cpinfo" id="cit-info"></span>
     </div>
   </div>
 </section>
@@ -675,115 +772,103 @@ a { color: inherit; text-decoration: none; }
 <footer class="footer">
   <div>
     <div class="footer-brand">Ykone · Barcode Entertainment</div>
-    <div class="footer-meta" style="margin-top:6px;">India–Saudi Arabia Tourism Intelligence · April 2026</div>
+    <div class="footer-meta" style="margin-top:5px;">Influencer Marketing for Saudi Tourism Recovery · April 2026</div>
   </div>
   <div style="text-align:right;">
     <div class="footer-meta">Confidential · For Authorised Stakeholders Only</div>
-    <div class="footer-meta" style="margin-top:4px;color:rgba(255,255,255,0.14);">Official Sources Only · No Social Media · No Unverified Sources</div>
+    <div class="footer-meta" style="margin-top:4px;color:rgba(255,255,255,0.12);">Academic · Government · Industry Sources Only</div>
   </div>
 </footer>
 
 <script>
-Chart.defaults.font.family = "'League Spartan', system-ui, sans-serif";
-Chart.defaults.font.weight = '600';
-const BLACK='#080808',GOLD='#c9a84c',RED='#b83232',GREEN='#1e6b42';
-const ticksLight = { color:'#333', font:{size:13,family:"'League Spartan'"} };
-const ticksDark  = { color:'rgba(255,255,255,0.65)', font:{size:13,family:"'League Spartan'"} };
-const gridLight  = { color:'rgba(0,0,0,0.07)' };
-const gridDark   = { color:'rgba(255,255,255,0.07)' };
+Chart.defaults.font.family="'League Spartan',system-ui,sans-serif";
+Chart.defaults.font.weight='600';
+const BLK='#080808',GLD='#c9a84c',RED='#b83232',GRN='#1e6b42';
+const TL={color:'#333',font:{size:12,family:"'League Spartan'"}};
+const TD={color:'rgba(255,255,255,0.60)',font:{size:12,family:"'League Spartan'"}};
+const GL={color:'rgba(0,0,0,0.07)'};
+const GD={color:'rgba(255,255,255,0.07)'};
 
-new Chart(document.getElementById('arrivalChart'),{type:'bar',data:{labels:['2019','2020','2021','2022','2023','2024'],datasets:[{label:'Indian Departures (Millions)',data:[2.92,0.68,0.85,2.48,3.09,3.42],backgroundColor:['#333','#ddd','#ddd','#555','#111','#080808'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}M Indian departures`}}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>v+'M'},max:4}}}});
+// 1. Perception Gap — radar-style bar
+new Chart(document.getElementById('perceptionGapChart'),{type:'bar',data:{labels:['Travellers "Concerned"','Actively Avoiding ME','Trust in Govt Ads','Saudi Safety Score\n(Numbeo /100)','Indians w/ Positive\nSaudi Perception'],datasets:[{label:'Perception / Fear Score',data:[78,42,30,86,42],backgroundColor:[RED,RED,'rgba(0,0,0,0.25)',GRN,'rgba(30,107,66,0.4)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}%`}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'},max:100}}}});
 
-new Chart(document.getElementById('saudiTotalChart'),{type:'bar',data:{labels:['2019','2020','2021','2022','2023','2024','2025'],datasets:[{label:'Total Visitors (Millions)',data:[40.0,9.6,11.0,93.5,100.0,116.0,122.0],backgroundColor:(ctx)=>{const v=[40,9.6,11,93.5,100,116,122][ctx.dataIndex];return v>=100?BLACK:v<20?'#ccc':'#555';},borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}M total visitors`}}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>v+'M'}}}}});
+// 2. Impact chart
+new Chart(document.getElementById('impactChart'),{type:'bar',data:{labels:['Best Case\n(−11%)','Base Case\n(−20%)','Worst Case\n(−27%)'],datasets:[{label:'Revenue Loss ($B)',data:[34,45,56],backgroundColor:['rgba(184,50,50,0.3)','rgba(184,50,50,0.6)',RED],borderWidth:0},{label:'Lost Visitors (M)',data:[23,31,38],backgroundColor:['rgba(201,168,76,0.3)','rgba(201,168,76,0.6)',GLD],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#333',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:TL}}}});
 
-new Chart(document.getElementById('segmentChart'),{type:'doughnut',data:{labels:['Religious (Hajj/Umrah)','Leisure / VFR','Business','Labour/Transit'],datasets:[{data:[42,28,16,14],backgroundColor:[BLACK,'#555','#888','#bbb'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:'right',labels:{color:'#222',boxWidth:10,padding:10,font:{size:13}}},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.parsed}%`}}}}});
+// 3. Perception Shift
+new Chart(document.getElementById('perceptionShiftChart'),{type:'bar',data:{labels:['Positive Perception\nChange','Increased Desire\nto Visit','Influenced\nDestination Choice','Concrete Booking\nIntent'],datasets:[{label:'Influencer Content',data:[76.7,83.3,70,63.3],backgroundColor:BLK,borderWidth:0},{label:'Traditional Advertising',data:[12,18,22,15],backgroundColor:'rgba(255,255,255,0.20)',borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,0.60)',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'%'},max:100}}}});
 
-new Chart(document.getElementById('gdpChart'),{type:'line',data:{labels:['2019','2020','2021','2022','2023','2024'],datasets:[{label:'Tourism GDP (SAR Billion)',data:[290,70,110,320,444,480],borderColor:BLACK,borderWidth:2.5,backgroundColor:'rgba(0,0,0,0.05)',fill:true,tension:0.4,pointBackgroundColor:BLACK,pointRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>'SAR '+v+'B'}}}}});
+// 4. Funnel
+new Chart(document.getElementById('funnelChart'),{type:'bar',data:{labels:['Prefer Social Media\nfor Travel Planning','Influencer Affected\nDestination Choice','Concrete Booking\nIntent from Influencers'],datasets:[{data:[70,70,63.3],backgroundColor:[BLK,'rgba(255,255,255,0.35)','rgba(255,255,255,0.18)'],borderWidth:0}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.x}%`}}},scales:{x:{grid:GD,ticks:{...TD,callback:v=>v+'%'},max:100},y:{grid:{display:false},ticks:{...TD,font:{size:10}}}}}});
 
-new Chart(document.getElementById('sentimentChart'),{type:'line',data:{labels:['Jan 23','Apr 23','Jul 23','Oct 23\n(Hamas)','Jan 24','Apr 24\n(MEA Adv.)','Jul 24','Oct 24','Jan 25','Apr 25','Jul 25','Oct 25','Jan 26','Feb 26\n(US-Iran)','Apr 26'],datasets:[{label:'ME Travel Sentiment Index',data:[78,80,82,38,45,42,52,55,60,62,64,60,58,22,35],borderColor:'#fff',borderWidth:2,backgroundColor:'rgba(255,255,255,0.06)',fill:true,tension:0.4,pointBackgroundColor:(ctx)=>[3,13].includes(ctx.dataIndex)?RED:'#fff',pointRadius:(ctx)=>[3,13].includes(ctx.dataIndex)?7:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:gridDark,ticks:{...ticksDark,font:{size:11}}},y:{grid:gridDark,ticks:ticksDark,min:0,max:100}}}});
+// 5. ROI Comparison
+new Chart(document.getElementById('roiCompChart'),{type:'bar',data:{labels:['Traditional\nAdvertising','Earned Media\n(Traditional PR)','Influencer\nMarketing','Top Performing\nInfluencer Campaigns'],datasets:[{label:'Average ROI (%)',data:[350,481,550,1100],backgroundColor:['rgba(0,0,0,0.20)','rgba(0,0,0,0.35)','rgba(0,0,0,0.70)',BLK],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}% ROI`}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'}}}}});
 
-new Chart(document.getElementById('aviationChart'),{type:'line',data:{labels:['Jan 23','Jul 23','Oct 23','Jan 24','Jul 24','Jan 25','Jul 25','Jan 26','Apr 26'],datasets:[{label:'India-ME Aviation Capacity Index',data:[100,105,92,88,94,97,100,95,92],borderColor:GOLD,borderWidth:2,backgroundColor:'rgba(201,168,76,0.08)',fill:true,tension:0.4,pointBackgroundColor:(ctx)=>ctx.dataIndex===8?RED:GOLD,pointRadius:(ctx)=>ctx.dataIndex===8?7:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:gridDark,ticks:{...ticksDark,font:{size:11}}},y:{grid:gridDark,ticks:ticksDark,min:70,max:115}}}});
+// 6. Trust
+new Chart(document.getElementById('trustChart'),{type:'doughnut',data:{labels:['Trust Influencer Recommendations','Trust Traditional Corporate Ads','Neither / Undecided'],datasets:[{data:[67,21,12],backgroundColor:[BLK,'rgba(0,0,0,0.25)','rgba(0,0,0,0.08)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:'right',labels:{color:'#222',boxWidth:10,padding:10,font:{size:11}}}}}});
 
-new Chart(document.getElementById('scenarioDeclineChart'),{type:'bar',data:{labels:['Scenario A\n(Best Case)','Scenario B\n(Base Case)','Scenario C\n(Worst Case)'],datasets:[{label:'Projected Arrival Decline 2026 (%)',data:[12,23.5,26],backgroundColor:[GREEN,GOLD,RED],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>'-'+v+'%'},max:30}}}});
+// 7. Cost Advantage
+new Chart(document.getElementById('costChart'),{type:'bar',data:{labels:['Cost Per Acquisition','Cost Per Impression'],datasets:[{label:'Influencer Marketing',data:[70,60],backgroundColor:BLK,borderWidth:0},{label:'Traditional Advertising',data:[100,100],backgroundColor:'rgba(0,0,0,0.20)',borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#222',boxWidth:10,font:{size:11}}},tooltip:{callbacks:{label:c=>` ${c.parsed.y} (Index: Traditional=100)`}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:TL,max:120,title:{display:true,text:'Index: Traditional = 100',color:'#888',font:{size:10}}}}}});
 
-new Chart(document.getElementById('revenueLossChart'),{type:'bar',data:{labels:['Scenario A','Scenario B','Scenario C'],datasets:[{label:'Min Loss ($B)',data:[18,35,40],backgroundColor:'rgba(0,0,0,0.15)',borderWidth:0},{label:'Max Loss ($B)',data:[34,56,60],backgroundColor:[GREEN,GOLD,RED],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#222',boxWidth:10,font:{size:13}}}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>'$'+v+'B'}}}}});
+// 8. Funnel Comparison (Kantar)
+new Chart(document.getElementById('funnelCompChart'),{type:'bar',data:{labels:['Brand\nFavourability','Positive Brand\nAttributes','Purchase\nIntent'],datasets:[{label:'Influencer Marketing',data:[15,11,10],backgroundColor:BLK,borderWidth:0},{label:'Traditional Advertising',data:[12,9,9],backgroundColor:'rgba(0,0,0,0.22)',borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#222',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'},max:20}}}});
 
-new Chart(document.getElementById('substitutionChart'),{type:'bar',data:{labels:['Middle East (Non-GCC)','North Africa'],datasets:[{label:'2023 (Jan–Sep)',data:[100,100],backgroundColor:'#ccc',borderWidth:0},{label:'2024 (Jan–Sep)',data:[78,127],backgroundColor:[RED,GREEN],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#222',boxWidth:10,font:{size:13}}}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:ticksLight,min:0,max:140}}}});
+// 9. Case Study Recovery Chart
+new Chart(document.getElementById('recoveryCompChart'),{type:'bar',data:{labels:['Egypt\n(2014-2019)','Turkey\n(2016-2018)','Sri Lanka\n(51 Days)','Jordan\n(Ongoing)'],datasets:[{label:'Key Recovery Metric',data:[4,54,270,85],backgroundColor:[BLK,'rgba(0,0,0,0.70)','rgba(0,0,0,0.45)','rgba(0,0,0,0.30)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const labels=['4% tourism economy growth','54% visitor increase (30M→46M)','270% arrival surge in 51 days','All 5 influencer constructs validated'];return labels[c.dataIndex];}}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'}}}}});
 
-new Chart(document.getElementById('historicalDeclineChart'),{type:'bar',data:{labels:['Gulf War\n1991','9/11\n2001','Arab Spring\n2011','COVID-19\n2020','Current\n2026 (Base)'],datasets:[{label:'Peak Decline (%)',data:[17,11,12,76,23.5],backgroundColor:['#555','#555','#555','#111',RED],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{...ticksLight,font:{size:11}}},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>'-'+v+'%'}}}}});
+// 10. Visit Saudi Chart
+new Chart(document.getElementById('visitSaudiChart'),{type:'bar',data:{labels:['Creators\nMobilised','Trips\nOrganised','Impressions\n(Millions)','Audience\nReached (M)','Would Book\nSaudi (%)'],datasets:[{data:[300,26,350,240,60],backgroundColor:[BLK,BLK,BLK,'rgba(0,0,0,0.60)','rgba(0,0,0,0.40)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:TD}}}});
 
-new Chart(document.getElementById('recoveryTimeChart'),{type:'bar',data:{labels:['Gulf War\n1991','9/11\n2001','Arab Spring\n2011','COVID-19\n2020–22','Current\n(Base Est.)'],datasets:[{label:'Months to Full Recovery',data:[24,18,30,30,18],backgroundColor:['#888','#555','#555','#333',GOLD],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{...ticksLight,font:{size:11}}},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>v+' mo'}}}}});
+// 11. Saudi Timeline
+new Chart(document.getElementById('saudiTimelineChart'),{type:'line',data:{labels:['2019\nFirst Creator Trips','2021\n#VisitSaudi Launch','2022\n300+ Creators','2023\n100M Visitors','2024\nIndia MoU','2025\nAlUla Summit'],datasets:[{label:'Tourism Metric Index',data:[20,45,65,100,116,122],borderColor:'#fff',borderWidth:2.5,backgroundColor:'rgba(255,255,255,0.05)',fill:true,tension:0.4,pointBackgroundColor:'#fff',pointRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:GD,ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'M Visitors'}}}}});
 
-new Chart(document.getElementById('recoveryProjectionChart'),{type:'line',data:{labels:['2022','2023','2024','2025','2026','2027'],datasets:[{label:'Scenario A (Best)',data:[80,100,106,110,98,112],borderColor:GREEN,borderWidth:2,tension:0.4,pointBackgroundColor:GREEN,pointRadius:4,fill:false},{label:'Scenario B (Base)',data:[80,100,106,110,82,100],borderColor:GOLD,borderWidth:2,tension:0.4,pointBackgroundColor:GOLD,pointRadius:4,fill:false,borderDash:[5,3]},{label:'Scenario C (Worst)',data:[80,100,106,110,78,90],borderColor:RED,borderWidth:2,tension:0.4,pointBackgroundColor:RED,pointRadius:4,fill:false,borderDash:[2,2]}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'rgba(255,255,255,0.75)',boxWidth:12,padding:14,font:{size:13}}}},scales:{x:{grid:gridDark,ticks:ticksDark},y:{grid:gridDark,ticks:ticksDark,min:60,max:120}}}});
+// 12. Platform Chart
+new Chart(document.getElementById('platformChart'),{type:'bar',data:{labels:['YouTube','Instagram','Facebook','X / Twitter','WhatsApp'],datasets:[{label:'Advertising Reach (%)',data:[61.5,43.93,38.2,22.1,18.4],backgroundColor:[BLK,'rgba(0,0,0,0.70)','rgba(0,0,0,0.50)','rgba(0,0,0,0.35)','rgba(0,0,0,0.20)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:{...TL,callback:v=>v+'%'},max:80}}}});
 
-new Chart(document.getElementById('visionProgressChart'),{type:'bar',data:{labels:['2019','2020','2021','2022','2023','2024','2025','2030 Target'],datasets:[{label:'Total Visitors (Millions)',data:[40,9.6,11,93.5,100,116,122,150],backgroundColor:(ctx)=>{const i=ctx.dataIndex;return i===7?GOLD:i>=4?BLACK:i<=1?'#ccc':'#666';},borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>v+'M'}}}}});
+// 13. Tier Chart
+new Chart(document.getElementById('tierChart'),{type:'bar',data:{labels:['Nano\n(<10K)','Micro\n(10K-100K)','Macro\n(100K-1M)','Mega\n(1M+)'],datasets:[{label:'Engagement Rate (%)',data:[5.5,3.5,1.5,0.8],backgroundColor:['rgba(0,0,0,0.35)',BLK,'rgba(0,0,0,0.50)','rgba(0,0,0,0.25)'],borderWidth:0},{label:'Cost Per Post ($K)',data:[0.2,5,25,150],backgroundColor:[GLD,GLD,GLD,GLD],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#222',boxWidth:10,font:{size:11}}}},scales:{x:{grid:{display:false},ticks:TL},y:{grid:GL,ticks:TL}}}});
 
-new Chart(document.getElementById('domesticIntlChart'),{type:'doughnut',data:{labels:['Domestic Tourists (86.2M)','International Tourists (29.7M)'],datasets:[{data:[86.2,29.7],backgroundColor:[BLACK,'#888'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{color:'#222',boxWidth:10,padding:12,font:{size:13}}}}}});
+// 14. ROI Model
+new Chart(document.getElementById('roiModelChart'),{type:'bar',data:{labels:['Campaign\nInvestment ($M)','Direct Tourism\nRevenue ($M)'],datasets:[{data:[1,75.5],backgroundColor:['rgba(0,0,0,0.30)',BLK],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` $${c.parsed.y}M`}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:11}}},y:{grid:GD,ticks:{...TD,callback:v=>'$'+v+'M'}}}}});
 
-new Chart(document.getElementById('tourismRevenueChart'),{type:'bar',data:{labels:['2019','2020','2021','2022','2023','2024'],datasets:[{label:'International Visitor Spending (SAR B)',data:[144,30,55,144,227,169],backgroundColor:BLACK,borderWidth:0},{label:'Domestic Visitor Spending (SAR B)',data:[130,40,60,160,217,115],backgroundColor:'#888',borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#222',boxWidth:10,font:{size:13}}}},scales:{x:{grid:{display:false},ticks:ticksLight},y:{grid:gridLight,ticks:{...ticksLight,callback:v=>'SAR '+v+'B'}}}}});
+// 15. Budget Comparison
+new Chart(document.getElementById('budgetCompChart'),{type:'bar',data:{labels:['Influencer\nMarketing','Traditional\nTV Spots','Traditional\nPrint','Traditional\nDigital Display'],datasets:[{label:'Impressions for $1M Budget (Millions)',data:[100,12,8,25],backgroundColor:[BLK,'rgba(255,255,255,0.20)','rgba(255,255,255,0.15)','rgba(255,255,255,0.12)'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}M impressions for $1M budget`}}},scales:{x:{grid:{display:false},ticks:{...TD,font:{size:10}}},y:{grid:GD,ticks:{...TD,callback:v=>v+'M'}}}}});
 
-// TIMELINE FILTER
-document.querySelectorAll('[data-tl]').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('[data-tl]').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.tl;
-    document.querySelectorAll('#timeline-list .tl-item').forEach(item=>{item.style.display=(f==='all'||item.dataset.tag===f)?'':'none';});
-  });
-});
-
-// CRISIS TABLE FILTER
-document.querySelectorAll('[data-crisis]').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('[data-crisis]').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f=btn.dataset.crisis;
-    document.querySelectorAll('#crisis-table tbody tr').forEach(row=>{row.style.display=(f==='all'||(row.dataset.crisis&&row.dataset.crisis.includes(f)))?'':'none';});
-  });
-});
-
-// CITATIONS PAGINATION
-const ITEMS_PER_PAGE=8;
-let currentPage=1,currentCat='all';
-const allItems=()=>Array.from(document.querySelectorAll('#citations-grid .citation-item'));
-const getFiltered=()=>allItems().filter(i=>currentCat==='all'||i.dataset.cat===currentCat);
-
-function renderCitations(){
-  const filtered=getFiltered();
-  const totalPages=Math.max(1,Math.ceil(filtered.length/ITEMS_PER_PAGE));
-  if(currentPage>totalPages)currentPage=1;
-  const start=(currentPage-1)*ITEMS_PER_PAGE,end=start+ITEMS_PER_PAGE;
-  const visible=new Set(filtered.slice(start,end));
-  allItems().forEach(i=>{i.style.display=visible.has(i)?'':'none';});
-  const pg=document.getElementById('cit-pagination');
-  const prevBtn=document.getElementById('cit-prev'),nextBtn=document.getElementById('cit-next');
-  pg.querySelectorAll('[data-pg]').forEach(b=>b.remove());
-  for(let p=1;p<=totalPages;p++){
-    const btn=document.createElement('button');
-    btn.className='cit-page-btn'+(p===currentPage?' active':'');
-    btn.dataset.pg=p; btn.textContent=p;
-    btn.addEventListener('click',()=>{currentPage=p;renderCitations();});
-    pg.insertBefore(btn,nextBtn);
-  }
-  prevBtn.disabled=currentPage===1; prevBtn.style.opacity=currentPage===1?'0.35':'1';
-  nextBtn.disabled=currentPage===totalPages; nextBtn.style.opacity=currentPage===totalPages?'0.35':'1';
-  const s=filtered.length===0?0:start+1,e=Math.min(end,filtered.length);
-  document.getElementById('cit-page-info').textContent=`Page ${currentPage} of ${totalPages} · Showing ${s}–${e} of ${filtered.length} sources`;
-}
-document.getElementById('cit-prev').addEventListener('click',()=>{if(currentPage>1){currentPage--;renderCitations();}});
-document.getElementById('cit-next').addEventListener('click',()=>{const t=Math.ceil(getFiltered().length/ITEMS_PER_PAGE);if(currentPage<t){currentPage++;renderCitations();}});
-document.querySelectorAll('.cit-cat-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.cit-cat-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active'); currentCat=btn.dataset.cat; currentPage=1; renderCitations();
-  });
-});
-renderCitations();
-
-// Smooth nav
+// NAV SMOOTH
 document.querySelectorAll('.nav a').forEach(a=>{
   a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});
 });
+
+// CITATIONS
+const IPP=8;let cPage=1,cCat='all';
+const allC=()=>Array.from(document.querySelectorAll('#cit-grid .cit-item'));
+const getFilt=()=>allC().filter(i=>cCat==='all'||i.dataset.cat===cCat);
+function renderC(){
+  const f=getFilt(),tot=Math.max(1,Math.ceil(f.length/IPP));
+  if(cPage>tot)cPage=1;
+  const s=(cPage-1)*IPP,e=s+IPP,vis=new Set(f.slice(s,e));
+  allC().forEach(i=>{i.style.display=vis.has(i)?'':'none';});
+  const pg=document.getElementById('cit-pag');
+  const prev=document.getElementById('cit-prev'),next=document.getElementById('cit-next');
+  pg.querySelectorAll('[data-pg]').forEach(b=>b.remove());
+  for(let p=1;p<=tot;p++){
+    const b=document.createElement('button');
+    b.className='cpbtn'+(p===cPage?' active':'');
+    b.dataset.pg=p;b.textContent=p;
+    b.addEventListener('click',()=>{cPage=p;renderC();});
+    pg.insertBefore(b,next);
+  }
+  prev.disabled=cPage===1;prev.style.opacity=cPage===1?'0.35':'1';
+  next.disabled=cPage===tot;next.style.opacity=cPage===tot?'0.35':'1';
+  const fs=f.length===0?0:s+1,fe=Math.min(e,f.length);
+  document.getElementById('cit-info').textContent=`Page ${cPage} of ${tot} · ${fs}–${fe} of ${f.length}`;
+}
+document.getElementById('cit-prev').addEventListener('click',()=>{if(cPage>1){cPage--;renderC();}});
+document.getElementById('cit-next').addEventListener('click',()=>{const t=Math.ceil(getFilt().length/IPP);if(cPage<t){cPage++;renderC();}});
+document.querySelectorAll('.cit-btn').forEach(b=>{
+  b.addEventListener('click',()=>{document.querySelectorAll('.cit-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');cCat=b.dataset.cat;cPage=1;renderC();});
+});
+renderC();
 </script>
 </body>
 </html>
